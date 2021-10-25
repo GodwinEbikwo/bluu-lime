@@ -1,26 +1,25 @@
-import Image from "next/image";
 import styled from "styled-components";
 import { SplitText } from "./split-text";
 import useInView from "react-cool-inview";
-import { toBase64, shimmer } from "../helpers";
-import Icon from "./icons";
+import { HeroImage } from "../helpers";
 
-export default function Hero() {
+export default function Hero({
+  heroTitle,
+  heroButtonTitle,
+  title,
+  responsiveImage,
+}) {
   const { observe } = useInView();
   return (
     <HeroBox>
       <aside data-scroll>
         <div className="bg-full" data-scroll>
-          <Image
-            alt="5n6"
-            src="https://res.cloudinary.com/godwinebikwo/image/upload/v1635114010/IMG_7467_otxhkz.jpg"
-            className="a-img"
-            quality="85"
-            layout="fill"
-            objectFit="cover"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(1920, 990)
-            )}`}
+          <HeroImage
+            title={title}
+            responsiveImage={
+              responsiveImage ||
+              "https://res.cloudinary.com/godwinebikwo/image/upload/v1635114010/IMG_7467_otxhkz.jpg"
+            }
           />
         </div>
       </aside>
@@ -44,12 +43,12 @@ export default function Hero() {
               }),
             }}
           >
-            Cute. Mini. Bags.
+            {heroTitle}
           </SplitText>
         </h1>
 
-        <button type="button" title="shop all">
-          Shop all →
+        <button type="button" title={heroButtonTitle}>
+          {heroButtonTitle} →
         </button>
       </aside>
     </HeroBox>

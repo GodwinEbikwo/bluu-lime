@@ -1,4 +1,25 @@
 import { useEffect, useState } from "react";
+import { Image } from "react-datocms";
+
+export function HeroImage({ title, responsiveImage }) {
+  const image = (
+    <div data-scroll data-scroll-speed="-1.5">
+      <Image
+        data={{
+          ...responsiveImage,
+          alt: `${title ? title : ""}`,
+        }}
+        className="not-selectable a-img"
+      />
+    </div>
+  );
+
+  return (
+    <div className="mx-auto overflow-hidden" data-scroll>
+      {image}
+    </div>
+  );
+}
 
 export function useHasMounted() {
   const [hasMounted, setHasMounted] = useState(false);

@@ -476,7 +476,7 @@ html,
     opacity: 0;
     transform: rotate(-8deg) scale(1.3);
     transform-origin: 50% 50%;
-    transition: opacity 0.5s var(--easing), transform 1.25s var(--easing);
+    transition: opacity 0.2s var(--easing), transform 1.25s var(--easing);
     will-change: opacity, transform;
   }
 
@@ -484,7 +484,7 @@ html,
     .a-img {
       opacity: 1;
       transform: rotate(0deg) scale(1);
-      transition-delay: 0.25s;
+      transition-delay: 0.45s;
     }
   }
 
