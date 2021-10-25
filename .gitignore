@@ -12,9 +12,6 @@
 /.next/
 /out/
 
-# remove font
-/public
-
 # production
 /build
 
