@@ -1,0 +1,18 @@
+import { AppStyles } from "@/styles/app-styles";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import { DefaultSeo } from "next-seo";
+import SEO from "@/helpers/seo-config";
+
+export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  return (
+    <>
+      <AppStyles />
+      <DefaultSeo {...SEO} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.asPath} />
+      </AnimatePresence>
+    </>
+  );
+}
