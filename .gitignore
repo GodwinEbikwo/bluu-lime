@@ -13,7 +13,7 @@
 /out/
 
 # remove font
-/public/font
+/public
 
 # production
 /build
