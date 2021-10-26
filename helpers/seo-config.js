@@ -5,8 +5,8 @@ export default {
     openGraph: {
       type: 'website',
       locale: 'en_GB',
-      url: 'https://sg-next-tailwind-motion.vercel.app/',
-      site_name: 'fivensix',
+      url: 'https://bluu-lime.vercel.app/',
+      site_name: 'bluu-lime',
     },
     twitter: {
       handle: '@godwinebikwo',

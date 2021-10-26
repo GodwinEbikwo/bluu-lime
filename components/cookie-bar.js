@@ -96,7 +96,7 @@ export default CookieBar;
 
 const CookieBarBox = styled(m.aside)`
   position: fixed;
-  bottom: var(--spacing-lg);
+  bottom: var(--spacing-md);
   right: 0;
   z-index: 90;
   width: 100%;
@@ -107,7 +107,7 @@ const CookieBarBox = styled(m.aside)`
   }
 `;
 
-const CookieBarContent = styled.div`
+const CookieBarContent = styled.article`
   display: grid;
   align-items: center;
   gap: 1.5rem;

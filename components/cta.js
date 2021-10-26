@@ -91,13 +91,8 @@ const CtaBox = styled.div`
 
   .cta-title {
     font-family: var(--font-2);
-    font-size: 2rem;
     text-transform: none;
     line-height: 1.15;
-    letter-spacing: var(--ls-md);
-    @media (min-width: 768px) {
-      font-size: 3vw;
-    }
   }
 
   .cta-btn_container {

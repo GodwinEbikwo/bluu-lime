@@ -30,7 +30,7 @@ export default function HomePage({ heroContent }) {
         containerRef={containerRef}
         watch={[]}
       >
-        <main data-scroll-container ref={containerRef} id="scroll-container">
+        <main role="main" data-scroll-container ref={containerRef} id="scroll-container">
           <section data-scroll-section>
             <LazyMotion features={domAnimation}>
               <m.div initial="initial" animate="enter" exit="exit">

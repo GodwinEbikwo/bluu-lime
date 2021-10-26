@@ -14,13 +14,29 @@ export const AppStyles = createGlobalStyle`
   font-display: swap;
   src: url("/fonts/EditorialNew-Regular.woff2") format('woff2');
 }
+@font-face {
+  font-family: 'RadioGrotesk-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/RadioGrotesk-Bold.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'RadioGrotesk-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/RadioGrotesk-Regular.woff2") format('woff2');
+}
 
 :root{
   --golden-ratio: 1.5rem;
   --max-width: 2460px;
 
 
-  --bg: hsla(223, 57%, 42%, 20%);
+  --bg: hsla(200, 50%, 0%, 100%);
+  /* --bg: hsla(0, 0%, 0%, 0%); */
+  /* --bg: hsla(223, 57%, 42%, 20%); */
   --accent: hsla(2, 89%, 58%, 100%);
 
   --text-white: #111;
@@ -33,6 +49,8 @@ export const AppStyles = createGlobalStyle`
 
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
   --font-2: "EditorialNew-Regular",  'Times New Roman', Times, serif;
+  --font-3: "RadioGrotesk-Bold", 'Helvetica Neue', sans-serif;
+  --font-4: "RadioGrotesk-Regular", 'Times New Roman', Times, serif;
  
   --font-sm: 400;
   --font-md: 500;
@@ -52,6 +70,10 @@ export const AppStyles = createGlobalStyle`
   --spacer-md: 3rem;
   --spacer-lg: 5rem;
   --easing: cubic-bezier(0.215, 0.61, 0.355, 1);  
+
+  --fluid-type-min: 3rem;
+  --fluid-type-max: 3.5rem;
+  --fluid-type-target: 3vw;
 }
 
 *,
@@ -206,7 +228,6 @@ html,
   }
 
   html {
-    font-size: 62.5%;
     background-color: var(--bg);
     &:not(.has-scroll-init) {
       cursor: wait;
@@ -220,26 +241,34 @@ html,
     font-feature-settings: 'kern';
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-    color: var(--text-black);
+    line-height: 1.5;
+    color: var(--off-white);
     font-family: var(--font);
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 
     &.no-scroll {
       overflow-y: hidden;
       touch-action: none;
     }  
+}
 
-    &.bg-white{
-      background-color: var(--bg);
-      transition: background-color 400ms linear;
-    }
-    
-    &.bg-red{
-      background-color: hsla(310, 81%, 85%, 100%);
-      transition: background-color 400ms linear;
-  }
+h1 {
+  font-family: var(--font-3);
+  font-size: clamp(
+    var(--fluid-type-min, 1rem),
+    calc(1rem + var(--fluid-type-target, 3vw)),
+    var(--fluid-type-max, 1.3rem)
+  );
+}
+
+h2,
+h3,
+h4,
+p {
+  letter-spacing: var(--letter-spacing-small);
+  hyphens: auto;
+  word-break: break-word;
 }
 
   li,
@@ -259,16 +288,15 @@ html,
     object-fit: cover;
   }
 
+  .box-shadow{
+    box-shadow: 0 3px 50px rgb(0 0 0 / 0.1);
+  }
 
-.box-shadow{
-  box-shadow: 0 3px 50px rgb(0 0 0 / 0.1);
-}
-
-.line {
-  height: 1px;
-  transform-origin: left;
-  background: var(--white);
-}
+  .line {
+    height: 1px;
+    transform-origin: left;
+    background: var(--white);
+  }
 
   .text-center {
     text-align: center;
@@ -371,7 +399,7 @@ html,
     padding-left: var(--golden-ratio);
     padding-right: var(--golden-ratio);
     @media screen and (max-width: 767px) {
-      --gr-r: 1rem;
+      --gr-r: 1.25rem;
       padding-left: var(--g-r);
       padding-right: var(--g-r);
     }
@@ -389,14 +417,12 @@ html,
   .hide-for-mobile {
     @media screen and (max-width: 767px) {
      display: none;
-     visibility: hidden;
     }
   }
   
   .hide-for-desktop {
     @media screen and (min-width: 768px) {
       display: none;
-      visibility: hidden;
     }
   }
 
@@ -450,19 +476,17 @@ html,
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 50%;
       opacity: 0;
-      transform: rotate(-5deg) scale(1.3);
+      transform: scale(1.3);
       transition: opacity 0.2s var(--easing), transform 1.2s var(--easing);
       will-change: transform, opacity;
       transform-origin: 50% 50%;
-      transform-style: preserve-3d;
   }
 
     &.is-inview {
       .img {
         opacity: 1;
-        transform: rotate(0deg) scale(1);
+        transform: scale(1);
         transition-delay: 0.65s;
     }
   }
@@ -476,7 +500,7 @@ html,
     opacity: 0;
     transform: rotate(-8deg) scale(1.3);
     transform-origin: 50% 50%;
-    transition: opacity 0.2s var(--easing), transform 1.25s var(--easing);
+    transition: opacity 0s var(--easing), transform 1.25s var(--easing);
     will-change: opacity, transform;
   }
 
@@ -495,7 +519,7 @@ html,
   left: 0;
   position: fixed;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   z-index: -1;
 }

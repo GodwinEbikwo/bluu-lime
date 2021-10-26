@@ -5,7 +5,7 @@ export function SplitText({ children, ...rest }) {
   return text.map((word, i) => {
     return (
       <span key={children + i} className="inline-block overflow-hidden">
-        <m.span {...rest} className="block will-change" custom={i}>
+        <m.span {...rest} className="inline-block" custom={i}>
           {word + (i !== text.length - 1 ? "\u00A0" : "")}
         </m.span>
       </span>

@@ -72,25 +72,21 @@ const HeroBox = styled.article`
     justify-content: center;
 
     button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 999px;
       padding: 1rem 3rem;
       width: auto;
+      height: 48px;
       background-color: var(--black);
-      color: var(--off-white);
-      margin-top: var(--spacing-sm);
+      color: var(--white);
     }
 
     .hero_title {
       text-align: center;
-      font-family: var(--font-2);
-      font-size: 3.5rem;
-      line-height: 1;
-      letter-spacing: var(--ls-md);
       color: var(--white);
-      @media (min-width: 768px) {
-        line-height: 1.3;
-        font-size: 5.25vw;
-      }
+      margin-bottom: var(--spacing-sm);
     }
   }
 `;

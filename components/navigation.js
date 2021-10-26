@@ -3,6 +3,7 @@ import { m, LazyMotion, domAnimation, useCycle } from "framer-motion";
 import FancyLink from "./fancy-link";
 import { useHasMounted } from "@/helpers/index";
 import { MenuToggle } from "./menu/menu-toggle";
+import Icon from "./icons";
 
 const data = [
   {
@@ -47,24 +48,34 @@ const NavBox = styled(m.nav)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   .nav-logo {
-    span {
-      color: black;
-      font-size: 3vw;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 1rem;
+    height: 40px;
+    border-radius: 999px;
+    background-color: var(--black);
+    cursor: pointer;
   }
 `;
 
-const MenuBox = styled.ul`
+const MenuBox = styled.div`
   display: flex;
 `;
 
 const NavList = styled.ul`
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: auto;
+  height: 40px;
   padding: 1rem 3rem;
   background-color: var(--black);
   border-radius: 999px;
+  mix-blend-mode: difference;
 
   &:hover > li {
     transition: opacity 300ms linear;
@@ -84,7 +95,7 @@ const NavList = styled.ul`
     a {
       text-transform: capitalize;
       text-align: center;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--off-white);
     }
   }
 `;
@@ -134,7 +145,19 @@ export default function Navigation() {
       >
         <NavBox initial={false} animate={isOpen ? "enter" : "exit"} exit="exit">
           <div className="nav-logo">
-            <span aria-label="emoji">✦</span>
+            <svg
+              className="logo"
+              width="28"
+              height="28"
+              viewBox="0 0 43 43"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
+                fill="var(--white)"
+              />
+            </svg>
           </div>
           <NavList className="hide-for-mobile">
             {data.map((item, i) => (
@@ -147,7 +170,24 @@ export default function Navigation() {
               />
             ))}
           </NavList>
-          <MenuBox>{/* <MenuToggle toggle={() => toggleOpen()} /> */}</MenuBox>
+          <div className="nav-logo">
+            <svg
+              className="logo"
+              width="28"
+              height="28"
+              viewBox="0 0 43 43"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
+                fill="var(--white)"
+              />
+            </svg>
+          </div>
+          {/* <MenuBox>
+            <MenuToggle toggle={() => toggleOpen()} />{" "}
+          </MenuBox> */}
         </NavBox>
       </HeaderBox>
     </LazyMotion>

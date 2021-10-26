@@ -117,6 +117,13 @@ const getIcon = (name, color) => {
           d="M12.1 52.1l24.4 24.4 53-53"
         />
       );
+    case "Logo":
+      return (
+        <path
+          d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
+          fill={color}
+        />
+      );
     case "Chevron Down":
       return (
         <polygon
