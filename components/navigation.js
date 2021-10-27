@@ -35,7 +35,7 @@ const data = [
 
 const HeaderBox = styled(m.header)`
   position: fixed;
-  top: var(--spacer-half);
+  top: var(--spacing-md);
   left: calc(var(--golden-ratio) - var(--px-2));
   right: calc(var(--golden-ratio) - var(--px-2));
   padding-top: var(--py-2);

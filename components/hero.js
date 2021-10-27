@@ -12,8 +12,8 @@ export default function Hero({
 }) {
   const { observe } = useInView();
   return (
-    <Div100vh>
-      <HeroBox>
+    <HeroBox>
+      <Div100vh>
         <aside data-scroll>
           <div className="bg-full" data-scroll>
             <HeroImage
@@ -53,8 +53,8 @@ export default function Hero({
             {heroButtonTitle} →
           </button>
         </aside>
-      </HeroBox>
-    </Div100vh>
+      </Div100vh>
+    </HeroBox>
   );
 }
 
