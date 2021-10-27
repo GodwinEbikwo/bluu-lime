@@ -466,7 +466,7 @@ html,
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transform: scale(1.3);
+      transform: scale(1.3, 1.3);
       transition: opacity 0.2s var(--easing), transform 1.2s var(--easing);
       will-change: transform, opacity;
       transform-origin: 50% 50%;
@@ -487,16 +487,16 @@ html,
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transform: rotate(-8deg) scale(1.3, 1.3);
+    transform: scale(1.2, 1.2);
     transform-origin: 50% 50%;
-    transition: opacity 0s var(--easing), transform 1.25s var(--easing);
-    will-change: opacity, transform;
+    transition: transform 1.2s var(--easing), opacity 0.5s var(--easing);
+    will-change:transform, opacity;
   }
 
    &.is-inview {
     .a-img {
       opacity: 1;
-      transform: rotate(0deg) scale(1);
+      transform: scale(1);
       transition-delay: 0.45s;
     }
   }
