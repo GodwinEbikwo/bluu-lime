@@ -17,12 +17,14 @@ import Image from "next/image";
 import { SplitText } from "@/components/split-text";
 import Five from "../public/5.jpg";
 import Hero from "@/components/hero";
+import { getHeroContent } from "@/lib/api";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
 
 export default function TestPage({ heroContent }) {
   const { heroTitle, heroButtonTitle, heroImage } = heroContent;
+  
   const containerRef = useRef(null);
   const { observe, inView } = useInView({
     rootMargin: "150px 0px",
@@ -41,7 +43,7 @@ export default function TestPage({ heroContent }) {
 
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo title="Test" />
       <CookieBar message={policyData} />
       <Navigation />
       <LocomotiveScrollProvider
@@ -69,8 +71,8 @@ export default function TestPage({ heroContent }) {
                           <Hero
                             heroTitle={heroTitle}
                             heroButtonTitle={heroButtonTitle}
-                            title={heroTitle.title}
-                            responsiveImage={heroImage.responsiveImage}
+                            title={heroTitle?.title}
+                            responsiveImage={heroImage?.responsiveImage}
                           />
                         </section>
                         <HGrid className="hide-for-desktop">
