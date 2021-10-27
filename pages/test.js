@@ -3,15 +3,8 @@ import { NextSeo } from "next-seo";
 import Layout from "@/components/layout";
 import Navigation from "@/components/navigation";
 import { fade } from "@/helpers/transitions";
-import { StyledBox, StyledSectionBox } from "@/components/box";
-import {
-  LazyMotion,
-  domAnimation,
-  useViewportScroll,
-  useTransform,
-  m,
-  useAnimation,
-} from "framer-motion";
+import { StyledBox } from "@/components/box";
+import { LazyMotion, domAnimation, useAnimation, m } from "framer-motion";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { options } from "@/lib/scroll";
 import CookieBar from "@/components/cookie-bar";
@@ -23,24 +16,13 @@ import styled from "styled-components";
 import Image from "next/image";
 import { SplitText } from "@/components/split-text";
 import Five from "../public/5.jpg";
+import Hero from "@/components/hero";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
 
-const icon = {
-  initial: {
-    opacity: 0,
-    pathLength: 0,
-    fill: "rgba(255, 255, 255, 0)",
-  },
-  enter: {
-    opacity: 1,
-    pathLength: 1,
-    fill: "rgba(255, 255, 255, 1)",
-  },
-};
-
-export default function TestPage() {
+export default function TestPage({ heroContent }) {
+  const { heroTitle, heroButtonTitle, heroImage } = heroContent;
   const containerRef = useRef(null);
   const { observe, inView } = useInView({
     rootMargin: "150px 0px",
@@ -83,7 +65,15 @@ export default function TestPage() {
                       style={{ background: "var(--accent)" }}
                     >
                       <Div100vh>
-                        <HGrid>
+                        <section className="hide-for-mobile">
+                          <Hero
+                            heroTitle={heroTitle}
+                            heroButtonTitle={heroButtonTitle}
+                            title={heroTitle.title}
+                            responsiveImage={heroImage.responsiveImage}
+                          />
+                        </section>
+                        <HGrid className="hide-for-desktop">
                           <div className="left">
                             <div className="h-left-inner">
                               <h1>
@@ -165,6 +155,13 @@ export default function TestPage() {
       </LocomotiveScrollProvider>
     </Layout>
   );
+}
+
+export async function getStaticProps({ preview = false }) {
+  const heroContent = (await getHeroContent()) || [];
+  return {
+    props: { heroContent },
+  };
 }
 
 const HGrid = styled.div`
