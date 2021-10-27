@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import styled from "styled-components";
 import Image from "next/image";
 import FancyLink from "./fancy-link";
 import Link from "next/link";
-import { FeatureProductList } from "./box";
+import { FeatureProductList, StyledSectionBox } from "./box";
 import {
   ProductInfoContainer,
   ProductTitle,
@@ -46,15 +45,17 @@ export function FeatureProduct({ src, name, alt, price }) {
 
 export default function FeatureProducts() {
   return (
-    <article className="container px-2">
-      <div className="flex space-between py-2">
-        <h1>Epxlore new arrival</h1>
-        <FancyLink
+    <StyledSectionBox>
+      <div className="flex-container space-between">
+        <h1 style={{ marginBottom: "var(--spacing-md)" }}>
+          Epxlore New Arrivals
+        </h1>
+        {/* <FancyLink
           destination="/"
           a11yText="naviagtes to the collection page"
           label="see all products"
           className="link link--metis"
-        />
+        /> */}
       </div>
 
       <FeatureProductList data-scroll>
@@ -77,6 +78,6 @@ export default function FeatureProducts() {
           src={BagPic3}
         />
       </FeatureProductList>
-    </article>
+    </StyledSectionBox>
   );
 }

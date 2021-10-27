@@ -34,14 +34,18 @@ const data = [
 ];
 
 const HeaderBox = styled(m.header)`
-  --py-2: 1rem;
   position: fixed;
   top: var(--spacer-half);
-  left: var(--golden-ratio);
-  right: var(--golden-ratio);
+  left: calc(var(--golden-ratio) - var(--px-2));
+  right: calc(var(--golden-ratio) - var(--px-2));
   padding-top: var(--py-2);
   padding-bottom: var(--py-2);
   z-index: 90;
+
+  @media (min-width: 767px) {
+    left: var(--golden-ratio);
+    right: var(--golden-ratio);
+  }
 `;
 
 const NavBox = styled(m.nav)`
@@ -57,7 +61,9 @@ const NavBox = styled(m.nav)`
     padding: 1rem;
     height: 40px;
     border-radius: 999px;
-    background-color: var(--black);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(40, 40, 40, 0.5);
     cursor: pointer;
   }
 `;
@@ -73,9 +79,10 @@ const NavList = styled.ul`
   width: auto;
   height: 40px;
   padding: 1rem 3rem;
-  background-color: var(--black);
   border-radius: 999px;
-  mix-blend-mode: difference;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(40, 40, 40, 0.5);
 
   &:hover > li {
     transition: opacity 300ms linear;
@@ -129,6 +136,17 @@ const navAnim = {
   },
 };
 
+const icon = {
+  initial: {
+    pathLength: 0,
+    fill: "rgba(55, 155, 105, 0)",
+  },
+  enter: {
+    pathLength: 1,
+    fill: "var(--white)",
+  },
+};
+
 export default function Navigation() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const hasMounted = useHasMounted();
@@ -140,24 +158,11 @@ export default function Navigation() {
         initial="initial"
         animate="enter"
         exit="initial"
-        className="px-2"
         variants={navAnim}
       >
         <NavBox initial={false} animate={isOpen ? "enter" : "exit"} exit="exit">
           <div className="nav-logo">
-            <svg
-              className="logo"
-              width="28"
-              height="28"
-              viewBox="0 0 43 43"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
-                fill="var(--white)"
-              />
-            </svg>
+            <h5>BluuLime</h5>
           </div>
           <NavList className="hide-for-mobile">
             {data.map((item, i) => (
@@ -170,24 +175,6 @@ export default function Navigation() {
               />
             ))}
           </NavList>
-          <div className="nav-logo">
-            <svg
-              className="logo"
-              width="28"
-              height="28"
-              viewBox="0 0 43 43"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
-                fill="var(--white)"
-              />
-            </svg>
-          </div>
-          {/* <MenuBox>
-            <MenuToggle toggle={() => toggleOpen()} />{" "}
-          </MenuBox> */}
         </NavBox>
       </HeaderBox>
     </LazyMotion>

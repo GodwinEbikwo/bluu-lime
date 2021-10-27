@@ -44,8 +44,8 @@ export default function Cta() {
                 }),
               }}
             >
-              Get that bag summer or Spend that bag winter. Either way we
-              got you
+              Get that bag summer or Spend that bag winter. Either way we got
+              you
             </SplitText>
           </m.h1>
 
@@ -90,13 +90,10 @@ const CtaBox = styled.div`
   }
 
   .cta-title {
-    font-family: var(--font-2);
-    text-transform: none;
-    line-height: 1.15;
+    margin-bottom: var(--spacing-md);
   }
 
   .cta-btn_container {
-    margin-top: var(--spacing-sm);
     transition: opacity 400ms linear 0.85s;
   }
 

@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { NextSeo } from "next-seo";
-import dynamic from "next/dynamic";
 import Layout from "@/components/layout";
 import Hero from "@/components/hero";
 import Navigation from "@/components/navigation";
@@ -35,7 +34,7 @@ export default function HomePage({ heroContent }) {
             <LazyMotion features={domAnimation}>
               <m.div initial="initial" animate="enter" exit="exit">
                 <m.div variants={fade}>
-                  <StyledBox className="has-px">
+                  <StyledBox>
                     <Hero
                       heroTitle={heroTitle}
                       heroButtonTitle={heroButtonTitle}

@@ -14,6 +14,55 @@ export const StyledBox = styled.div`
   }
 `;
 
+export const StyledSectionBox = styled.section`
+  padding: 70px calc(var(--golden-ratio) - var(--px-2));
+  @media (min-width: 767px) {
+    padding: 100px var(--golden-ratio);
+  }
+`;
+
+export const FeatureProductList = styled.ul`
+  --min: 30ch;
+  --gap: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+
+  > * {
+    flex: 1 1 var(--min);
+  }
+
+  @media (min-width: 499px) {
+    display: grid;
+    grid-column-gap: var(--spacer);
+    grid-row-gap: var(--spacer);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 991px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & > li {
+    transition: opacity 250ms linear;
+    @media (max-width: 767px) {
+      margin-bottom: var(--spacing-md);
+    }
+  }
+
+  &:hover > li {
+    transition: opacity 350ms linear;
+    opacity: 0.25;
+  }
+
+  &:hover > li:hover {
+    opacity: 1;
+  }
+`;
+
 // export const FeaturedContainer = styled.aside`
 //   display: grid;
 //   grid-column-gap: var(--spacer);
@@ -52,66 +101,3 @@ export const StyledBox = styled.div`
 //   }
 
 // `;
-
-export const FeaturedContainer = styled.aside`
-  display: grid;
-  grid-column-gap: var(--spacer);
-  grid-row-gap: var(--spacer-double);
-  opacity: 0;
-  transition: opacity 300ms var(--easing), transform 0.75s var(--easing);
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  min-height: 70vh;
-  margin-top: var(--spacing-lg);
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  &.is-inview {
-    opacity: 1;
-    transform: translate3d(0, -20px, 0);
-    transition-delay: 0.2s;
-  }
-`;
-
-export const FeatureProductList = styled.ul`
-  display: grid;
-  grid-column-gap: var(--spacer);
-  grid-row-gap: var(--spacer-double);
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-
-  & > li {
-    transition: opacity 200ms linear;
-    @media (max-width: 767px) {
-      margin-bottom: var(--spacing-md);
-    }
-  }
-
-  &:hover > li {
-    transition: opacity 350ms linear;
-    opacity: 0.25;
-  }
-
-  &:hover > li:hover {
-    opacity: 1;
-  }
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-export const Title = styled.h1`
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.03em;
-`;

@@ -147,7 +147,7 @@ export const ProductSize = styled.span`
 `;
 
 export const ProductTitle = styled.span`
-  font-family: var(--font-2);
+  font-family: var(--font);
   padding-top: 1rem;
   text-align: start;
   display: inline-block;

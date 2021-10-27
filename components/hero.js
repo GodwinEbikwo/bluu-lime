@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { SplitText } from "./split-text";
 import useInView from "react-cool-inview";
 import { HeroImage } from "../helpers";
+import Div100vh from "react-div-100vh";
 
 export default function Hero({
   heroTitle,
@@ -11,47 +12,49 @@ export default function Hero({
 }) {
   const { observe } = useInView();
   return (
-    <HeroBox>
-      <aside data-scroll>
-        <div className="bg-full" data-scroll>
-          <HeroImage
-            title={title}
-            responsiveImage={
-              responsiveImage ||
-              "https://res.cloudinary.com/godwinebikwo/image/upload/v1635114010/IMG_7467_otxhkz.jpg"
-            }
-          />
-        </div>
-      </aside>
+    <Div100vh>
+      <HeroBox>
+        <aside data-scroll>
+          <div className="bg-full" data-scroll>
+            <HeroImage
+              title={title}
+              responsiveImage={
+                responsiveImage ||
+                "https://res.cloudinary.com/godwinebikwo/image/upload/v1635114010/IMG_7467_otxhkz.jpg"
+              }
+            />
+          </div>
+        </aside>
 
-      <aside className="hero_center" ref={observe}>
-        <h1 className="hero_title">
-          <SplitText
-            initial={{ y: "105%", opacity: 0 }}
-            animate="enter"
-            exit={{
-              y: "-105%",
-            }}
-            variants={{
-              enter: () => ({
-                y: "0%",
-                opacity: 1,
-                transition: {
-                  duration: 1.35,
-                  ease: [0.215, 0.61, 0.355, 1],
-                },
-              }),
-            }}
-          >
-            {heroTitle}
-          </SplitText>
-        </h1>
+        <aside className="hero_center" ref={observe}>
+          <h1 className="hero_title">
+            <SplitText
+              initial={{ y: "105%", opacity: 0 }}
+              animate="enter"
+              exit={{
+                y: "-105%",
+              }}
+              variants={{
+                enter: () => ({
+                  y: "0%",
+                  opacity: 1,
+                  transition: {
+                    duration: 1.35,
+                    ease: [0.215, 0.61, 0.355, 1],
+                  },
+                }),
+              }}
+            >
+              {heroTitle}
+            </SplitText>
+          </h1>
 
-        <button type="button" title={heroButtonTitle}>
-          {heroButtonTitle} →
-        </button>
-      </aside>
-    </HeroBox>
+          <button type="button" title={heroButtonTitle}>
+            {heroButtonTitle} →
+          </button>
+        </aside>
+      </HeroBox>
+    </Div100vh>
   );
 }
 
@@ -86,7 +89,7 @@ const HeroBox = styled.article`
     .hero_title {
       text-align: center;
       color: var(--white);
-      margin-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
     }
   }
 `;

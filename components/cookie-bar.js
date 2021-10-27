@@ -100,10 +100,10 @@ const CookieBarBox = styled(m.aside)`
   right: 0;
   z-index: 90;
   width: 100%;
-  max-width: 58rem;
+  max-width: 25rem;
   padding: 1rem;
   @media (min-width: 768px) {
-    right: var(--spacing-sm);
+    right: var(--spacing-md);
   }
 `;
 
@@ -113,53 +113,43 @@ const CookieBarContent = styled.article`
   gap: 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
-  background-color: #f7f7f7;
-  padding: 1.5rem 1.5rem 1rem;
-  @media (min-width: 768px) {
-    display: flex;
-    padding: 1.5rem;
-  }
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 1.25rem;
+  background-color: rgba(190, 190, 190, 0.5);
 `;
 
 const CookieBarMessage = styled.div`
   flex: 1 1;
   text-align: center;
-
-  @media (min-width: 768px) {
-    padding-right: 1rem;
-    text-align: left;
-  }
 `;
 
 const CookieBarActions = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
-  gap: 0.25rem;
 
   a {
     text-align: center;
-    font-size: 1.35rem;
-    @media (min-width: 768px) {
-      margin-top: 0.65rem;
-      text-align: unset;
-    }
+    margin-bottom: var(--spacing-md);
   }
 
   button {
-    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
     border-radius: 9999px;
     width: auto;
-    line-height: 1rem;
+    height: 48.5px;
     position: relative;
     text-align: center;
     transition: all 0.3s linear;
-    padding: 1.25rem 2rem;
+    padding: 1.25rem 3rem;
   }
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  } */
 `;
