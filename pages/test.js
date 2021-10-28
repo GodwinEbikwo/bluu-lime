@@ -93,7 +93,7 @@ export default function TestPage({ heroContent }) {
                             </div>
 
                             <div className="h-left-side">
-                              <button>Shop all products</button>
+                              <button>Shop our collection</button>
                             </div>
                           </div>
 
@@ -166,6 +166,7 @@ const HGrid = styled.div`
         font-weight: var(--font-md);
         @media (max-width: 700px) {
           font-size: 2.35rem;
+          text-align: center;
         }
       }
     }
@@ -173,6 +174,12 @@ const HGrid = styled.div`
     .h-left-side {
       width: 100%;
       margin-bottom: var(--spacing-md);
+
+      @media (max-width: 700px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       button {
         display: flex;

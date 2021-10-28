@@ -37,8 +37,8 @@ const HeaderBox = styled(m.header)`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   z-index: 90;
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
@@ -121,8 +121,8 @@ const navAnim = {
 };
 
 const LogoContainer = styled.div`
-  height: 38px;
-  width: 38px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background: var(--black);
   display: flex;
