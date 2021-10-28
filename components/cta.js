@@ -81,8 +81,12 @@ const CtaBox = styled.div`
     justify-content: flex-start;
     text-align: center;
     flex-direction: column;
-    max-width: 40vw;
+    max-width: 85vw;
     margin: 0 auto;
+
+    @media (min-width: 768px) {
+      max-width: 40vw;
+    }
 
     &.bg-red {
       background-color: red;
@@ -90,6 +94,7 @@ const CtaBox = styled.div`
   }
 
   .cta-title {
+    line-height: 1.1;
     margin-bottom: var(--spacing-md);
   }
 

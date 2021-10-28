@@ -137,6 +137,7 @@ const HGrid = styled.div`
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
   height: 100vh;
+  border-bottom: 1px solid var(--border-color);
   @media (min-width: 1040px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -160,7 +161,7 @@ const HGrid = styled.div`
       margin-bottom: var(--spacing-md);
       h1 {
         font-size: 4rem;
-        letter-spacing: var(--ls-md);
+        letter-spacing: var(--ls-sm);
         line-height: 1.05;
         font-weight: var(--font-md);
         @media (max-width: 700px) {
