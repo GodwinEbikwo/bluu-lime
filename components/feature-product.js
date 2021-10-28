@@ -47,15 +47,9 @@ export default function FeatureProducts() {
   return (
     <StyledSectionBox>
       <div className="flex-container space-between">
-        <h1 style={{ marginBottom: "var(--spacing-md)" }}>
-          Epxlore New Arrivals
-        </h1>
-        {/* <FancyLink
-          destination="/"
-          a11yText="naviagtes to the collection page"
-          label="see all products"
-          className="link link--metis"
-        /> */}
+        <h3 style={{ marginBottom: "var(--spacing-md)" }}>
+          Explore New Arrivals
+        </h3>
       </div>
 
       <FeatureProductList data-scroll>

@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { m, LazyMotion, domAnimation, useCycle } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import FancyLink from "./fancy-link";
 import { useHasMounted } from "@/helpers/index";
-import { MenuToggle } from "./menu/menu-toggle";
-import Icon from "./icons";
 
 const data = [
   {
@@ -34,55 +33,41 @@ const data = [
 ];
 
 const HeaderBox = styled(m.header)`
+  width: 100%;
   position: fixed;
-  top: var(--spacing-md);
-  left: calc(var(--golden-ratio) - var(--px-2));
-  right: calc(var(--golden-ratio) - var(--px-2));
-  padding-top: var(--py-2);
-  padding-bottom: var(--py-2);
+  top: 0;
+  left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   z-index: 90;
-
-  @media (min-width: 767px) {
-    left: var(--golden-ratio);
-    right: var(--golden-ratio);
-  }
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(190, 190, 190, 0.35);
 `;
 
 const NavBox = styled(m.nav)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-left: calc(var(--golden-ratio) - var(--px-2));
+  padding-right: calc(var(--golden-ratio) - var(--px-2));
+
+  @media (min-width: 767px) {
+    padding-left: var(--golden-ratio);
+    padding-right: var(--golden-ratio);
+  }
 
   .nav-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    padding: 1rem;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(20px) saturate(180%);
-    background-color: rgba(40, 40, 40, 0.5);
     cursor: pointer;
+    font-family: var(--font-2);
+    text-transform: capitalize;
   }
-`;
-
-const MenuBox = styled.div`
-  display: flex;
 `;
 
 const NavList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: auto;
-  height: 40px;
-  padding: 1rem 3rem;
-  border-radius: 999px;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(20px) saturate(180%);
-  background-color: rgba(40, 40, 40, 0.5);
 
   &:hover > li {
     transition: opacity 300ms linear;
@@ -100,9 +85,8 @@ const NavList = styled.ul`
     }
 
     a {
-      text-transform: capitalize;
-      text-align: center;
-      color: var(--off-white);
+      text-transform: uppercase;
+      font-size: 0.75rem;
     }
   }
 `;
@@ -136,19 +120,35 @@ const navAnim = {
   },
 };
 
-const icon = {
-  initial: {
-    pathLength: 0,
-    fill: "rgba(55, 155, 105, 0)",
-  },
-  enter: {
-    pathLength: 1,
-    fill: "var(--white)",
-  },
-};
+const LogoContainer = styled.div`
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+function Logo() {
+  return (
+    <svg
+      className="logo"
+      width="30"
+      height="30"
+      viewBox="0 0 43 43"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
+        fill="var(--white)"
+      />
+    </svg>
+  );
+}
 
 export default function Navigation() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const hasMounted = useHasMounted();
   if (!hasMounted) return null;
 
@@ -160,10 +160,11 @@ export default function Navigation() {
         exit="initial"
         variants={navAnim}
       >
-        <NavBox initial={false} animate={isOpen ? "enter" : "exit"} exit="exit">
-          <div className="nav-logo">
-            <h5>BluuLime</h5>
-          </div>
+        <NavBox className="flex space-between justify-center align-center">
+          <LogoContainer className="nav-logo">
+            <Logo />
+          </LogoContainer>
+
           <NavList className="hide-for-mobile">
             {data.map((item, i) => (
               <ListItem

@@ -28,6 +28,13 @@ export const AppStyles = createGlobalStyle`
   font-display: swap;
   src: url("/fonts/RadioGrotesk-Regular.woff2") format('woff2');
 }
+@font-face {
+  font-family: 'Casa-Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/Casa-Regular.woff2") format('woff2');
+}
 
 :root {
   --py-2: 1rem;
@@ -51,6 +58,7 @@ export const AppStyles = createGlobalStyle`
   --font-2: "EditorialNew-Regular", 'Times New Roman', Times, serif;
   --font-3: "RadioGrotesk-Bold", 'Helvetica Neue', sans-serif;
   --font-4: "RadioGrotesk-Regular", 'Helvetica Neue', Times, serif;
+  --font-5: "Casa-Regular", "EditorialNew-Regular", Times, serif;
  
   --font-sm: 400;
   --font-md: 500;

@@ -18,13 +18,14 @@ import { SplitText } from "@/components/split-text";
 import Five from "../public/5.jpg";
 import Hero from "@/components/hero";
 import { getHeroContent } from "@/lib/api";
+import { HeroImage } from "../helpers";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
 
 export default function TestPage({ heroContent }) {
-  const { heroTitle, heroButtonTitle, heroImage } = heroContent;
-  
+  //   const { heroTitle, heroButtonTitle, heroImage } = heroContent;
+
   const containerRef = useRef(null);
   const { observe, inView } = useInView({
     rootMargin: "150px 0px",
@@ -62,20 +63,9 @@ export default function TestPage({ heroContent }) {
               <m.div initial="initial" animate="enter" exit="exit">
                 <m.div variants={fade}>
                   <StyledBox>
-                    <div
-                      className="relative"
-                      style={{ background: "var(--accent)" }}
-                    >
+                    <div className="relative">
                       <Div100vh>
-                        <section className="hide-for-mobile">
-                          <Hero
-                            heroTitle={heroTitle}
-                            heroButtonTitle={heroButtonTitle}
-                            title={heroTitle?.title}
-                            responsiveImage={heroImage?.responsiveImage}
-                          />
-                        </section>
-                        <HGrid className="hide-for-desktop">
+                        <HGrid>
                           <div className="left">
                             <div className="h-left-inner">
                               <h1>
@@ -90,47 +80,23 @@ export default function TestPage({ heroContent }) {
                                       y: "0%",
                                       opacity: 1,
                                       transition: {
-                                        duration: 1.5,
+                                        duration: 1.25,
                                         ease: [0.83, 0, 0.17, 1],
                                         delay: i * 0.0285,
                                       },
                                     }),
                                   }}
                                 >
-                                  Handmade crocket bags for every hot girl
-                                  occasion
+                                  Handmade knitted bags for every occasion
                                 </SplitText>
                               </h1>
                             </div>
 
                             <div className="h-left-side">
-                              <p>
-                                <SplitText
-                                  initial={{ y: "110%", opacity: 0 }}
-                                  animate="enter"
-                                  exit={{
-                                    y: "110%",
-                                  }}
-                                  variants={{
-                                    enter: (i) => ({
-                                      y: "0%",
-                                      opacity: 1,
-                                      transition: {
-                                        duration: 1.4,
-                                        ease: [0.83, 0, 0.17, 1],
-                                        delay: i * 0.015,
-                                      },
-                                    }),
-                                  }}
-                                >
-                                  At Adeleke Family Law, we are the only
-                                  national law firm dedicated to family matters
-                                  with the largest team of specialist family
-                                  lawyers in nigeria.
-                                </SplitText>
-                              </p>
+                              <button>Shop all products</button>
                             </div>
                           </div>
+
                           <div className="right">
                             <Image
                               placeholder="blur"
@@ -159,79 +125,70 @@ export default function TestPage({ heroContent }) {
   );
 }
 
-export async function getStaticProps({ preview = false }) {
-  const heroContent = (await getHeroContent()) || [];
-  return {
-    props: { heroContent },
-  };
-}
+// export async function getStaticProps({ preview = false }) {
+//   const heroContent = (await getHeroContent()) || [];
+//   return {
+//     props: { heroContent },
+//   };
+// }
 
 const HGrid = styled.div`
-  width: 100vw;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   @media (min-width: 1040px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
   }
 
   .left {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0 var(--golden-ratio);
 
     @media (max-width: 700px) {
       margin-top: 4rem;
       padding-top: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 0 1rem;
     }
 
     .h-left-inner {
-      /* @media (max-width: 700px) {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-    } */
-
+      width: 100%;
       margin-bottom: var(--spacing-md);
-
       h1 {
+        font-size: 4rem;
         letter-spacing: var(--ls-md);
         line-height: 1.05;
         font-weight: var(--font-md);
+        @media (max-width: 700px) {
+          font-size: 2.35rem;
+        }
       }
     }
 
     .h-left-side {
+      width: 100%;
       margin-bottom: var(--spacing-md);
-      margin: 0 auto;
-      max-width: 40rem;
-      p {
-      }
-      /* position: absolute;
-    bottom: 1rem;
-    right: var(--spacer-lg); */
 
-      /* p {
-      max-width: 30ch;
-    } */
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 1rem 3rem;
+        width: auto;
+        height: 48px;
+        background-color: var(--black);
+        color: var(--white);
+      }
     }
   }
 
   .right {
     overflow: hidden;
-    /* background: yellow; */
     /* z-index: -1; */
   }
 `;

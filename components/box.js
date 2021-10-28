@@ -15,8 +15,9 @@ export const StyledBox = styled.div`
 `;
 
 export const StyledSectionBox = styled.section`
-  padding: 70px calc(var(--golden-ratio) - var(--px-2));
-  @media (min-width: 767px) {
+  margin: var(--spacing-md) auto;
+  padding: 50px calc(var(--golden-ratio) - var(--px-2));
+  @media (min-width: 991px) {
     padding: 100px var(--golden-ratio);
   }
 `;
