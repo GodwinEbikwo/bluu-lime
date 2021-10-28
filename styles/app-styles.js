@@ -56,9 +56,8 @@ export const AppStyles = createGlobalStyle`
 
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
   --font-2: "EditorialNew-Regular", 'Times New Roman', Times, serif;
-  --font-3: "RadioGrotesk-Bold", 'Helvetica Neue', sans-serif;
-  --font-4: "RadioGrotesk-Regular", 'Helvetica Neue', Times, serif;
   --font-5: "Casa-Regular", "EditorialNew-Regular", Times, serif;
+  --font-6: "ivypresto-display", serif;
  
   --font-sm: 400;
   --font-md: 500;
@@ -224,7 +223,6 @@ html,
     font-family: var(--font);
     font-weight: normal;
     font-size: 0.9rem;
-
     &.no-scroll {
       overflow-y: hidden;
       touch-action: none;
@@ -232,9 +230,10 @@ html,
 }
 
   h1 {
-    line-height: 1.05;
+    line-height: 1.6;
     letter-spacing: var(--ls-sm);
-    font-family: var(--font-2);
+    font-family: var(--font-6), serif;
+    font-weight: 100;
     font-size: clamp(
       var(--fluid-type-min, 1rem),
       calc(1rem + var(--fluid-type-target, 3vw)),
@@ -339,9 +338,40 @@ html,
 
   .flex-container {
     width: 100%;
+    @media (max-width: 991px) {
+      padding: 50px calc(var(--golden-ratio) - var(--px-2));
+    }
+
+    & > * {
+      &:nth-child(1){
+        @media (max-width: 991px) {
+          margin-bottom: var(--spacer-md);
+        }
+      }
+    }
     @media (min-width: 1024px) {
       display: flex;
       flex-wrap: wrap;
+      height: 100vh;
+
+      & > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &:nth-child(1){
+          width: 50%;
+          background: hsla(223, 87%, 42%, 10%);
+          padding: 2rem;
+        }
+
+        &:nth-child(2){
+          width: 50%;
+          background: hsla(200, 50%, 0%, 100%);
+          padding: 2rem;
+        }
+      }
     }
   }
 
@@ -495,10 +525,10 @@ html,
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.25, 1.25);
     transform-origin: 50% 50%;
     transition: transform 1.2s var(--easing), opacity 0.5s var(--easing);
-    will-change:transform, opacity;
+    will-change: transform, opacity;
   }
 
    &.is-inview {

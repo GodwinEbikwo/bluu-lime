@@ -13,16 +13,10 @@ export default function Hero({
   const { observe } = useInView();
   return (
     <HeroBox>
-      <Div100vh>
+      <>
         <aside data-scroll>
           <div className="bg-full" data-scroll>
-            <HeroImage
-              title={title}
-              responsiveImage={
-                responsiveImage ||
-                "https://res.cloudinary.com/godwinebikwo/image/upload/v1635114010/IMG_7467_otxhkz.jpg"
-              }
-            />
+            <HeroImage title={title} responsiveImage={responsiveImage} />
           </div>
         </aside>
 
@@ -53,7 +47,7 @@ export default function Hero({
             {heroButtonTitle} →
           </button>
         </aside>
-      </Div100vh>
+      </>
     </HeroBox>
   );
 }

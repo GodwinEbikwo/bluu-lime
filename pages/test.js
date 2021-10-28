@@ -19,6 +19,7 @@ import Five from "../public/5.jpg";
 import Hero from "@/components/hero";
 import { getHeroContent } from "@/lib/api";
 import { HeroImage } from "../helpers";
+import Infoone from "@/components/info-one";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
@@ -67,7 +68,7 @@ export default function TestPage({ heroContent }) {
                       <Div100vh>
                         <HGrid>
                           <div className="left">
-                            <div className="left-top">
+                            <div className="left-top hide-for-desktop">
                               <span>
                                 <SplitText
                                   initial={{ y: "110%", opacity: 0 }}
@@ -137,6 +138,7 @@ export default function TestPage({ heroContent }) {
 
                     <FeatureProducts />
                     <Cta />
+                    <Infoone />
                   </StyledBox>
                 </m.div>
               </m.div>
@@ -197,7 +199,6 @@ const HGrid = styled.div`
         font-size: 4rem;
         letter-spacing: var(--ls-sm);
         line-height: 1.05;
-        font-weight: var(--font-md);
         @media (max-width: 700px) {
           font-size: 2rem;
           text-align: center;

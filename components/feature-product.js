@@ -45,12 +45,15 @@ export function FeatureProduct({ src, name, alt, price }) {
 export default function FeatureProducts() {
   return (
     <StyledSectionBox>
-      <div className="flex-container space-between">
-        <h4 style={{ marginBottom: "var(--spacing-md)", fontFamily: "var(--font-2)" }}>
-          Explore New Arrivals
-        </h4>
-      </div>
-
+      <h4
+        style={{
+          fontWeight: "100",
+          marginBottom: "var(--spacing-md)",
+          fontFamily: "var(--font-6)",
+        }}
+      >
+        Explore New Arrivals
+      </h4>
       <FeatureProductList data-scroll>
         <FeatureProduct
           name="Pink Panther Knitt bag"

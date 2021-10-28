@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import FancyLink from "./fancy-link";
 import { useHasMounted } from "@/helpers/index";
+import useInView from "react-cool-inview";
 
 const data = [
   {
@@ -149,6 +150,15 @@ function Logo() {
 }
 
 export default function Navigation() {
+  const { observe, inView } = useInView({
+    onEnter: () => {
+      document.querySelector("header").classList.remove("bg-black");
+    },
+    onLeave: () => {
+      document.querySelector("header").classList.add("bg-black");
+    },
+  });
+
   const hasMounted = useHasMounted();
   if (!hasMounted) return null;
 
@@ -159,6 +169,7 @@ export default function Navigation() {
         animate="enter"
         exit="initial"
         variants={navAnim}
+        ref={observe}
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">

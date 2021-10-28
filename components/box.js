@@ -23,6 +23,10 @@ export const StyledSectionBox = styled.section`
     margin: var(--spacing-md) auto;
     padding: 70px var(--golden-ratio);
   }
+
+  &.no-px {
+    padding: 50px 0 !important;
+  }
 `;
 
 export const FeatureProductList = styled.ul`
@@ -32,7 +36,6 @@ export const FeatureProductList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
-
   > * {
     flex: 1 1 var(--min);
   }
