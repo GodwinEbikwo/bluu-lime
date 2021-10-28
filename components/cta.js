@@ -73,7 +73,7 @@ const CtaBox = styled.div`
   position: relative;
   margin-top: var(--golden-ratio);
   margin-bottom: var(--golden-ratio);
-  padding: 100px 0;
+  padding: 50px 0;
 
   .cta-inner {
     display: flex;

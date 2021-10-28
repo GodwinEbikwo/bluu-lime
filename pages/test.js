@@ -76,12 +76,14 @@ export default function TestPage({ heroContent }) {
                                     y: "110%",
                                   }}
                                   variants={{
-                                    y: "0%",
-                                    opacity: 1,
-                                    transition: {
-                                      duration: 1,
-                                      ease: [0.215, 0.61, 0.355, 1],
-                                    },
+                                    enter: () => ({
+                                      y: "0%",
+                                      opacity: 1,
+                                      transition: {
+                                        duration: 1,
+                                        ease: [0.215, 0.61, 0.355, 1],
+                                      },
+                                    }),
                                   }}
                                 >
                                   Bluu Lime
