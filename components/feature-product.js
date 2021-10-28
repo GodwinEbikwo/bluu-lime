@@ -47,9 +47,9 @@ export default function FeatureProducts() {
   return (
     <StyledSectionBox>
       <div className="flex-container space-between">
-        <h3 style={{ marginBottom: "var(--spacing-md)" }}>
+        <h4 style={{ marginBottom: "var(--spacing-md)", fontFamily: "var(--font-2)" }}>
           Explore New Arrivals
-        </h3>
+        </h4>
       </div>
 
       <FeatureProductList data-scroll>
