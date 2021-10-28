@@ -67,6 +67,9 @@ export default function TestPage({ heroContent }) {
                       <Div100vh>
                         <HGrid>
                           <div className="left">
+                            <div className="left-top">
+                              <span>Bluu Lime</span>
+                            </div>
                             <div className="h-left-inner">
                               <h1>
                                 <SplitText
@@ -156,6 +159,17 @@ const HGrid = styled.div`
       padding: 0 1rem;
     }
 
+    .left-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: var(--spacing-md);
+      span {
+        font-family: var(--font-5);
+      }
+    }
+
     .h-left-inner {
       width: 100%;
       margin-bottom: var(--spacing-md);
@@ -165,7 +179,7 @@ const HGrid = styled.div`
         line-height: 1.05;
         font-weight: var(--font-md);
         @media (max-width: 700px) {
-          font-size: 2.35rem;
+          font-size: 2rem;
           text-align: center;
         }
       }
@@ -186,7 +200,7 @@ const HGrid = styled.div`
         align-items: center;
         justify-content: center;
         border-radius: 999px;
-        padding: 1rem 3rem;
+        padding: 1rem 2rem;
         width: auto;
         height: 48px;
         background-color: var(--black);

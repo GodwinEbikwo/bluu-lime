@@ -64,7 +64,7 @@ export const AppStyles = createGlobalStyle`
   --font-md: 500;
   --font-lg: 700;
 
-  --border-color: rgba(200, 200, 200, 0.4);
+  --border-color: rgba(180, 180, 180, 0.4);
  
   --ls-sm: -0.02em;
   --ls-md: -0.035em;
