@@ -151,9 +151,10 @@ export const ProductTitle = styled.span`
   padding-top: 1rem;
   text-align: start;
   display: inline-block;
-  letter-spacing: var(--ls-sm);
+  font-size: 1rem;
 `;
 
 export const ProductPrice = styled.span`
-  letter-spacing: var(--ls-sm);
+  font-family: var(--font-3);
+  font-size: 1rem;
 `;
