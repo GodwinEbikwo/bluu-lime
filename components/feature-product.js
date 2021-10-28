@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import FancyLink from "./fancy-link";
 import Link from "next/link";
 import { FeatureProductList, StyledSectionBox } from "./box";
 import {

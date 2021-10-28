@@ -68,7 +68,25 @@ export default function TestPage({ heroContent }) {
                         <HGrid>
                           <div className="left">
                             <div className="left-top">
-                              <span>Bluu Lime</span>
+                              <span>
+                                <SplitText
+                                  initial={{ y: "110%", opacity: 0 }}
+                                  animate="enter"
+                                  exit={{
+                                    y: "110%",
+                                  }}
+                                  variants={{
+                                    y: "0%",
+                                    opacity: 1,
+                                    transition: {
+                                      duration: 1,
+                                      ease: [0.215, 0.61, 0.355, 1],
+                                    },
+                                  }}
+                                >
+                                  Bluu Lime
+                                </SplitText>
+                              </span>
                             </div>
                             <div className="h-left-inner">
                               <h1>
@@ -84,7 +102,7 @@ export default function TestPage({ heroContent }) {
                                       opacity: 1,
                                       transition: {
                                         duration: 1.25,
-                                        ease: [0.83, 0, 0.17, 1],
+                                        ease: [0.215, 0.61, 0.355, 1],
                                         delay: i * 0.0285,
                                       },
                                     }),

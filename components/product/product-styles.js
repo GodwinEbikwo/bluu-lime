@@ -155,6 +155,5 @@ export const ProductTitle = styled.span`
 `;
 
 export const ProductPrice = styled.span`
-  font-family: var(--font-3);
   font-size: 1rem;
 `;
