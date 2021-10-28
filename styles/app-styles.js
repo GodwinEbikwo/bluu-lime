@@ -38,7 +38,7 @@ export const AppStyles = createGlobalStyle`
 
 :root {
   --py-2: 1rem;
-  --px-2: 1.85rem;
+  --px-2: 1.55rem;
   --golden-ratio: 2.75rem;
   --max-width: 100rem;
 

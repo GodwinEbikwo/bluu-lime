@@ -15,7 +15,8 @@ export const StyledBox = styled.div`
 `;
 
 export const StyledSectionBox = styled.section`
-  margin: 6rem auto;
+  min-height: 100vh;
+  margin: 0 auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
