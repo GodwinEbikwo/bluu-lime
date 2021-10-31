@@ -12,7 +12,8 @@ import { formatMoney } from "../helpers";
 import BagPic1 from "../public/3.jpg";
 import BagPic2 from "../public/2.jpg";
 import BagPic3 from "../public/4.jpg";
-
+import { Bluu } from "./icons";
+import styled from "styled-components";
 export function FeatureProduct({ src, name, alt, price }) {
   return (
     <li>
@@ -44,16 +45,29 @@ export function FeatureProduct({ src, name, alt, price }) {
 
 export default function FeatureProducts() {
   return (
-    <StyledSectionBox>
-      <h4
-        style={{
-          fontWeight: "100",
-          marginBottom: "var(--spacing-md)",
-          fontFamily: "var(--font-6)",
-        }}
-      >
-        Explore New Arrivals
-      </h4>
+    <StyledSectionBox className="no-my-2">
+      <FPHeader>
+        <h4
+          style={{
+            fontWeight: "100",
+            marginBottom: "var(--spacing-md)",
+            fontFamily: "var(--font-6)",
+          }}
+        >
+          Explore New Arrivals
+        </h4>
+        <h5
+          style={{
+            fontWeight: "100",
+            marginBottom: "var(--spacing-md)",
+            fontFamily: "var(--font-6)",
+          }}
+        >
+          Shop
+        </h5>
+        <Bluu />
+      </FPHeader>
+
       <FeatureProductList data-scroll>
         <FeatureProduct
           name="Pink Panther Knitt bag"
@@ -77,3 +91,32 @@ export default function FeatureProducts() {
     </StyledSectionBox>
   );
 }
+
+const FPHeader = styled.aside`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    & > * {
+      &:nth-child(1) {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        width: 33.3333333%;
+      }
+
+      &:nth-child(2) {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 33.3333333%;
+      }
+
+      &:nth-child(3) {
+        width: 33.3333333%;
+        padding-left: 15%;
+      }
+    }
+  }
+`;

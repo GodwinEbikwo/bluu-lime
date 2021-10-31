@@ -150,7 +150,6 @@ export const ProductTitle = styled.span`
   padding-top: 1rem;
   text-align: start;
   display: inline-block;
-  font-size: 1rem;
 `;
 
 export const ProductPrice = styled.span`

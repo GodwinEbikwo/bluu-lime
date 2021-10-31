@@ -20,6 +20,8 @@ import Hero from "@/components/hero";
 import { getHeroContent } from "@/lib/api";
 import { HeroImage } from "../helpers";
 import Infoone from "@/components/info-one";
+import TestC from "@/components/test-c";
+import Testb from "@/components/test-b";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
@@ -65,7 +67,8 @@ export default function TestPage({ heroContent }) {
                 <m.div variants={fade}>
                   <StyledBox>
                     <div className="relative">
-                      <Div100vh>
+                      <TestC />
+                      {/* <Div100vh>
                         <HGrid>
                           <div className="left">
                             <div className="left-top hide-for-desktop">
@@ -133,8 +136,10 @@ export default function TestPage({ heroContent }) {
                             />
                           </div>
                         </HGrid>
-                      </Div100vh>
+                      </Div100vh> */}
                     </div>
+
+                    <Testb />
 
                     <FeatureProducts />
                     <Cta />

@@ -41,9 +41,9 @@ const HeaderBox = styled(m.header)`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   z-index: 90;
-  border-bottom: 1px solid var(--border-color);
+  /* border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
-  background-color: rgba(190, 190, 190, 0.35);
+  background-color: rgba(190, 190, 190, 0.35); */
 `;
 
 const NavBox = styled(m.nav)`

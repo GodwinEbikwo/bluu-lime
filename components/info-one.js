@@ -13,12 +13,15 @@ export default function Infoone() {
       <Aside className="" ref={observe}>
         <aside>
           <div className="heading-title">
-            <h4>Refresh the jigsaw.</h4>
+            <h4>Ulta mini hot girl bag.</h4>
           </div>
 
           <Clippy
             data-scroll
             ref={observe}
+            style={{
+              transform: inView ? "scale(1, 1)" : "scale(1.25, 1.25)",
+            }}
             // style={{
             //   clipPath: inView ? "inset(0%)" : "inset(0 0 100% 0)",
             // }}
@@ -34,10 +37,13 @@ export default function Infoone() {
         </aside>
 
         <aside data-scroll>
-          <h4>Refresh the jigsaw.</h4>
+          <h4>Bag full of roses</h4>
           <Clippy
             data-scroll
             ref={observe}
+            style={{
+              transform: inView ? "scale(1, 1)" : "scale(1.25, 1.25)",
+            }}
             // style={{
             //   clipPath: inView ? "inset(0%)" : "inset(0 0 100% 0)",
             // }}
@@ -54,11 +60,17 @@ export default function Infoone() {
 
         <aside data-scroll>
           <h4>Refresh the jigsaw.</h4>
-          <Clippy data-scroll ref={observe}>
+          <Clippy
+            data-scroll
+            ref={observe}
+            style={{
+              transform: inView ? "scale(1, 1)" : "scale(1.25, 1.25)",
+            }}
+          >
             <Image
               width={500}
               height={572}
-              src="/4.jpg"
+              src="/2.jpg"
               alt="img"
               className="a-img"
             />
@@ -74,19 +86,21 @@ export default function Infoone() {
 }
 
 const Clippy = styled.div`
-  transition: clip-path 2.75s var(--easing) 1.2s;
+  /* transition: clip-path 2.75s var(--easing) 1.2s; */
+  transition: transform 1.2s var(--easing) 0.25s;
+  will-change: transform;
+  transform-origin: 50% 50%;
 `;
 
 const Aside = styled.div`
   width: 100%;
-  /* @media (min-width: 1024px) { */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
 
   h4 {
-    font-family: var(--font-6), serif;
+    font-family: var(--font-6);
     margin-bottom: var(--spacing-md);
     font-weight: 100;
   }
@@ -103,24 +117,24 @@ const Aside = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-right: 0;
 
     &:nth-child(1) {
-      background: hsla(223, 87%, 42%, 10%);
+      border-bottom: 0;
       padding: 3rem;
     }
 
-    &:nth-child(2) {
-      background: hsla(200, 50%, 0%, 100%);
+    &:nth-child(2n) {
+      border-bottom: 0;
       padding: 3rem;
     }
 
     &:nth-child(3) {
-      background: hsla(200, 50%, 0%, 100%);
       padding: 3rem;
     }
     &:nth-child(4) {
-      background: hsla(223, 87%, 42%, 10%);
+      border-bottom: 1px solid var(--border-color);
     }
   }
-  /* } */
 `;

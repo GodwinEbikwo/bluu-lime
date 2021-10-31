@@ -18,10 +18,17 @@ export const StyledSectionBox = styled.section`
   min-height: 100vh;
   margin: 7rem auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
-  border-bottom: 1px solid var(--border-color);
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
-    padding: 70px var(--golden-ratio);
+    padding: 50px var(--golden-ratio);
+  }
+
+  &.no-my {
+    margin: 4rem auto;
+  }
+
+  &.no-my-2 {
+    margin: 0 auto;
   }
 
   &.no-px {

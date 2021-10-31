@@ -11,7 +11,7 @@ const LetterWrapper = ({ children, countIndex }) => {
           className="inline-block"
           transition={{
             ease: [0.215, 0.61, 0.355, 1],
-            duration: 0.8,
+            duration: 1,
             delay: 0.03 * countIndex,
           }}
           initial={{ x: "-110%", scaleX: 1 }}

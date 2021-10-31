@@ -8,25 +8,18 @@ export const AppStyles = createGlobalStyle`
   src: url("/fonts/NeueMontreal-Regular.woff2") format('woff2');
 }
 @font-face {
+  font-family:'NeueMontreal-Bold';
+  font-style: normal;
+  font-weight: 850;
+  font-display: swap;
+  src: url("/fonts/NeueMontreal-Bold.woff2") format('woff2');
+}
+@font-face {
   font-family: 'EditorialNew-Regular';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("/fonts/EditorialNew-Regular.woff2") format('woff2');
-}
-@font-face {
-  font-family: 'RadioGrotesk-Bold';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/RadioGrotesk-Bold.woff2") format('woff2');
-}
-@font-face {
-  font-family: 'RadioGrotesk-Regular';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/RadioGrotesk-Regular.woff2") format('woff2');
 }
 @font-face {
   font-family: 'Casa-Regular';
@@ -56,14 +49,15 @@ export const AppStyles = createGlobalStyle`
 
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
   --font-2: "EditorialNew-Regular", 'Times New Roman', Times, serif;
+  --font-3: "NeueMontreal-Bold", "Helvetica Neue", Helvetica, sans-serif;
   --font-5: "Casa-Regular", "EditorialNew-Regular", Times, serif;
-  --font-6: "ivypresto-display", serif;
+  --font-6: "ivypresto-display", var(--font-2), serif;
  
   --font-sm: 400;
   --font-md: 500;
   --font-lg: 700;
 
-  --border-color: rgba(180, 180, 180, 0.4);
+  --border-color: rgba(180, 180, 180, 0.8);
  
   --ls-sm: -0.02em;
   --ls-md: -0.035em;
@@ -222,7 +216,7 @@ html,
     color: var(--text-black);
     font-family: var(--font);
     font-weight: normal;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     &.no-scroll {
       overflow-y: hidden;
       touch-action: none;
@@ -276,7 +270,7 @@ html,
 
   .center-absolute{
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -349,27 +343,60 @@ html,
         }
       }
     }
+
+    h4 {
+      font-family: var(--font-6), serif;
+      margin-bottom: var(--spacing-md);
+      font-weight: 100;
+    }
+
+    .start{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      p {
+        transform: rotate(0deg);
+        color: white;
+      }
+    }
+
     @media (min-width: 1024px) {
       display: flex;
       flex-wrap: wrap;
-      height: 100vh;
+      min-height: 100vh;
 
       & > * {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        border: 1px solid var(--border-color);
+        border-right: 0;
 
         &:nth-child(1){
-          width: 50%;
-          background: hsla(223, 87%, 42%, 10%);
-          padding: 2rem;
+          width: 48.25%;
+          padding: 3rem;
+          /* background-color: red; */
         }
 
         &:nth-child(2){
+          width: 3.5%;
+          padding: 0.5rem;
+        }
+
+        &:nth-child(3){
+          width: 48.25%;
+          padding: 3rem;
+          /* background-color: blue; */
+        }
+
+        &:nth-child(4){
           width: 50%;
-          background: hsla(200, 50%, 0%, 100%);
-          padding: 2rem;
+          padding: 3rem;
+        }
+        &:nth-child(5){
+          width: 50%;
+          padding: 3rem;
         }
       }
     }
@@ -535,7 +562,7 @@ html,
     .a-img {
       opacity: 1;
       transform: scale(1);
-      transition-delay: 0.45s;
+      transition-delay: 0.35s;
     }
   }
 
