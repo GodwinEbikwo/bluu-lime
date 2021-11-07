@@ -69,7 +69,8 @@ export const CartBox = styled.aside`
       margin: 0 auto;
       font-size: 0.75rem;
       padding: 0.5rem;
-      border: 1px solid var(--border-color);
+      /* border: 1px solid var(--border-color); */
+      background-color: hsla(2, 89%, 58%, 100%);
     }
   }
 

@@ -50,7 +50,7 @@ export function CartHeader({ onClick, cartItems }) {
   return (
     <header className="header-container" data-scroll>
       <div className="flex space-between cart-header">
-        <h3 className="cart-title">Bag</h3>
+        <h3 className="cart-title">Your Bag</h3>
         <button
           aria-label="close-cart"
           type="button"
