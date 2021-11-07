@@ -14,6 +14,45 @@ export const StyledBox = styled.div`
   }
 `;
 
+export const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 1rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms var(--easing);
+  border: 1px solid var(--off-white);
+  text-transform: capitalize;
+
+  &.no-height {
+    height: 0;
+  }
+
+  &.filled {
+    color: var(--black);
+    background-color: var(--white);
+
+    &:hover {
+      color: var(--off-white);
+      background-color: transparent;
+    }
+  }
+
+  &.outline {
+    color: var(--off-white);
+    background-color: transparent;
+    transition: all 300ms var(--easing);
+    &:hover {
+      color: var(--black);
+      background-color: var(--off-white);
+    }
+  }
+`;
+
 export const StyledSectionBox = styled.section`
   min-height: 100vh;
   margin: 7rem auto;
@@ -25,6 +64,13 @@ export const StyledSectionBox = styled.section`
 
   &.no-my {
     margin: 4rem auto;
+  }
+
+  &.mx-half {
+    margin: 4rem auto;
+    @media (max-width: 768px) {
+      margin: 2rem auto;
+    }
   }
 
   &.no-my-2 {
@@ -61,14 +107,15 @@ export const FeatureProductList = styled.ul`
   }
 
   & > li {
-    transition: opacity 250ms linear;
+    cursor: pointer;
+    transition: opacity 250ms ease-in-out;
     @media (max-width: 767px) {
       margin-bottom: var(--spacing-md);
     }
   }
 
   &:hover > li {
-    transition: opacity 350ms linear;
+    transition: opacity 350ms ease-in-out;
     opacity: 0.25;
   }
 

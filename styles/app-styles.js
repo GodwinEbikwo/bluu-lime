@@ -35,9 +35,9 @@ export const AppStyles = createGlobalStyle`
   --golden-ratio: 2.75rem;
   --max-width: 100rem;
 
-  /* --bg: hsla(200, 50%, 0%, 100%); */
+  --bg: hsla(200, 50%, 0%, 93%);
   /* --bg: hsla(0, 0%, 0%, 0%); */
-  --bg: hsla(223, 57%, 42%, 20%);
+  /* --bg: hsla(223, 57%, 42%, 20%); */
   --accent: hsla(223, 57%, 42%, 20%);
 
   --text-white: #fff;
@@ -50,14 +50,13 @@ export const AppStyles = createGlobalStyle`
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
   --font-2: "EditorialNew-Regular", 'Times New Roman', Times, serif;
   --font-3: "NeueMontreal-Bold", "Helvetica Neue", Helvetica, sans-serif;
-  --font-5: "Casa-Regular", "EditorialNew-Regular", Times, serif;
   --font-6: "ivypresto-display", var(--font-2), serif;
  
   --font-sm: 400;
   --font-md: 500;
   --font-lg: 700;
 
-  --border-color: rgba(180, 180, 180, 0.8);
+  --border-color: rgba(100, 100, 100, 0.8);
  
   --ls-sm: -0.02em;
   --ls-md: -0.035em;
@@ -137,28 +136,6 @@ html.has-scroll-dragging {
   cursor: grabbing;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-}
-
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button {
-  font-family: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  outline: none;
-  background-color: transparent;
-}
 
 html,
   body,
@@ -188,6 +165,7 @@ html,
   optgroup,
   select,
   textarea,
+  fieldset,
   nav,
   section {
     margin: 0;
@@ -213,14 +191,76 @@ html,
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
-    color: var(--text-black);
+    color: var(--off-white);
     font-family: var(--font);
     font-weight: normal;
     font-size: 0.95rem;
+    transition: all 250ms ease;
+
     &.no-scroll {
       overflow-y: hidden;
       touch-action: none;
+    }
+
+    &.bg-blue {
+      background-color: hsla(212, 89%, 57%, 100%);
+      color: hsla(32, 72%, 95%, 100%);
     }  
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  outline: none;
+  background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.bag-inner::-webkit-scrollbar {
+  display: none !important;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 40px solid currentColor;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
 }
 
   h1 {
@@ -552,9 +592,11 @@ html,
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transform: scale(1.25, 1.25);
+    transform: scale3d(1.25, 1.25, 1);
     transform-origin: 50% 50%;
-    transition: transform 1.2s var(--easing), opacity 0.5s var(--easing);
+    transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 0.6s 0.2s cubic-bezier(0.38, 0.005, 0.215, 1);
+    /* transition: transform 1.2s var(--easing), opacity 0.5s var(--easing); */
     will-change: transform, opacity;
   }
 
@@ -567,14 +609,49 @@ html,
   }
 
   .bg-full {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    z-index: -1;
+  }
+  
+
+  .swiper-button-prev {
+    background-image: url("/al.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .swiper-button-next {
+    background-image: url("/ar.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .swiper-button-prev::after {
+    display: none;
+  }
+  .swiper-button-next::after {
+    display: none;
   }
 `;

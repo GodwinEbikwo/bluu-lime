@@ -115,7 +115,7 @@ const CookieBarContent = styled.article`
   border: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
   padding: 1.25rem;
-  background-color: rgba(190, 190, 190, 0.5);
+  background-color: rgba(90, 90, 90, 0.5);
 `;
 
 const CookieBarMessage = styled.div`

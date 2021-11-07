@@ -1,56 +1,51 @@
-import { useRef, useEffect, useCallback } from "react";
-import s from "./modal.module.css";
-import { Cross } from "@components/icons";
-import {
-  disableBodyScroll,
-  clearAllBodyScrollLocks,
-  enableBodyScroll,
-} from "body-scroll-lock";
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import useFocusTrap from "@charlietango/use-focus-trap";
+import styled from "styled-components";
 
-const Modal = ({ children, onClose }) => {
-  const ref = useRef();
+const Wrapper = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+`;
 
-  const handleKey = useCallback(
-    (e) => {
-      if (e.key === "Escape") {
-        return onClose();
-      }
-    },
-    [onClose]
-  );
+function BaseModal({ children, isOpen, onRequestClose, className }) {
+  const ref = useFocusTrap();
+  function handleKeyDown(event) {
+    if (event.key === "Escape") {
+      if (onRequestClose) onRequestClose();
+    }
+  }
 
   useEffect(() => {
-    const modal = ref.current;
-
-    if (modal) {
-      disableBodyScroll(modal, { reserveScrollBarGap: true });
-      window.addEventListener("keydown", handleKey);
+    if (isOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+      };
     }
-    return () => {
-      if (modal) {
-        enableBodyScroll(modal);
-      }
-      clearAllBodyScrollLocks();
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [handleKey]);
 
-  return (
-    <div className={s.root}>
-      <div className={s.modal} role="dialog" ref={ref}>
-        <button
-          onClick={() => onClose()}
-          aria-label="Close panel"
-          className={s.close}
-        >
-          <Cross className="h-6 w-6" />
-        </button>
-        <>
-          {children}
-        </>
-      </div>
-    </div>
+    return;
+  }, [isOpen]);
+
+  const modal = (
+    <Wrapper
+      ref={ref}
+      style={{ pointerEvents: !isOpen ? "none" : undefined }}
+      role="dialog"
+      className={className ? className : null}
+    >
+      {children}
+    </Wrapper>
   );
-};
 
-export default Modal;
+  return ReactDOM.createPortal(modal, window.document.body);
+}
+
+BaseModal.displayName = "BaseModal";
+BaseModal.defaultProps = {};
+
+export default BaseModal;

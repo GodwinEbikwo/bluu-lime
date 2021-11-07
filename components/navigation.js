@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { useEffect, useRef, useState } from "react";
+import { useContext } from "react";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import FancyLink from "./fancy-link";
 import { useHasMounted } from "@/helpers/index";
 import useInView from "react-cool-inview";
+import { CartContext } from "context/shop-context";
+import MiniCart from "./cart/cart";
 
 const data = [
   {
@@ -40,15 +42,16 @@ const HeaderBox = styled(m.header)`
   left: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  z-index: 90;
-  /* border-bottom: 1px solid var(--border-color);
-  backdrop-filter: blur(20px) saturate(180%);
-  background-color: rgba(190, 190, 190, 0.35); */
+  z-index: 100;
 `;
 
 const NavBox = styled(m.nav)`
   padding-left: calc(var(--golden-ratio) - var(--px-2));
   padding-right: calc(var(--golden-ratio) - var(--px-2));
+
+  a {
+    cursor: pointer;
+  }
 
   @media (min-width: 767px) {
     padding-left: var(--golden-ratio);
@@ -77,7 +80,6 @@ const NavList = styled.ul`
 
   &:hover > li:hover {
     opacity: 1;
-    color: var(--black);
   }
 
   li {
@@ -150,17 +152,16 @@ function Logo() {
 }
 
 export default function Navigation() {
-  const { observe, inView } = useInView({
-    onEnter: () => {
-      document.querySelector("header").classList.remove("bg-black");
-    },
-    onLeave: () => {
-      document.querySelector("header").classList.add("bg-black");
-    },
-  });
+  const { observe } = useInView();
+  const { cart, cartOpen, setCartOpen } = useContext(CartContext);
 
   const hasMounted = useHasMounted();
   if (!hasMounted) return null;
+
+  let cartQuantity = 0;
+  cart.map((item) => {
+    return (cartQuantity += item?.variantQuantity);
+  });
 
   return (
     <LazyMotion features={domAnimation}>
@@ -187,6 +188,16 @@ export default function Navigation() {
               />
             ))}
           </NavList>
+
+          <div className="flex">
+            <a
+              className="text-uppercase"
+              onClick={() => setCartOpen(!cartOpen)}
+            >
+              Cart ({cartQuantity})
+            </a>
+            <MiniCart cart={cart} />
+          </div>
         </NavBox>
       </HeaderBox>
     </LazyMotion>

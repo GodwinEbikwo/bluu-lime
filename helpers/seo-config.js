@@ -1,7 +1,7 @@
 export default {
-    defaultTitle: 'FivenSix',
-    description: 'A simple Next.js starter kit with Tailwind, Framer Motion and Locomotive.',
-    titleTemplate: '%s | FivenSix',
+    defaultTitle: 'BluuLime',
+    description: 'Handmade knitted bags for all occasions, BluuLime',
+    titleTemplate: '%s | BluuLime',
     openGraph: {
       type: 'website',
       locale: 'en_GB',

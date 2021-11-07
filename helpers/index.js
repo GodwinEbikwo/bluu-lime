@@ -31,7 +31,6 @@ export function useHasMounted() {
   return hasMounted;
 }
 
-
 export const toBase64 = (str) =>
   typeof window === "undefined"
     ? Buffer.from(str).toString("base64")
@@ -41,12 +40,12 @@ export const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
-      <stop stop-color="#eaeaea" offset="20%" />
-      <stop stop-color="#eaeaea" offset="50%" />
-      <stop stop-color="#eaeaea" offset="80%" />
+      <stop stop-color="#3c3c3c" offset="20%" />
+      <stop stop-color="#5c5c5c" offset="50%" />
+      <stop stop-color="#3c3c3c" offset="70%" />
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="#eaeaea" />
+  <rect width="${w}" height="${h}" fill="#3c3c3c" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.5s" repeatCount="indefinite"  />
 </svg>`;
@@ -55,7 +54,7 @@ export function formatMoney(amount = 0) {
   const options = {
     style: "currency",
     currency: "GBP",
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
   };
 
   // check if the remainder is equal to zero an set accordingly
@@ -66,3 +65,9 @@ export function formatMoney(amount = 0) {
   const formatter = Intl.NumberFormat("en-GB", options);
   return formatter.format(amount / 1);
 }
+
+export const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+});
