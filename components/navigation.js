@@ -6,6 +6,7 @@ import { useHasMounted } from "@/helpers/index";
 import useInView from "react-cool-inview";
 import { CartContext } from "context/shop-context";
 import MiniCart from "./cart/cart";
+import Link from "next/link";
 
 const data = [
   {
@@ -174,7 +175,11 @@ export default function Navigation() {
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
-            <Logo />
+            <Link href="/">
+              <a>
+                <Logo />
+              </a>
+            </Link>
           </LogoContainer>
 
           <NavList className="hide-for-mobile">

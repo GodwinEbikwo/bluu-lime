@@ -148,8 +148,4 @@ const CookieBarActions = styled.div`
     transition: all 0.3s linear;
     padding: 1.25rem 3rem;
   }
-
-  /* @media (min-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  } */
 `;

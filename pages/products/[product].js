@@ -18,7 +18,7 @@ export default function HomePage({ product }) {
   const containerRef = useRef(null);
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo title={product.title} />
       <CookieBar message={policyData} />
       <Navigation />
       <LocomotiveScrollProvider
