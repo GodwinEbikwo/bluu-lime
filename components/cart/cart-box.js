@@ -10,19 +10,17 @@ export const CartBox = styled.aside`
   width: 100%;
   max-width: 500px;
   bottom: 0;
-  transform: translate3d(100%, 0, 0);
-  transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-  will-change: transform;
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
   z-index: 90;
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: var(--px-2);
+  clip-path: inset(0 0 0 100%);
+  will-change: clip-path;
 
   ${(props) =>
     props.open &&
-    `transform: translate3d(0, 0, 0); 
-    transition: transform 1s cubic-bezier(.76,0,.24,1);
-    cursor: pointer;`};
+    `clip-path: inset(0%); transition: clip-path 1.2s cubic-bezier(.76,0,.24,1);`};
 
   @media (max-width: 767px) {
     min-width: 100%;
@@ -31,7 +29,7 @@ export const CartBox = styled.aside`
   .header-container {
     .cart-header {
       flex-direction: column;
-      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
       .cart-empty {
         margin: var(--spacing-md) 0;
         margin-bottom: 0.5rem;
@@ -43,15 +41,14 @@ export const CartBox = styled.aside`
     .button_label {
       position: absolute;
       right: var(--spacer);
-      top: var(--spacer);
+      top: calc(var(--spacer) - 10px);
       cursor: pointer;
     }
 
     .cart-title {
-      line-height: 0.9;
+      line-height: 1;
       font-weight: 100;
       font-family: var(--font-6);
-      margin-bottom: var(--spacing-md);
     }
 
     .info-container {

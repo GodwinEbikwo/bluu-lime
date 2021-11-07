@@ -189,15 +189,15 @@ export default function Navigation() {
             ))}
           </NavList>
 
-          <div className="flex">
+          <aside className="flex">
             <a
               className="text-uppercase"
               onClick={() => setCartOpen(!cartOpen)}
             >
-              Cart ({cartQuantity})
+              Bag ({cartQuantity})
             </a>
             <MiniCart cart={cart} />
-          </div>
+          </aside>
         </NavBox>
       </HeaderBox>
     </LazyMotion>
