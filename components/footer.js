@@ -1,9 +1,7 @@
-
-
 export default function footer() {
   return (
-    <div>
+    <footer>
       <div>footer stuuf</div>
-    </div>
+    </footer>
   );
 }

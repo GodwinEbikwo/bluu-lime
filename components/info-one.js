@@ -44,9 +44,6 @@ export default function Infoone() {
             style={{
               transform: inView ? "scale(1, 1)" : "scale(1.25, 1.25)",
             }}
-            // style={{
-            //   clipPath: inView ? "inset(0%)" : "inset(0 0 100% 0)",
-            // }}
           >
             <Image
               width={500}

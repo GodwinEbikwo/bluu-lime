@@ -13,7 +13,6 @@ export function HeroImage({ title, responsiveImage }) {
       />
     </div>
   );
-
   return (
     <div className="mx-auto overflow-hidden" data-scroll>
       {image}
@@ -37,7 +36,7 @@ export const toBase64 = (str) =>
     : window.btoa(str);
 
 export const shimmer = (w, h) => `
-<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
       <stop stop-color="#3c3c3c" offset="20%" />
@@ -57,7 +56,6 @@ export function formatMoney(amount = 0) {
     minimumFractionDigits: 2,
   };
 
-  // check if the remainder is equal to zero an set accordingly
   if (amount % 100 === 0) {
     options.minimumFractionDigits = 0;
   }
@@ -65,9 +63,3 @@ export function formatMoney(amount = 0) {
   const formatter = Intl.NumberFormat("en-GB", options);
   return formatter.format(amount / 1);
 }
-
-export const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  minimumFractionDigits: 2,
-});

@@ -3,10 +3,8 @@ import ProductForm from "./product-form";
 import RecommendedList from "./recommended-list";
 import styled from "styled-components";
 import { shimmer, toBase64 } from "@/helpers/index";
-import Div100vh from "react-div-100vh";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import { StyledSectionBox } from "../box";
 
 export default function ProductContent({ product }) {
   const images = [];
@@ -32,28 +30,25 @@ export default function ProductContent({ product }) {
 
   return (
     <ProductContentBox>
-      <>
-        <ProductContentContainer>
-          <div className="product-container-inner">
-            <div className="w-full h-full relative" data-scroll>
-              <Swiper
-                style={{
-                  "--swiper-navigation-color": "#fff",
-                  "--swiper-pagination-color": "#fff",
-                }}
-                navigation
-                pagination={{ clickable: true }}
-                className="h-full"
-                loop="true"
-              >
-                {images}
-              </Swiper>
-            </div>
+      <ProductContentContainer>
+        <div className="product-container-inner">
+          <div className="w-full h-full relative" data-scroll>
+            <Swiper
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              navigation
+              pagination={{ clickable: true }}
+              className="h-full"
+              loop="true"
+            >
+              {images}
+            </Swiper>
           </div>
-          <ProductForm product={product} />
-        </ProductContentContainer>
-      </>
-
+        </div>
+        <ProductForm product={product} />
+      </ProductContentContainer>
       <RecommendedList
         current={product.id}
         products={product.collections.edges[0].node.products.edges}
