@@ -14,29 +14,27 @@ export default function ProductCard({ product }) {
   const price = product.node.priceRange.minVariantPrice.amount;
 
   return (
-    <li>
-      <Link href={`/products/${handle}`}>
-        <ProductLink>
-          <div data-scroll>
-            <Image
-              quality="85"
-              width={504}
-              height={672}
-              src={originalSrc ? originalSrc : undefined}
-              alt={altText ? altText : "bluu-lime-product"}
-              className="a-img img"
-              placeholder="blur"
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(504, 672)
-              )}`}
-            />
-          </div>
-          <ProductTitle>{title}</ProductTitle>
-          <ProductInfoContainer>
-            <ProductPrice>{formatMoney(price)}</ProductPrice>
-          </ProductInfoContainer>
-        </ProductLink>
-      </Link>
-    </li>
+    <Link href={`/products/${handle}`} passHref>
+      <ProductLink>
+        <div data-scroll>
+          <Image
+            quality="85"
+            width={504}
+            height={672}
+            src={originalSrc ? originalSrc : undefined}
+            alt={altText ? altText : "bluu-lime-product"}
+            className="a-img img"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(504, 672)
+            )}`}
+          />
+        </div>
+        <ProductTitle>{title}</ProductTitle>
+        <ProductInfoContainer>
+          <ProductPrice>{formatMoney(price)}</ProductPrice>
+        </ProductInfoContainer>
+      </ProductLink>
+    </Link>
   );
 }

@@ -58,9 +58,11 @@ const ProductList = ({ products }) => {
       </ProductListHeader>
 
       <FeatureProductList>
-        {products.map((product) => (
-          <ProductCard key={product.node.id} product={product} />
-        ))}
+        <li>
+          {products.map((product) => (
+            <ProductCard key={product.node.id} product={product} />
+          ))}
+        </li>
       </FeatureProductList>
     </StyledSectionBox>
   );
