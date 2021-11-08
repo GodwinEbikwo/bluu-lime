@@ -61,12 +61,13 @@ const ProductContentBox = styled.section`
   margin: 8rem auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
 
+  @media (max-width: 768px) {
+    margin: 2rem auto;
+  }
+
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
     padding: 50px var(--golden-ratio);
-  }
-  @media (max-width: 768px) {
-    margin: 2rem auto;
   }
 `;
 
