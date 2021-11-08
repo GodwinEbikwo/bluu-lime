@@ -196,7 +196,6 @@ html,
     font-weight: normal;
     font-size: 0.95rem;
     transition: all 250ms ease;
-
     &.no-scroll {
       overflow-y: hidden;
       touch-action: none;

@@ -10,7 +10,7 @@ import {
   CartHeader,
   CartActions,
 } from "./cart-helpers";
-import { EmptyIcon } from "../icons";
+import { EmptyIcon, CloseIcon } from "../icons";
 
 export default function MiniCart({ cart }) {
   const {

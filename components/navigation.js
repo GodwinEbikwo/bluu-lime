@@ -124,11 +124,11 @@ const navAnim = {
   },
 };
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.aside`
   height: 40px;
   width: 40px;
-  border-radius: 50%;
-  background: var(--black);
+  /* border-radius: 50%; */
+  /* background: var(--black); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +175,7 @@ export default function Navigation() {
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
-            <Link href="/">
+            <Link href="/" passHref>
               <a>
                 <Logo />
               </a>
@@ -194,7 +194,7 @@ export default function Navigation() {
             ))}
           </NavList>
 
-          <aside className="flex">
+          <div>
             <a
               className="text-uppercase"
               onClick={() => setCartOpen(!cartOpen)}
@@ -202,7 +202,7 @@ export default function Navigation() {
               Bag ({cartQuantity})
             </a>
             <MiniCart cart={cart} />
-          </aside>
+          </div>
         </NavBox>
       </HeaderBox>
     </LazyMotion>

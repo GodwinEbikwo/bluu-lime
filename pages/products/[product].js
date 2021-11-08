@@ -16,9 +16,29 @@ const policyData =
 
 export default function HomePage({ product }) {
   const containerRef = useRef(null);
+  const { originalSrc, altText } = product.images.edges[0].node;
+  console.log(product);
+
   return (
     <Layout>
-      <NextSeo title={product.title} />
+      <NextSeo
+        title={product.title}
+        description={product.description}
+        openGraph={{
+          type: "website",
+          url: `https://bluu-lime.vercel.app/${product.handle}`,
+          title: `${product.title}`,
+          description: `${product.description}`,
+          images: [
+            {
+              url: originalSrc,
+              width: 252,
+              height: 336,
+              alt: "bluu-lime-image",
+            },
+          ],
+        }}
+      />
       <CookieBar message={policyData} />
       <Navigation />
       <LocomotiveScrollProvider
@@ -51,10 +71,8 @@ export default function HomePage({ product }) {
 
 export async function getStaticPaths() {
   const products = await recursiveCatalog();
-
   const paths = products.map((item) => {
     const product = String(item.node.handle);
-
     return {
       params: { product },
     };

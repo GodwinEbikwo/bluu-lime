@@ -3,8 +3,8 @@ import ProductCard from "./product-card";
 
 const RecommendedList = ({ products, current }) => {
   return (
-    <RecommendedContainer className="bg-white">
-      <aside className="recommend-products">
+    <RecommendedContainer>
+      <div className="recommend-products">
         <h4>Recommended Products</h4>
         <article className="recommend-products_grid">
           {products.map((product) =>
@@ -13,7 +13,7 @@ const RecommendedList = ({ products, current }) => {
             )
           )}
         </article>
-      </aside>
+      </div>
     </RecommendedContainer>
   );
 };

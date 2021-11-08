@@ -57,7 +57,9 @@ export function CartHeader({ onClick, cartItems }) {
           onClick={onClick}
           className="button_label"
         >
-          <CloseIcon />
+          <span className="inline-block" style={{ color: "white" }}>
+            CLOSE
+          </span>
         </button>
       </div>
 

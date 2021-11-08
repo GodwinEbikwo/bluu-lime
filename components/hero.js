@@ -14,7 +14,7 @@ export const revealInOut = {
     y: "0%",
     opacity: 1,
     transition: {
-      duration: 1.15,
+      duration: 1.1,
       ease: [0.165, 0.84, 0.44, 1],
     },
   },
@@ -31,7 +31,7 @@ const barAnim = {
   enter: {
     opacity: 1,
     transition: {
-      duration: 1.15,
+      duration: 1.1,
       ease: [0.165, 0.84, 0.44, 1],
       delay: 0.35,
     },
@@ -200,7 +200,7 @@ const HeroContainer = styled(m.article)`
   .hero-center_title {
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    line-height: 1.05;
+    line-height: 1.2;
     max-width: 20ch;
   }
 
@@ -222,7 +222,7 @@ const HeroContainer = styled(m.article)`
   .hero-bottom_title {
     color: white;
     font-weight: 800;
-    font-size: 22.5vw;
+    font-size: 22.4vw;
     line-height: 0.8em;
     letter-spacing: -0.065em;
     margin-top: 3vw;
