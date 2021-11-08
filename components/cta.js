@@ -94,7 +94,7 @@ const CtaBox = styled.div`
   }
 
   .cta-title {
-    line-height: 1.1;
+    line-height: 1.25;
     margin-bottom: var(--spacing-md);
   }
 

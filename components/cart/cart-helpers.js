@@ -71,7 +71,7 @@ export function CartHeader({ onClick, cartItems }) {
               {cartItems?.length === 1 ? "" : "s"}
             </span>
             <span className="block spc">&bull;</span>
-            <span className="block">UK Only</span>
+            <span className="block">UK shipping Only</span>
           </span>
         </span>
       </div>

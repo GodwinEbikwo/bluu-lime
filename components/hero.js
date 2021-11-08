@@ -170,18 +170,6 @@ const HeroContainer = styled(m.article)`
         left: 58%;
       }
     }
-
-    .hero-image_container-3 {
-      left: 69%;
-      top: 60%;
-      background: orange;
-    }
-
-    .hero-image_container-4 {
-      left: 5.5%;
-      top: 56%;
-      background: purple;
-    }
   }
 
   .hero-inner {
@@ -214,25 +202,21 @@ const HeroContainer = styled(m.article)`
 
   .no-pb {
     position: absolute;
-    bottom: 2rem;
+    bottom: 2.35rem;
     left: 0;
     right: 0;
   }
 
   .hero-bottom_title {
-    color: white;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 22.4vw;
     line-height: 0.8em;
     letter-spacing: -0.065em;
-    margin-top: 3vw;
     padding-bottom: 0;
     user-select: none;
     pointer-events: none;
     white-space: nowrap;
     font-family: var(--font-3);
     text-transform: uppercase;
-    transition: color 350ms var(--easing);
-    cursor: pointer;
   }
 `;

@@ -77,7 +77,7 @@ export function EmptyIcon() {
       <div className="flex align-center justify-center">
         <EmptyCart />
       </div>
-      <p className="text-center text-uppercase">your cart is empty</p>
+      <p className="text-center text-uppercase">your bag is empty</p>
     </div>
   );
 }

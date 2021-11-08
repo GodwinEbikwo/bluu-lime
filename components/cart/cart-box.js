@@ -70,8 +70,8 @@ export const CartBox = styled.aside`
       margin: 0 auto;
       font-size: 0.75rem;
       padding: 0.5rem;
-      /* border: 1px solid var(--border-color); */
-      background-color: hsla(2, 89%, 58%, 100%);
+      background-color: var(--accent);
+      color: var(--text-black)
     }
   }
 
@@ -127,10 +127,6 @@ export const CartBox = styled.aside`
 
   footer {
     border-top: 1px solid var(--border-color);
-    /* position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0; */
     padding: 30px calc(var(--golden-ratio) - var(--px-2));
     @media (min-width: 991px) {
       margin: var(--spacing-md) auto;
@@ -188,7 +184,6 @@ export const CartBox = styled.aside`
 
       button {
         margin-top: var(--spacing-sm);
-        /* background-color: red; */
         color: white;
         border: 0;
       }

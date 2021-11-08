@@ -115,7 +115,7 @@ export const FeatureProductList = styled.ul`
   }
 
   &:hover > li {
-    transition: opacity 350ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
     opacity: 0.25;
   }
 

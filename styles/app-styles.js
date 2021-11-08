@@ -36,10 +36,10 @@ export const AppStyles = createGlobalStyle`
   --max-width: 100rem;
 
   --bg: hsla(200, 50%, 0%, 93%);
-  /* --bg: hsla(0, 0%, 0%, 0%); */
+  /* --bg: hsla(30, 23%, 20%, 80%); */
   /* --bg: hsla(223, 57%, 42%, 20%); */
-  --accent: hsla(223, 57%, 42%, 20%);
-
+  --accent: #d3fd50;
+  
   --text-white: #fff;
   --text-black: #2b2b2b;
   --off-white: rgba(255, 255, 255, 0.85);
