@@ -2,82 +2,42 @@ import styled from "styled-components";
 import FancyLink from "./fancy-link";
 import useInView from "react-cool-inview";
 import { m, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { SplitText } from "./split-text";
 
 export default function Cta() {
   const { observe, inView } = useInView({
     rootMargin: "150px 0px",
   });
 
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("enter");
-    }
-    if (!inView) {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   const style = {
     opacity: inView ? 1 : 0,
     transform: inView ? "none" : "translateY(110%) rotateX(-80deg)",
   };
 
-  // className={`field-btn ${checked ? "active" : "inactive"}`}
   return (
-    <>
-      <CtaBox>
-        <div className="cta-inner" data-scroll>
-          <h1 data-scroll className="c-header_title">
-            <span ref={observe} style={style} className="c-header_title_line">
-              Locomotive scroll
-            </span>
-          </h1>
+    <CtaBox>
+      <div className="cta-inner" data-scroll>
+        <h1 data-scroll className="c-header_title">
+          <span ref={observe} style={style} className="c-header_title_line">
+            Locomotive scroll
+          </span>
+        </h1>
 
-          {/* <m.h1 ref={observe} className="cta-title">
-            <SplitText
-              initial={{ y: "110%", opacity: 0 }}
-              animate={controls}
-              exit={{
-                y: "110%",
-              }}
-              variants={{
-                enter: (i) => ({
-                  y: "0%",
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    ease: [0.77, 0, 0.175, 1],
-                    delay: i * 0.02,
-                  },
-                }),
-              }}
-            >
-              Get that bag summer or Spend that bag winter. Either way we got
-              you
-            </SplitText>
-          </m.h1> */}
-
-          <m.div
-            className="cta-btn_container"
-            ref={observe}
-            style={{
-              opacity: inView ? 1 : 0,
-            }}
-          >
-            <FancyLink
-              a11yText="navigates to the perfumes page"
-              className="link link--metis"
-              destination="/care"
-              label="Learn more about our bags"
-            />
-          </m.div>
-        </div>
-      </CtaBox>
-    </>
+        <m.div
+          className="cta-btn_container"
+          ref={observe}
+          style={{
+            opacity: inView ? 1 : 0,
+          }}
+        >
+          <FancyLink
+            a11yText="navigates to the perfumes page"
+            className="link link--metis"
+            destination="/care"
+            label="Learn more about our bags"
+          />
+        </m.div>
+      </div>
+    </CtaBox>
   );
 }
 
@@ -88,7 +48,6 @@ const CtaBox = styled.div`
   padding: 60px 0;
 
   /* just added */
-
   .c-header_title {
     perspective: 600px;
   }
@@ -124,11 +83,6 @@ const CtaBox = styled.div`
     &.bg-red {
       background-color: red;
     }
-  }
-
-  .cta-title {
-    line-height: 1.25;
-    margin-bottom: var(--spacing-md);
   }
 
   .cta-btn_container {

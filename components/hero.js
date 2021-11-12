@@ -7,42 +7,7 @@ import { useEffect, useState } from "react";
 import { StyledButton } from "./box";
 import One from "../public/image.jpg";
 import Two from "../public/5.jpg";
-
-export const revealInOut = {
-  initial: {
-    y: "110%",
-    opacity: 0,
-    rotateX: "-80deg",
-    transformPerspective: "500px",
-  },
-  enter: {
-    y: "0%",
-    opacity: 1,
-    rotateX: "0deg",
-    transition: {
-      duration: 1.15,
-      ease: [0.165, 0.84, 0.44, 1],
-    },
-  },
-  exit: {
-    y: "110%",
-    transition: { ease: [0.77, 0, 0.175, 1] },
-  },
-};
-
-const barAnim = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      duration: 1.1,
-      ease: [0.165, 0.84, 0.44, 1],
-      delay: 0.35,
-    },
-  },
-};
+import { revealInOut, barAnim } from "@/helpers/transitions";
 
 const work = ["hot girl", "fun girl", "sad girl", "bad b*tch"];
 

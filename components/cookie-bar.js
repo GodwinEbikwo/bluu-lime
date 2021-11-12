@@ -4,23 +4,7 @@ import Cookies from "js-cookie";
 import { useHasMounted } from "@/helpers/index";
 import FancyLink from "./fancy-link";
 import styled from "styled-components";
-
-const barAnim = {
-  initial: {
-    y: "100%",
-    transition: {
-      duration: 1,
-      ease: [0.215, 0.61, 0.355, 1],
-    },
-  },
-  enter: {
-    y: "0%",
-    transition: {
-      duration: 0.8,
-      ease: [0.215, 0.61, 0.355, 1],
-    },
-  },
-};
+import { barAnim } from "@/helpers/transitions";
 
 const CookieBar = React.memo(({ message }) => {
   const hasMounted = useHasMounted();

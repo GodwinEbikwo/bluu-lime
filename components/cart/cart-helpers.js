@@ -1,6 +1,6 @@
 import { StyledButton } from "../box";
 import { formatMoney } from "@/helpers/index";
-import { CloseIcon, PlusIcon, MinusIcon } from "../icons";
+import { PlusIcon, MinusIcon } from "../icons";
 
 export function getCartSubTotal(cart) {
   if (cart.length === 0) {
@@ -20,8 +20,8 @@ export function CartFooter({ subtotal, onClick, checkoutUrl }) {
   return (
     <footer>
       <div className="flex space-between">
-        <p className="footer-title">Subtotal :</p>
-        <p className="footer-price">{formatMoney(subtotal)}</p>
+        <p className="inline-block footer-title">Subtotal: </p>
+        <p className="inline-block footer-price">{formatMoney(subtotal)}</p>
       </div>
 
       <p className="footer-info">Shipping and taxes calculated at checkout.</p>

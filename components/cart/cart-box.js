@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const CartBoxInner = styled.div`
-    .cart-header {
-      flex-direction: column;
-      margin-bottom: var(--spacing-md);
+  .cart-header {
+    flex-direction: column;
+    margin-bottom: var(--spacing-md);
       .cart-empty {
         margin: var(--spacing-md) 0;
         margin-bottom: 0.5rem;
         margin-left: 0.4em;
         line-height: 1.2;
       }
-    }
+  }
 
     .button_label {
       position: absolute;
@@ -101,6 +101,7 @@ export const CartBoxInner = styled.div`
   footer {
     border-top: 1px solid var(--border-color);
     padding: 30px calc(var(--golden-ratio) - var(--px-2));
+
     @media (min-width: 991px) {
       margin: var(--spacing-md) auto;
       padding: 40px var(--px-2) 10px;
@@ -161,5 +162,4 @@ export const CartBoxInner = styled.div`
         border: 0;
       }
     }
-  
 `;
