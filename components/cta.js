@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FancyLink from "./fancy-link";
 import useInView from "react-cool-inview";
-import { m, useAnimation } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function Cta() {
   const { observe, inView } = useInView({
@@ -17,7 +17,7 @@ export default function Cta() {
     <CtaBox>
       <div className="cta-inner" data-scroll>
         <h1 data-scroll className="c-header_title">
-          <span ref={observe} style={style} className="c-header_title_line">
+          <span ref={observe} style={style} className="inline-block c-header_title_line">
             Locomotive scroll
           </span>
         </h1>
@@ -59,10 +59,6 @@ const CtaBox = styled.div`
     transition: opacity 0s var(--easing), transform 0s var(--easing);
     line-height: normal;
     transition-duration: 1s;
-
-    span {
-      display: inline-block;
-    }
   }
 
   /* just added */

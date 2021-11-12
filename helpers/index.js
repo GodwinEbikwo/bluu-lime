@@ -49,6 +49,7 @@ export const shimmer = (w, h) => `
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.5s" repeatCount="indefinite"  />
 </svg>`;
 
+
 export function formatMoney(amount = 0) {
   const options = {
     style: "currency",

@@ -4,12 +4,13 @@ export const CartBoxInner = styled.div`
   .cart-header {
     flex-direction: column;
     margin-bottom: var(--spacing-md);
-      .cart-empty {
-        margin: var(--spacing-md) 0;
-        margin-bottom: 0.5rem;
-        margin-left: 0.4em;
-        line-height: 1.2;
-      }
+
+    .cart-empty {
+      margin: var(--spacing-md) 0;
+      margin-bottom: 0.5rem;
+      margin-left: 0.4em;
+      line-height: 1.2;
+    }
   }
 
     .button_label {
@@ -124,6 +125,7 @@ export const CartBoxInner = styled.div`
       width: 100%;
       margin-top: var(--spacing-md);
       margin-bottom: var(--spacing-md);
+      
       .footer-btn {
         display: flex;
         align-items: center;
