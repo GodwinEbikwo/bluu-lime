@@ -9,6 +9,8 @@ export const ProductContainer = styled.li`
   .img-container {
     display: inline-block;
     overflow: hidden;
+    /* transition: all var(--duration) var(--easeInOutCubic);
+    transform: scale(1); */
 
     &:hover .img-txt {
       opacity: 1;
@@ -22,12 +24,17 @@ export const ProductContainer = styled.li`
         transform: scale(2);
       }
     }
+
+    /* &:hover {
+      transform: scale(0.95);
+    } */
   }
 
   .img-container img {
     display: block;
     opacity: 1;
-    transition: all var(--duration) var(--easeOutCubic);
+    transition: all var(--duration) var(--easeInOutCubic);
+    transition-delay: 0.1295s;
   }
 
   .img-container:hover img {
@@ -54,7 +61,7 @@ export const ProductContainer = styled.li`
       background-color: var(--accent);
       width: 3rem;
       height: 3rem;
-      transition: all var(--duration) var(--easeOutCubic);
+      transition: all var(--duration) var(--easeInOutCubic);
       opacity: 0;
       z-index: 0;
     }
@@ -63,7 +70,7 @@ export const ProductContainer = styled.li`
       grid-row: 1;
       grid-column: 1;
       opacity: 0;
-      transition: all var(--duration) var(--easeOutCubic);
+      transition: all var(--duration) var(--easeInOutCubic);
       z-index: 1;
       text-align: center;
       color: black;

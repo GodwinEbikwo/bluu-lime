@@ -18,14 +18,14 @@ export default function ProductCard({ product }) {
     <ProductContainer>
       <Link href={`/products/${handle}`} passHref>
         <ProductLink>
-          <div className="img-container">
+          <div className="img-container" data-scroll>
             <Image
               src={originalSrc ? originalSrc : undefined}
               alt={altText ? altText : "bluu-lime-product"}
               width={504}
               height={672}
               quality="85"
-              className="a-img img"
+              className="a-img"
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
                 shimmer(504, 672)

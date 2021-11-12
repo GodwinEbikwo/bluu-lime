@@ -121,10 +121,6 @@ const HeroContainer = styled(m.article)`
     .h-m-container {
       overflow: hidden;
       position: absolute;
-      border-radius: 5px;
-      .img {
-        border-radius: 5px;
-      }
     }
 
     .hero-image_container-1 {
