@@ -96,15 +96,16 @@ export default CookieBar;
 
 const CookieBarBox = styled(m.aside)`
   position: fixed;
-  bottom: var(--spacing-md);
+  bottom: var(--spacer);
   right: 0;
   z-index: 90;
   width: 100%;
   max-width: 25rem;
   padding: 1rem;
   @media (min-width: 768px) {
-    right: var(--spacing-md);
+    right: var(--spacer);
   }
+  overflow: hidden;
 `;
 
 const CookieBarContent = styled.article`

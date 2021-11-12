@@ -21,11 +21,23 @@ export default function Cta() {
     }
   }, [controls, inView]);
 
+  const style = {
+    opacity: inView ? 1 : 0,
+    transform: inView ? "none" : "translateY(110%) rotateX(-80deg)",
+  };
+
+  // className={`field-btn ${checked ? "active" : "inactive"}`}
   return (
     <>
       <CtaBox>
-        <div className="cta-inner">
-          <m.h1 ref={observe} className="cta-title">
+        <div className="cta-inner" data-scroll>
+          <h1 data-scroll className="c-header_title">
+            <span ref={observe} style={style} className="c-header_title_line">
+              Locomotive scroll
+            </span>
+          </h1>
+
+          {/* <m.h1 ref={observe} className="cta-title">
             <SplitText
               initial={{ y: "110%", opacity: 0 }}
               animate={controls}
@@ -47,7 +59,7 @@ export default function Cta() {
               Get that bag summer or Spend that bag winter. Either way we got
               you
             </SplitText>
-          </m.h1>
+          </m.h1> */}
 
           <m.div
             className="cta-btn_container"
@@ -74,6 +86,27 @@ const CtaBox = styled.div`
   margin-top: var(--golden-ratio);
   margin-bottom: var(--golden-ratio);
   padding: 60px 0;
+
+  /* just added */
+
+  .c-header_title {
+    perspective: 600px;
+  }
+
+  .c-header_title_line {
+    display: block;
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transition: opacity 0s var(--easing), transform 0s var(--easing);
+    line-height: normal;
+    transition-duration: 1s;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  /* just added */
 
   .cta-inner {
     display: flex;

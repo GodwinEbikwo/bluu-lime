@@ -7,7 +7,7 @@ export function HeroImage({ title, responsiveImage }) {
       <Image
         data={{
           ...responsiveImage,
-          alt: `${title ? title : ""}`,
+          alt: `${title ? title : "bluu-lime"}`,
         }}
         className="not-selectable a-img"
       />

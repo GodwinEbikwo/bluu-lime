@@ -70,9 +70,7 @@ export default function InfoA({ responsiveImage, title }) {
       </FW>
 
       <DL>
-        <div>
-          <HeroImage title={title} responsiveImage={responsiveImage} />
-        </div>
+        <HeroImage title={title} responsiveImage={responsiveImage} />
       </DL>
     </StyledSectionBox>
   );

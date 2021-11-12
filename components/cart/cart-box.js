@@ -1,33 +1,6 @@
 import styled from "styled-components";
 
-export const CartBox = styled.aside`
-  position: fixed;
-  background-color: var(--bg);
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  max-width: 500px;
-  z-index: 1;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: var(--px-2);
-  clip-path: inset(0 0 0 100%);
-  transition: clip-path 1.15s cubic-bezier(0.77, 0, 0.18, 1),
-    visibility 1.15s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-  will-change: clip-path;
-  visibility: hidden;
-
-  ${(props) =>
-    props.open &&
-    `clip-path: inset(0%); transition: clip-path 1s cubic-bezier(.76,0,.24,1); visibility: visible`};
-
-  @media (max-width: 767px) {
-    min-width: 100%;
-  }
-
-  .header-container {
+export const CartBoxInner = styled.div`
     .cart-header {
       flex-direction: column;
       margin-bottom: var(--spacing-md);
@@ -71,7 +44,7 @@ export const CartBox = styled.aside`
       font-size: 0.75rem;
       padding: 0.5rem;
       background-color: var(--accent);
-      color: var(--text-black)
+      color: var(--text-black);
     }
   }
 
@@ -188,26 +161,5 @@ export const CartBox = styled.aside`
         border: 0;
       }
     }
-  }
-`;
-
-export const Overlay = styled.div`
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(39, 39, 39, 0.8);
-  z-index: -1;
-  transition: opacity 1s cubic-bezier(0.77, 0, 0.18, 1),
-    visibility 1.2s cubic-bezier(0.77, 0, 0.18, 1);
-  cursor: pointer;
-  backdrop-filter: blur(20px) saturate(180%);
-  ${(props) =>
-    props.open && `opacity: 1; visibility: visible; transition-delay: 0.1s;`};
+  
 `;

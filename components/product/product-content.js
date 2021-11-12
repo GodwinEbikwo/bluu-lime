@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import ProductForm from "./product-form";
 import RecommendedList from "./recommended-list";
@@ -5,8 +6,27 @@ import styled from "styled-components";
 import { shimmer, toBase64 } from "@/helpers/index";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
+import { m } from "framer-motion";
+
+const Backdrop = ({ children, onClick }) => {
+  return (
+    <m.div
+      onClick={onClick}
+      className="backdrop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {children}
+    </m.div>
+  );
+};
 
 export default function ProductContent({ product }) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+
   const images = [];
   product.images.edges.map((image, i) => {
     images.push(
@@ -48,7 +68,19 @@ export default function ProductContent({ product }) {
           </div>
         </div>
         <ProductForm product={product} />
+
+        <div>
+          <m.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="save-button"
+            onClick={() => (modalOpen ? close() : open())}
+          >
+            Launch modal
+          </m.button>
+        </div>
       </ProductContentContainer>
+
       <RecommendedList
         current={product.id}
         products={product.collections.edges[0].node.products.edges}

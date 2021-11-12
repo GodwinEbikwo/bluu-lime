@@ -55,6 +55,7 @@ export default function ProductForm({ product }) {
       <span className="p-price">
         {formatMoney(product.variants.edges[0].node.priceV2.amount)}
       </span>
+
       {product.options.map(({ name, values }) => (
         <ProductOptions
           key={`key-${name}`}
@@ -68,6 +69,7 @@ export default function ProductForm({ product }) {
       <div className="p-desc">
         <p>{product.description}</p>
       </div>
+      
       <StyledButton
         onClick={() => {
           addToCart(selectedVariant);

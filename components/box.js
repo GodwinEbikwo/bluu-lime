@@ -82,48 +82,6 @@ export const StyledSectionBox = styled.section`
   }
 `;
 
-export const FeatureProductList = styled.ul`
-  --min: 30ch;
-  --gap: 1rem;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
-  > * {
-    flex: 1 1 var(--min);
-  }
-
-  @media (min-width: 499px) {
-    display: grid;
-    grid-column-gap: var(--spacer);
-    grid-row-gap: var(--spacer);
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 991px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  & > li {
-    cursor: pointer;
-    transition: opacity 250ms ease-in-out;
-    @media (max-width: 767px) {
-      margin-bottom: var(--spacing-md);
-    }
-  }
-
-  &:hover > li {
-    transition: opacity 250ms ease-in-out;
-    opacity: 0.25;
-  }
-
-  &:hover > li:hover {
-    opacity: 1;
-  }
-`;
-
 // export const FeaturedContainer = styled.aside`
 //   display: grid;
 //   grid-column-gap: var(--spacer);
@@ -155,10 +113,6 @@ export const FeatureProductList = styled.ul`
 //         grid-column: 8/13;
 //       }
 //     }
-//   }
-
-//   .img {
-//     height: 540px;
 //   }
 
 // `;

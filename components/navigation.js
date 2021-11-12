@@ -127,8 +127,6 @@ const navAnim = {
 const LogoContainer = styled.aside`
   height: 40px;
   width: 40px;
-  /* border-radius: 50%; */
-  /* background: var(--black); */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState, useEffect } from "react";
-import { CartBox, Overlay } from "./cart-box";
+import { CartBoxInner } from "./cart-box";
 import { formatMoney } from "@/helpers/index";
 import { CartContext } from "context/shop-context";
 import {
@@ -10,7 +10,8 @@ import {
   CartHeader,
   CartActions,
 } from "./cart-helpers";
-import { EmptyIcon, CloseIcon } from "../icons";
+import { EmptyIcon } from "../icons";
+import cn from "classnames";
 
 export default function MiniCart({ cart }) {
   const {
@@ -35,77 +36,79 @@ export default function MiniCart({ cart }) {
 
   return (
     <>
-      <CartBox open={cartOpen}>
-        <CartHeader
-          onClick={() => {
-            setCartOpen(!cartOpen);
-          }}
-          cartItems={cartItems}
-        />
+      <div className={cn("menu", { open: cartOpen })}>
+        <CartBoxInner>
+          <CartHeader
+            onClick={() => {
+              setCartOpen(!cartOpen);
+            }}
+            cartItems={cartItems}
+          />
 
-        <main className="scroll-container">
-          {cartItems.length > 0 ? (
-            <ul role="list">
-              {cartItems.map((product) => (
-                <li key={product.id} className="-mt-b flex">
-                  <div className="img-box">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-
-                  <div className="list-box">
-                    <div>
-                      <div className="flex space-between">
-                        <h5 className="product-title">
-                          <Link href={`/products/${product.handle}`} passHref>
-                            <a
-                              onClick={() => setCartOpen(false)}
-                              className="link link--metis"
-                            >
-                              {product.title}
-                            </a>
-                          </Link>
-                        </h5>
-                        <p>{formatMoney(product.variantPrice)}</p>
-                      </div>
-                      <p>{product.variantTitle}</p>
-                      <p>qty {product.variantQuantity}</p>
+          <main className="scroll-container">
+            {cartItems.length > 0 ? (
+              <ul role="list">
+                {cartItems.map((product) => (
+                  <li key={product.id} className="-mt-b flex">
+                    <div className="img-box">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
                     </div>
 
-                    <CartActions
-                      product={product}
-                      minusAction={() =>
-                        updateItem(product.id, product.variantQuantity - 1)
-                      }
-                      addAction={() => {
-                        updateItem(product.id, product.variantQuantity + 1);
-                      }}
-                      removeAction={() => removeCartItem(product.id)}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="center-absolute">
-              <EmptyIcon />
-            </div>
-          )}
+                    <div className="list-box">
+                      <div>
+                        <div className="flex space-between">
+                          <h5 className="product-title">
+                            <Link href={`/products/${product.handle}`} passHref>
+                              <a
+                                onClick={() => setCartOpen(false)}
+                                className="link link--metis"
+                              >
+                                {product.title}
+                              </a>
+                            </Link>
+                          </h5>
+                          <p>{formatMoney(product.variantPrice)}</p>
+                        </div>
+                        <p>{product.variantTitle}</p>
+                        <p>qty {product.variantQuantity}</p>
+                      </div>
 
-          {cartItems.length > 0 ? (
-            <CartFooter
-              subtotal={subtotal}
-              onClick={() => setCartOpen(false)}
-              checkoutUrl={checkoutUrl}
-            />
-          ) : null}
-        </main>
-      </CartBox>
-      <Overlay open={cartOpen} />
+                      <CartActions
+                        product={product}
+                        minusAction={() =>
+                          updateItem(product.id, product.variantQuantity - 1)
+                        }
+                        addAction={() => {
+                          updateItem(product.id, product.variantQuantity + 1);
+                        }}
+                        removeAction={() => removeCartItem(product.id)}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="center-absolute">
+                <EmptyIcon />
+              </div>
+            )}
+
+            {cartItems.length > 0 ? (
+              <CartFooter
+                subtotal={subtotal}
+                onClick={() => setCartOpen(false)}
+                checkoutUrl={checkoutUrl}
+              />
+            ) : null}
+          </main>
+        </CartBoxInner>
+      </div>
+      <div className={cn("menu-overlay", { open: cartOpen })} />
     </>
   );
 }

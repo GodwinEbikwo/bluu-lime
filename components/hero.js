@@ -9,12 +9,18 @@ import One from "../public/image.jpg";
 import Two from "../public/5.jpg";
 
 export const revealInOut = {
-  initial: { y: "110%", opacity: 0 },
+  initial: {
+    y: "110%",
+    opacity: 0,
+    rotateX: "-80deg",
+    transformPerspective: "500px",
+  },
   enter: {
     y: "0%",
     opacity: 1,
+    rotateX: "0deg",
     transition: {
-      duration: 1.1,
+      duration: 1.15,
       ease: [0.165, 0.84, 0.44, 1],
     },
   },
@@ -67,6 +73,7 @@ export default function HeroN() {
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed="3"
+              data-scroll-position="top"
             >
               <Image
                 placeholder="blur"
@@ -83,6 +90,7 @@ export default function HeroN() {
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed="-3"
+              data-scroll-position="top"
             >
               <Image
                 placeholder="blur"
@@ -98,7 +106,7 @@ export default function HeroN() {
           {/* .....fore-ground..... */}
           <div className="hero-inner">
             <div className="hero-center">
-              <h1 className="hero-center_title">
+              <h1 className="hero-center_title not-selectable">
                 <FancySpan>
                   <m.span className="block" variants={revealInOut}>
                     Handmade knitted bags for every{" "}
@@ -218,5 +226,6 @@ const HeroContainer = styled(m.article)`
     white-space: nowrap;
     font-family: var(--font-3);
     text-transform: uppercase;
+    color: white;
   }
 `;
