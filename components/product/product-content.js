@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Image from "next/image";
 import ProductForm from "./product-form";
 import RecommendedList from "./recommended-list";
@@ -6,7 +5,6 @@ import styled from "styled-components";
 import { shimmer, toBase64 } from "@/helpers/index";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import Accordion from "../accordion";
 
 export default function ProductContent({ product }) {
   const images = [];
@@ -33,7 +31,7 @@ export default function ProductContent({ product }) {
   return (
     <ProductContentBox>
       <ProductContentContainer>
-        <div className="product-container-inner" style={{ zIndex: "-1" }}>
+        <div className="product-container-inner">
           <div className="w-full h-full relative" data-scroll>
             <Swiper
               style={{
@@ -51,14 +49,6 @@ export default function ProductContent({ product }) {
         </div>
 
         <ProductForm product={product} />
-        {/* <Accordion
-          title="Frequently Asked Questions"
-          content={data.map((faq, index) => (
-            <ProductFaqs key={index}>
-              <li>{faq.title}</li>
-            </ProductFaqs>
-          ))}
-        /> */}
       </ProductContentContainer>
 
       <RecommendedList
@@ -68,27 +58,6 @@ export default function ProductContent({ product }) {
     </ProductContentBox>
   );
 }
-
-const data = [
-  {
-    title: "one",
-  },
-  {
-    title: "two",
-  },
-  {
-    title: "three",
-  },
-];
-
-export const ProductFaqs = styled.ul`
-  list-style: none;
-
-  li {
-    display: list-item;
-    margin-bottom: var(--spacing-md);
-  }
-`;
 
 const ProductContentBox = styled.section`
   margin: 8rem auto;

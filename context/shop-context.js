@@ -46,7 +46,7 @@ export default function ShopProvider({ children }) {
   }, []);
 
   async function updateQuantity(id, quantity) {
-    setisLoading(true);
+    setIsLoading(true);
     let newQuantity = Math.floor(quantity);
     if (quantity === "") {
       newQuantity = "";
@@ -64,14 +64,13 @@ export default function ShopProvider({ children }) {
     setCart(newCart);
     const newCheckout = await updateCheckout(checkoutId, newCart);
     localStorage.setItem("checkout_id", JSON.stringify([newCart, newCheckout]));
-    setisLoading(false);
+    setIsLoading(false);
   }
 
   async function addToCart(newItem) {
     setIsLoading(true);
     setCartOpen(true);
     setCanScroll(false);
-
     if (cart.length === 0) {
       setCart([...cart, newItem]);
 

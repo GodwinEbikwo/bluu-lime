@@ -61,8 +61,8 @@ export default function MiniCart({ cart }) {
 
                     <div className="list-box">
                       <div>
-                        <div className="flex space-between">
-                          <h5 className="product-title">
+                        <div className="flex space-between flex-wrap">
+                          <p className="product-title">
                             <Link href={`/products/${product.handle}`} passHref>
                               <a
                                 onClick={() => setCartOpen(false)}
@@ -71,7 +71,7 @@ export default function MiniCart({ cart }) {
                                 {product.title}
                               </a>
                             </Link>
-                          </h5>
+                          </p>
                           <p>{formatMoney(product.variantPrice)}</p>
                         </div>
                         <p>{product.variantTitle}</p>

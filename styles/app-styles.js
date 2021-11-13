@@ -580,8 +580,8 @@ h1 {
     z-index: -1;
     transition: opacity 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1.2s cubic-bezier(0.77, 0, 0.18, 1);
-
     backdrop-filter: blur(20px) saturate(180%);
+
     &.open {
       opacity: 1;
       visibility: visible;

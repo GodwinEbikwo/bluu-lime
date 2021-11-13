@@ -67,7 +67,7 @@ export const CartBoxInner = styled.div`
       position: relative;
       flex-shrink: 0;
       overflow: hidden;
-      border-radius: 0.375rem;
+      /* border-radius: 0.375rem; */
       width: 6.5rem;
       height: 6.5rem;
     }
