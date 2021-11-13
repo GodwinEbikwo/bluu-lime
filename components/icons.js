@@ -21,8 +21,8 @@ export const EmptyCart = () => (
 export const CloseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="33"
-    height="33"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="currentColor"
     stroke="var(--white)"

@@ -4,9 +4,13 @@ import { CartContext } from "@/context/shop-context";
 import { formatMoney } from "@/helpers/index";
 import { StyledButton } from "../box";
 import styled from "styled-components";
+import cn from "classnames";
+import LoadingDots from "../loading-dots";
+import Accordion from "../accordion";
 
 export default function ProductForm({ product }) {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, isLoading } = useContext(CartContext);
+
   const allVariantOptions = product.variants.edges?.map((variant) => {
     const allOptions = {};
     variant.node.selectedOptions.map((item) => {
@@ -21,6 +25,7 @@ export default function ProductForm({ product }) {
       variantTitle: variant.node.title,
       variantPrice: variant.node.priceV2.amount,
       variantQuantity: 1,
+      varaintAvailableForSale: variant.node.availableForSale,
     };
   });
 
@@ -31,6 +36,7 @@ export default function ProductForm({ product }) {
 
   const [selectedVariant, setSelectedVariant] = useState(allVariantOptions[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultValues);
+  const availableForSale = selectedVariant.varaintAvailableForSale;
 
   function setOptions(name, value) {
     setSelectedOptions((prevState) => {
@@ -66,21 +72,74 @@ export default function ProductForm({ product }) {
         />
       ))}
 
-      <div className="p-desc">
-        <p>{product.description}</p>
-      </div>
-      
+      {product.description && (
+        <div className="p-desc">
+          <p>{product.description}</p>
+        </div>
+      )}
+
       <StyledButton
+        style={{ marginBottom: "var(--spacing-md)" }}
+        aria-busy={isLoading}
+        aria-label="Add to Bag"
         onClick={() => {
           addToCart(selectedVariant);
         }}
-        className="filled"
+        className={cn("add-to-bag", { loading: isLoading })}
+        disabled={availableForSale === false}
       >
-        Add To Bag
+        {availableForSale === false ? "Not Available" : "Add To Bag"}
+        {isLoading && (
+          <div
+            className="flex"
+            style={{ marginTop: "3.85px", paddingLeft: "0.5rem" }}
+          >
+            <LoadingDots />
+          </div>
+        )}
       </StyledButton>
+
+      <Accordion
+        title="Size guide"
+        content={data.map((faq, index) => (
+          <ProductFaqs key={index}>
+            <li>{faq.title}</li>
+          </ProductFaqs>
+        ))}
+      />
+
+      <Accordion
+        title="Frequently Asked Questions"
+        content={data.map((faq, index) => (
+          <ProductFaqs key={index}>
+            <li>{faq.title}</li>
+          </ProductFaqs>
+        ))}
+      />
     </ProductFormContainer>
   );
 }
+
+const data = [
+  {
+    title: "one",
+  },
+  {
+    title: "two",
+  },
+  {
+    title: "three",
+  },
+];
+
+export const ProductFaqs = styled.ul`
+  list-style: none;
+
+  li {
+    display: list-item;
+    margin-bottom: var(--spacing-md);
+  }
+`;
 
 const ProductFormContainer = styled.article`
   width: 100%;
@@ -104,7 +163,7 @@ const ProductFormContainer = styled.article`
     line-height: 1;
     margin-bottom: var(--spacing-sm);
   }
-  
+
   .p-price {
     margin-bottom: var(--spacing-sm);
   }

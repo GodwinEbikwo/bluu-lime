@@ -20,6 +20,15 @@ export default function ShopProvider({ children }) {
   const [checkoutId, setCheckoutId] = useState("");
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [canScroll, setCanScroll] = useState(true);
+
+  useEffect(() => {
+    if (canScroll === false) {
+      document.querySelector("body").classList.add("no-scroll");
+    } else {
+      document.querySelector("body").classList.remove("no-scroll");
+    }
+  }, [canScroll]);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -30,13 +39,14 @@ export default function ShopProvider({ children }) {
       } else if (cartObject[0].length > 0) {
         setCart(...[cartObject[0]]);
       }
-      
+
       setCheckoutId(cartObject[1].id);
       setCheckoutUrl(cartObject[1].webUrl);
     }
   }, []);
 
   async function updateQuantity(id, quantity) {
+    setisLoading(true);
     let newQuantity = Math.floor(quantity);
     if (quantity === "") {
       newQuantity = "";
@@ -54,11 +64,14 @@ export default function ShopProvider({ children }) {
     setCart(newCart);
     const newCheckout = await updateCheckout(checkoutId, newCart);
     localStorage.setItem("checkout_id", JSON.stringify([newCart, newCheckout]));
+    setisLoading(false);
   }
 
   async function addToCart(newItem) {
-    setCartOpen(true);
     setIsLoading(true);
+    setCartOpen(true);
+    setCanScroll(false);
+
     if (cart.length === 0) {
       setCart([...cart, newItem]);
 
@@ -117,6 +130,7 @@ export default function ShopProvider({ children }) {
         checkoutUrl,
         removeCartItem,
         updateQuantity,
+        isLoading,
       }}
     >
       {children}

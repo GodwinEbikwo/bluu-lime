@@ -204,6 +204,10 @@ body {
   font-family: var(--font);
   font-weight: normal;
   font-size: 0.95rem;
+  &.no-scroll {
+    overflow-y: hidden;
+    touch-action: none;
+  }
 }
 
 button,
@@ -477,17 +481,16 @@ h1 {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transform: scale3d(1.25, 1.25, 1);
+    transform: translateZ(0) scale3d(1.25, 1.25, 1);
     transform-origin: 50% 50%;
-    transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s 0.2s cubic-bezier(0.38, 0.005, 0.215, 1);
-    will-change: transform, opacity;
+    transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s cubic-bezier(0.38, 0.005, 0.215, 1);
+    transition-delay: 0.5s;
   }
 
    &.is-inview {
     .a-img {
       opacity: 1;
-      transform: scale(1);
-      transition-delay: 0.35s;
+      transform: scale3d(1, 1, 1);
     }
   }
 

@@ -6,27 +6,9 @@ import styled from "styled-components";
 import { shimmer, toBase64 } from "@/helpers/index";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import { m } from "framer-motion";
-
-const Backdrop = ({ children, onClick }) => {
-  return (
-    <m.div
-      onClick={onClick}
-      className="backdrop"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {children}
-    </m.div>
-  );
-};
+import Accordion from "../accordion";
 
 export default function ProductContent({ product }) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
-
   const images = [];
   product.images.edges.map((image, i) => {
     images.push(
@@ -40,8 +22,8 @@ export default function ProductContent({ product }) {
           blurDataURL={`data:image/svg+xml;base64,${toBase64(
             shimmer(504, 672)
           )}`}
-          className="a-img img"
-          quality="90"
+          className="a-img"
+          quality="85"
         />
       </SwiperSlide>
     );
@@ -51,7 +33,7 @@ export default function ProductContent({ product }) {
   return (
     <ProductContentBox>
       <ProductContentContainer>
-        <div className="product-container-inner">
+        <div className="product-container-inner" style={{ zIndex: "-1" }}>
           <div className="w-full h-full relative" data-scroll>
             <Swiper
               style={{
@@ -67,18 +49,16 @@ export default function ProductContent({ product }) {
             </Swiper>
           </div>
         </div>
-        <ProductForm product={product} />
 
-        <div>
-          <m.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="save-button"
-            onClick={() => (modalOpen ? close() : open())}
-          >
-            Launch modal
-          </m.button>
-        </div>
+        <ProductForm product={product} />
+        {/* <Accordion
+          title="Frequently Asked Questions"
+          content={data.map((faq, index) => (
+            <ProductFaqs key={index}>
+              <li>{faq.title}</li>
+            </ProductFaqs>
+          ))}
+        /> */}
       </ProductContentContainer>
 
       <RecommendedList
@@ -88,6 +68,27 @@ export default function ProductContent({ product }) {
     </ProductContentBox>
   );
 }
+
+const data = [
+  {
+    title: "one",
+  },
+  {
+    title: "two",
+  },
+  {
+    title: "three",
+  },
+];
+
+export const ProductFaqs = styled.ul`
+  list-style: none;
+
+  li {
+    display: list-item;
+    margin-bottom: var(--spacing-md);
+  }
+`;
 
 const ProductContentBox = styled.section`
   margin: 8rem auto;
@@ -114,13 +115,13 @@ const ProductContentContainer = styled.div`
   width: 100%;
 
   & > * {
-    &:last-child {
+    &:nth-child(2) {
       margin-top: var(--spacer);
       border: 1px solid var(--border-color);
       backdrop-filter: blur(20px) saturate(180%);
       background-color: rgba(60, 60, 60, 0.5);
       @media (min-width: 768px) {
-        margin-top: auto;
+        margin-top: 0;
       }
     }
   }
@@ -129,6 +130,13 @@ const ProductContentContainer = styled.div`
     margin: 3rem auto;
     flex-direction: row;
     align-items: flex-start;
+
+    .help {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center;
+      align-items: center; */
+    }
   }
 
   .product-container-inner {

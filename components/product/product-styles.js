@@ -33,14 +33,13 @@ export const ProductContainer = styled.li`
   .img-container img {
     display: block;
     opacity: 1;
-    transition: all var(--duration) var(--easeInOutCubic);
+    transition: all var(--duration) var(--easing);
     transition-delay: 0.1295s;
   }
 
   .img-container:hover img {
     transform: translateZ(0) scale(1.2);
     transform-origin: 50% 50%;
-    /* opacity: 0.25; */
   }
 
   .img-c-center {
@@ -61,7 +60,7 @@ export const ProductContainer = styled.li`
       background-color: var(--accent);
       width: 3rem;
       height: 3rem;
-      transition: all var(--duration) var(--easeInOutCubic);
+      transition: all var(--duration) var(--easing);
       opacity: 0;
       z-index: 0;
     }
@@ -70,7 +69,7 @@ export const ProductContainer = styled.li`
       grid-row: 1;
       grid-column: 1;
       opacity: 0;
-      transition: all var(--duration) var(--easeInOutCubic);
+      transition: all var(--duration) var(--easing);
       z-index: 1;
       text-align: center;
       color: black;

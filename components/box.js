@@ -27,6 +27,7 @@ export const StyledButton = styled.button`
   transition: all 300ms var(--easing);
   border: 1px solid var(--off-white);
   text-transform: capitalize;
+  transition: all 300ms var(--easing);
 
   &.no-height {
     height: 0;
@@ -35,11 +36,27 @@ export const StyledButton = styled.button`
   &.filled {
     color: var(--black);
     background-color: var(--white);
-
     &:hover {
       color: var(--off-white);
       background-color: transparent;
     }
+  }
+
+  &.add-to-bag {
+    border-radius: 0 !important;
+    background-color: var(--accent);
+    border: none;
+  }
+
+  &:disabled {
+    background: #f94144;
+    cursor: not-allowed;
+    color: white
+  }
+
+  &.loading {
+    cursor: wait;
+    opacity: 0.4;
   }
 
   &.outline {
