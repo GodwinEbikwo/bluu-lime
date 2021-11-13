@@ -34,7 +34,7 @@ export default function HeroN() {
         >
           <div className="hero-background">
             <div
-              className="h-m-container hero-image_container-1"
+              className="hide-for-mobile h-m-container hero-image_container-1"
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed="3"
@@ -51,7 +51,7 @@ export default function HeroN() {
             </div>
 
             <div
-              className="h-m-container hero-image_container-2"
+              className="hide-for-mobile h-m-container hero-image_container-2"
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed="-3"
