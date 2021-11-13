@@ -20,15 +20,6 @@ export default function ShopProvider({ children }) {
   const [checkoutId, setCheckoutId] = useState("");
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [canScroll, setCanScroll] = useState(true);
-
-  useEffect(() => {
-    if (canScroll === false) {
-      document.querySelector("body").classList.add("no-scroll");
-    } else {
-      document.querySelector("body").classList.remove("no-scroll");
-    }
-  }, [canScroll]);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -70,7 +61,6 @@ export default function ShopProvider({ children }) {
   async function addToCart(newItem) {
     setIsLoading(true);
     setCartOpen(true);
-    setCanScroll(false);
     if (cart.length === 0) {
       setCart([...cart, newItem]);
 
