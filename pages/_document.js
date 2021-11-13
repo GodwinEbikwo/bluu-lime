@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* <link rel="stylesheet" href="https://use.typekit.net/jpj8own.css" /> */}
+          <link rel="stylesheet" href="https://use.typekit.net/jpj8own.css" />
         </Head>
         <body>
           <Main />
