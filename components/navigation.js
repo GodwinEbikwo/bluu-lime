@@ -26,13 +26,13 @@ const data = [
   },
   {
     label: "Journal",
-    destination: "/ingredients",
-    a11yText: "go to the ingredients page",
+    destination: "/Journal",
+    a11yText: "go to the Journal page",
   },
   {
     label: "Policy",
-    destination: "/blog",
-    a11yText: "go to the blog page",
+    destination: "/Policy",
+    a11yText: "go to the Policy page",
   },
 ];
 
