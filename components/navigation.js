@@ -225,7 +225,7 @@ export default function Navigation() {
 
           <aside>
             <button
-              style={{ color: "white" }}
+              style={{ color: "white", cursor: "pointer" }}
               className="text-uppercase"
               onClick={() => setCartOpen(!cartOpen)}
             >

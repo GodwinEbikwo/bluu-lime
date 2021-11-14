@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartBoxInner } from "./cart-box";
-import { formatMoney, useOnClickOutside } from "@/helpers/index";
+import { formatMoney } from "@/helpers/index";
 import { CartContext } from "context/shop-context";
 import {
   CartFooter,
@@ -21,9 +21,6 @@ export default function MiniCart({ cart }) {
     removeCartItem,
     updateQuantity,
   } = useContext(CartContext);
-
-  const ref = useRef();
-  useOnClickOutside(ref, () => setCartOpen(false));
 
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
@@ -111,7 +108,7 @@ export default function MiniCart({ cart }) {
           </main>
         </CartBoxInner>
       </div>
-      <div ref={ref} className={cn("cart-menu-overlay", { open: cartOpen })} />
+      <div className={cn("cart-menu-overlay", { open: cartOpen })} />
     </>
   );
 }
