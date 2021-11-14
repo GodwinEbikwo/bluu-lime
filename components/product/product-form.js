@@ -111,18 +111,14 @@ export default function ProductForm({ product }) {
       <Accordion
         title="Size guide"
         content={data.map((faq, index) => (
-          <ProductFaqs key={index}>
-            <li>{faq.title}</li>
-          </ProductFaqs>
+          <ProductFaqs key={index}>{faq.title}</ProductFaqs>
         ))}
       />
 
       <Accordion
         title="Frequently Asked Questions"
         content={data.map((faq, index) => (
-          <ProductFaqs key={index}>
-            <li>{faq.title}</li>
-          </ProductFaqs>
+          <ProductFaqs key={index}>{faq.title}</ProductFaqs>
         ))}
       />
     </ProductFormContainer>
@@ -141,13 +137,9 @@ const data = [
   },
 ];
 
-export const ProductFaqs = styled.ul`
-  list-style: none;
-
-  li {
-    display: list-item;
-    margin-bottom: var(--spacing-md);
-  }
+export const ProductFaqs = styled.span`
+  display: block;
+  margin-bottom: var(--spacing-md);
 `;
 
 const ProductFormContainer = styled.article`
