@@ -5,13 +5,11 @@ export function HeroImage({ title, responsiveImage }) {
   const image = (
     <div data-scroll data-scroll-speed="-1.5">
       <Image
-        fadeInDuration={250}
-        intersectionThreshold={0.3}
         data={{
           ...responsiveImage,
           alt: `${title ? title : "bluu-lime"}`,
         }}
-        className="not-selectable a-img"
+        className="a-img"
       />
     </div>
   );

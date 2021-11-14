@@ -7,6 +7,7 @@ import useInView from "react-cool-inview";
 import { CartContext } from "context/shop-context";
 import MiniCart from "./cart/cart";
 import Link from "next/link";
+import Image from "next/image";
 
 const data = [
   {
@@ -73,6 +74,11 @@ const NavList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    visibility: hidden;
+    display: none;
+  }
 
   &:hover > li {
     transition: opacity 300ms linear;
@@ -191,6 +197,18 @@ export default function Navigation() {
               />
             ))}
           </NavList>
+
+          <div className="hide-for-desktop flex align-center justify-center text-center">
+            <div
+              style={{
+                fontFamily: "var(--font-3)",
+                letterSpacing: "-0.04em",
+                fontSize: "25px",
+              }}
+            >
+              BluuLime
+            </div>
+          </div>
 
           <div>
             <a

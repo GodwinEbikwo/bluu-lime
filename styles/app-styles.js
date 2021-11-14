@@ -428,14 +428,14 @@ h1 {
 
   /* hide elements for different viewports */
   .hide-for-mobile {
-    @media screen and (max-width: 767px) {
+    @media (max-width: 767px) {
       display: none;
       visibility: hidden;
     }
   }
   
   .hide-for-desktop {
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       display: none;
       visibility: hidden;
     }
@@ -487,8 +487,8 @@ h1 {
     opacity: 0;
     transform: translateZ(0) scale3d(1.25, 1.25, 1);
     transform-origin: 50% 50%;
-    transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s cubic-bezier(0.38, 0.005, 0.215, 1);
-    transition-delay: 0.5s;
+    transition: transform 1.35s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.5s cubic-bezier(0.38, 0.005, 0.215, 1);
+    transition-delay: 0.35s;
   }
 
    &.is-inview {
@@ -516,7 +516,7 @@ h1 {
   .swiper-button-next  {
     background-image: none;
   }
-  
+
   .swiper-button-prev::after {
     display: none;
   }
