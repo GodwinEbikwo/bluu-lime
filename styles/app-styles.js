@@ -526,7 +526,8 @@ h1 {
   }
 
   /* menu styles */
-  .cart-menu {
+  .cart-menu, 
+  .mobile-menu {
     position: fixed;
     background-color: var(--bg);
     width: 100%;
@@ -548,6 +549,19 @@ h1 {
     @media (max-width: 767px) {
       min-width: 100%;
     }
+
+    &.open {
+      clip-path: inset(0%); 
+      transition: clip-path 1s cubic-bezier(.76,0,.24,1); 
+      visibility: visible;
+    }
+  }
+
+  .mobile-menu {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.18, 1),
+    visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
+    background: purple;
 
     &.open {
       clip-path: inset(0%); 

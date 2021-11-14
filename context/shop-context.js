@@ -20,6 +20,20 @@ export default function ShopProvider({ children }) {
   const [checkoutId, setCheckoutId] = useState("");
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
+  function toogleMenu() {
+    setMenuOpen(!menuOpen);
+  }
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
+  function openMenu() {
+    setMenuOpen(true);
+  }
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -120,6 +134,8 @@ export default function ShopProvider({ children }) {
         removeCartItem,
         updateQuantity,
         isLoading,
+        menuOpen,
+        setMenuOpen
       }}
     >
       {children}

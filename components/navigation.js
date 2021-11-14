@@ -6,6 +6,7 @@ import { useHasMounted } from "@/helpers/index";
 import { CartContext } from "context/shop-context";
 import MiniCart from "./cart/cart";
 import Link from "next/link";
+import MobileMenu from "./mobile-menu/menu";
 
 const data = [
   {
@@ -29,9 +30,9 @@ const data = [
     a11yText: "go to the Journal page",
   },
   {
-    label: "Policy",
+    label: "Information",
     destination: "/policy",
-    a11yText: "go to the Policy page",
+    a11yText: "go to the Information page",
   },
 ];
 
@@ -155,7 +156,9 @@ function Logo() {
 }
 
 export default function Navigation() {
-  const { cart, cartOpen, setCartOpen } = useContext(CartContext);
+  const { cart, cartOpen, setCartOpen, menuOpen, setMenuOpen } = useContext(
+    CartContext
+  );
 
   const hasMounted = useHasMounted();
   if (!hasMounted) return null;
@@ -175,11 +178,19 @@ export default function Navigation() {
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
-            <Link href="/" passHref>
+            <button
+              style={{ color: "white" }}
+              className="text-uppercase"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              Menu
+            </button>
+            <MobileMenu />
+            {/* <Link href="/" passHref>
               <a>
                 <Logo />
               </a>
-            </Link>
+            </Link> */}
           </LogoContainer>
 
           <NavList className="hide-for-mobile">

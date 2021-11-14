@@ -49,3 +49,30 @@ export const barAnim = {
     },
   },
 };
+
+export const variantsAni = {
+  enter: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+  },
+  exit: {
+    transition: { staggerChildren: 0.1, staggerDirection: -1 },
+  },
+};
+
+export const menuInOut = {
+  initial: { y: "110%", opacity: 0 },
+  enter: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: [0.83, 0, 0.17, 1],
+    },
+  },
+  exit: {
+    y: "110%",
+    opacity: 0,
+    transition: { duration: 0.45, ease: [0.83, 0, 0.17, 1] },
+  },
+};
