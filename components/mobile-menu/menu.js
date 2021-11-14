@@ -12,7 +12,7 @@ import {
   MobileMenuUL,
   MobileMenuFooter,
 } from "./menu-style";
-import Div100vh from "react-div-100vh";
+import { useLockBodyScroll } from "@/helpers/index";
 
 function List({ href, onClick, children, a11y }) {
   return (
@@ -28,72 +28,71 @@ function List({ href, onClick, children, a11y }) {
 
 export default function MobileMenu({}) {
   const { setMenuOpen, menuOpen } = useContext(CartContext);
+  useLockBodyScroll();
   return (
     <m.aside animate="enter" initial="initial" exit="exit">
-      <>
-        <div className={cn("mobile-menu", { open: menuOpen })}>
-          <m.div
-            className="mm-inner"
-            initial={false}
-            animate={menuOpen ? "enter" : "exit"}
-            exit="exit"
-            variants={variantsAni}
-          >
-            <MobileMenuHeader>
-              <button role="button" onClick={() => setMenuOpen(!menuOpen)}>
-                <span>close</span>
-              </button>
-            </MobileMenuHeader>
+      <div className={cn("mobile-menu", { open: menuOpen })}>
+        <m.div
+          className="mm-inner"
+          initial={false}
+          animate={menuOpen ? "enter" : "exit"}
+          exit="exit"
+          variants={variantsAni}
+        >
+          <MobileMenuHeader>
+            <button role="button" onClick={() => setMenuOpen(!menuOpen)}>
+              <span>close</span>
+            </button>
+          </MobileMenuHeader>
 
-            <MobileMenuMain>
-              <MobileMenuUL>
-                <List
-                  a11y="go to home page"
-                  href="/"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <m.div variants={menuInOut}>Home</m.div>
-                </List>
-                <List
-                  a11y="go to about page"
-                  href="/"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <m.div variants={menuInOut}>About</m.div>
-                </List>
+          <MobileMenuMain>
+            <MobileMenuUL>
+              <List
+                a11y="go to home page"
+                href="/"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <m.div variants={menuInOut}>Home</m.div>
+              </List>
+              <List
+                a11y="go to about page"
+                href="/"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <m.div variants={menuInOut}>About</m.div>
+              </List>
 
-                <List
-                  a11y="go to shop page"
-                  href="/"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <m.div variants={menuInOut}>Shop</m.div>
-                </List>
-                <List
-                  a11y="go to journal page"
-                  href="/"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <m.div variants={menuInOut}>Journal</m.div>
-                </List>
-                <List
-                  a11y="go to information page"
-                  href="/"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <m.div variants={menuInOut}>Information</m.div>
-                </List>
-              </MobileMenuUL>
-            </MobileMenuMain>
+              <List
+                a11y="go to shop page"
+                href="/"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <m.div variants={menuInOut}>Shop</m.div>
+              </List>
+              <List
+                a11y="go to journal page"
+                href="/"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <m.div variants={menuInOut}>Journal</m.div>
+              </List>
+              <List
+                a11y="go to information page"
+                href="/"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <m.div variants={menuInOut}>Information</m.div>
+              </List>
+            </MobileMenuUL>
+          </MobileMenuMain>
 
-            <MobileMenuFooter>
-              <FancySpan>
-                <m.div variants={menuInOut}>footer</m.div>
-              </FancySpan>
-            </MobileMenuFooter>
-          </m.div>
-        </div>
-      </>
+          <MobileMenuFooter>
+            <FancySpan>
+              <m.div variants={menuInOut}>footer</m.div>
+            </FancySpan>
+          </MobileMenuFooter>
+        </m.div>
+      </div>
     </m.aside>
   );
 }

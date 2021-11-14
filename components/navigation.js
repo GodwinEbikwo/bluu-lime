@@ -183,7 +183,7 @@ export default function Navigation() {
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
             <button
-              className="text-uppercase"
+              className="text-uppercase hide-for-desktop"
               style={{ color: "white" }}
               onClick={() => setMenuOpen(!menuOpen)}
             >

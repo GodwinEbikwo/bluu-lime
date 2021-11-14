@@ -16,7 +16,7 @@ export default function Footer() {
 
           <div className="flex flex-column text-center">
             <div>EMAIL</div>
-            <h3>info@abluulime.com</h3>
+            <h3>info@bluulime.com</h3>
           </div>
         </aside>
 
@@ -30,8 +30,7 @@ export default function Footer() {
 }
 
 const FooterBox = styled.footer`
-  background: var(--accent);
-  color: var(--text-black);
+  background: var(--bg);
   padding: 150px calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
