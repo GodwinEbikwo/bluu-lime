@@ -15,12 +15,14 @@ export const MobileMenuUL = styled.ul`
     margin-bottom: var(--spacing-sm);
 
     div {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      font-family: var(--font-6);
+      font-weight: 100;
     }
   }
 `;
 
 export const MobileMenuFooter = styled.footer`
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
 `;

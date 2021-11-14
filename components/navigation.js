@@ -186,11 +186,11 @@ export default function Navigation() {
               Menu
             </button>
             <MobileMenu />
-            {/* <Link href="/" passHref>
-              <a>
+            <Link href="/" passHref>
+              <a className="hide-for-mobile">
                 <Logo />
               </a>
-            </Link> */}
+            </Link>
           </LogoContainer>
 
           <NavList className="hide-for-mobile">

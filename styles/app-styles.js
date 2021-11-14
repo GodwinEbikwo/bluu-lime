@@ -561,7 +561,7 @@ h1 {
     clip-path: inset(0 0 100% 0);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-    background: purple;
+    background: var(--bg);
 
     &.open {
       clip-path: inset(0%); 
