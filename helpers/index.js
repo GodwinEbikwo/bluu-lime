@@ -1,4 +1,4 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState, useLayoutEffect, useRef } from "react";
 import { Image } from "react-datocms";
 
 export function HeroImage({ title, responsiveImage }) {
@@ -73,4 +73,22 @@ export function useLockBodyScroll() {
     // Re-enable scrolling when component unmounts
     return () => (document.body.style.overflow = originalStyle);
   }, []); // Empty array ensures effect is only run on mount and unmount
+}
+
+export function useOnClickOutside(ref, handler) {
+  useEffect(() => {
+    const listener = (event) => {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, handler]);
 }
