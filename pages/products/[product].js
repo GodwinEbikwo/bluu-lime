@@ -10,6 +10,7 @@ import { options } from "@/lib/scroll";
 import CookieBar from "@/components/cookie-bar";
 import { recursiveCatalog, getProduct } from "@/lib/shopify";
 import ProductContent from "@/components/product/product-content";
+import Footer from "@/components/footer";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
@@ -57,6 +58,7 @@ export default function HomePage({ product }) {
                   <StyledBox>
                     <ProductContent product={product} />
                   </StyledBox>
+                  <Footer />
                 </m.div>
               </m.div>
             </LazyMotion>
