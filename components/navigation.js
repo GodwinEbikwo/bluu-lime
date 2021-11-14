@@ -3,11 +3,9 @@ import { useContext } from "react";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import FancyLink from "./fancy-link";
 import { useHasMounted } from "@/helpers/index";
-import useInView from "react-cool-inview";
 import { CartContext } from "context/shop-context";
 import MiniCart from "./cart/cart";
 import Link from "next/link";
-import Image from "next/image";
 
 const data = [
   {
@@ -27,12 +25,12 @@ const data = [
   },
   {
     label: "Journal",
-    destination: "/Journal",
+    destination: "/journal",
     a11yText: "go to the Journal page",
   },
   {
     label: "Policy",
-    destination: "/Policy",
+    destination: "/policy",
     a11yText: "go to the Policy page",
   },
 ];
@@ -157,7 +155,6 @@ function Logo() {
 }
 
 export default function Navigation() {
-  const { observe } = useInView();
   const { cart, cartOpen, setCartOpen } = useContext(CartContext);
 
   const hasMounted = useHasMounted();
@@ -175,7 +172,6 @@ export default function Navigation() {
         animate="enter"
         exit="initial"
         variants={navAnim}
-        ref={observe}
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
@@ -211,12 +207,13 @@ export default function Navigation() {
           </div>
 
           <div>
-            <a
+            <button
+              style={{ color: "white" }}
               className="text-uppercase"
               onClick={() => setCartOpen(!cartOpen)}
             >
               Bag ({cartQuantity})
-            </a>
+            </button>
             <MiniCart cart={cart} />
           </div>
         </NavBox>
