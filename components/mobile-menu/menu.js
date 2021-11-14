@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { CartContext } from "context/shop-context";
 import cn from "classnames";
 import FancySpan from "../fancy-span";
@@ -12,7 +12,6 @@ import {
   MobileMenuUL,
   MobileMenuFooter,
 } from "./menu-style";
-import { useLockBodyScroll } from "@/helpers/index";
 
 function List({ href, onClick, children, a11y }) {
   return (
@@ -28,7 +27,7 @@ function List({ href, onClick, children, a11y }) {
 
 export default function MobileMenu({}) {
   const { setMenuOpen, menuOpen } = useContext(CartContext);
-  useLockBodyScroll();
+
   return (
     <m.aside animate="enter" initial="initial" exit="exit">
       <div className={cn("mobile-menu", { open: menuOpen })}>
