@@ -7,6 +7,7 @@ import styled from "styled-components";
 import cn from "classnames";
 import LoadingDots from "../loading-dots";
 import Accordion from "../accordion";
+import Rating from "../ratings";
 
 export default function ProductForm({ product }) {
   const { addToCart, isLoading } = useContext(CartContext);
@@ -57,6 +58,14 @@ export default function ProductForm({ product }) {
 
   return (
     <ProductFormContainer>
+      <div
+        className="flex flex-row space-between align-center"
+        style={{ paddingBottom: "var(--spacing-md)" }}
+      >
+        <Rating value={5} />
+        <span>6 reviews</span>
+      </div>
+
       <h3 className="p-title">{product.title}</h3>
       <span className="p-price">
         {formatMoney(product.variants.edges[0].node.priceV2.amount)}
@@ -162,6 +171,7 @@ const ProductFormContainer = styled.article`
     font-family: var(--font-6);
     line-height: 1;
     margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
   }
 
   .p-price {

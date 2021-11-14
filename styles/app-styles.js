@@ -346,6 +346,10 @@ h1 {
     display: flex;
   }
 
+  .flex-row{
+    flex-direction: row;
+  }
+
   .align-center {
     align-items: center;
   }

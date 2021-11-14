@@ -97,8 +97,8 @@ const AccordionBody = styled.aside`
 
   header p {
     line-height: 1;
-    text-align: left;
-    letter-spacing: var(--ls-sm);
+    font-size: 0.8rem;
+    text-transform: uppercase;
   }
 
   .content-placeholder {

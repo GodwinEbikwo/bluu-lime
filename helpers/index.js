@@ -5,6 +5,8 @@ export function HeroImage({ title, responsiveImage }) {
   const image = (
     <div data-scroll data-scroll-speed="-1.5">
       <Image
+        fadeInDuration={250}
+        intersectionThreshold={0.3}
         data={{
           ...responsiveImage,
           alt: `${title ? title : "bluu-lime"}`,
@@ -48,7 +50,6 @@ export const shimmer = (w, h) => `
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.5s" repeatCount="indefinite"  />
 </svg>`;
-
 
 export function formatMoney(amount = 0) {
   const options = {
