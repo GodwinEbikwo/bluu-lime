@@ -9,8 +9,6 @@ export const ProductContainer = styled.li`
   .img-container {
     display: inline-block;
     overflow: hidden;
-    /* transition: all var(--duration) var(--easeInOutCubic);
-    transform: scale(1); */
 
     &:hover .img-txt {
       opacity: 1;
@@ -24,10 +22,6 @@ export const ProductContainer = styled.li`
         transform: scale(2);
       }
     }
-
-    /* &:hover {
-      transform: scale(0.95);
-    } */
   }
 
   .img-container img {
@@ -110,13 +104,6 @@ export const ProductListHeader = styled.div`
 `;
 
 export const GridContainer = styled.section`
-  --cs: 13.7;
-  --dw: 1920;
-  --ps: 55;
-  --ph: 55;
-  --bi: 70;
-  --sc: calc((var(--dw) / 100) * var(--cs));
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

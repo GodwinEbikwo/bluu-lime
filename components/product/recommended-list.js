@@ -22,7 +22,6 @@ export default RecommendedList;
 
 const RecommendedContainer = styled.section`
   margin: var(--spacer) auto;
-
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
     padding: 50px var(--golden-ratio);

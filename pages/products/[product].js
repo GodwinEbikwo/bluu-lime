@@ -17,7 +17,6 @@ const policyData =
 export default function HomePage({ product }) {
   const containerRef = useRef(null);
   const { originalSrc } = product.images.edges[0].node;
-  console.log(product);
 
   return (
     <Layout>

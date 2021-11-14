@@ -514,22 +514,9 @@ h1 {
   /* swiper styles */
   .swiper-button-prev,
   .swiper-button-next  {
-    background-image: url("/al.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    background-color: white;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  .swiper-button-next {
-    background-image: url("/ar.svg");
-}
-
+    background-image: none;
+  }
+  
   .swiper-button-prev::after {
     display: none;
   }
