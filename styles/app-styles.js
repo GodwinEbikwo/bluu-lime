@@ -526,7 +526,7 @@ h1 {
   }
 
   /* menu styles */
-  .menu {
+  .cart-menu {
     position: fixed;
     background-color: var(--bg);
     width: 100%;
@@ -556,7 +556,7 @@ h1 {
     }
   }
 
-  .menu-overlay {
+  .cart-menu-overlay {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

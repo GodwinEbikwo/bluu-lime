@@ -109,7 +109,7 @@ export default function ProductForm({ product }) {
       </StyledButton>
 
       <Accordion
-        title="Size guide"
+        title="Care guide"
         content={data.map((faq, index) => (
           <ProductFaqs key={index}>{faq.title}</ProductFaqs>
         ))}
@@ -117,7 +117,7 @@ export default function ProductForm({ product }) {
 
       <Accordion
         title="Frequently Asked Questions"
-        content={data.map((faq, index) => (
+        content={faqData.map((faq, index) => (
           <ProductFaqs key={index}>{faq.title}</ProductFaqs>
         ))}
       />
@@ -125,15 +125,21 @@ export default function ProductForm({ product }) {
   );
 }
 
+const faqData = [{
+  title: "Does Sav have a smelly bum... YES ;)"
+}]
+
 const data = [
   {
-    title: "one",
+    title: "Before washing, turn your garments inside out",
   },
   {
-    title: "two",
+    title:
+      "Use the wool cycle on your washing machine or wash on low spin speed (high spin speed will destroy the fibre and cause it to shrink)",
   },
   {
-    title: "three",
+    title:
+      "Use neutral or mild detergents, preferably a special wool detergent. The enzymes in normal detergents will damage the lanolin in the wool, removing the natural protective qualities of the wool",
   },
 ];
 

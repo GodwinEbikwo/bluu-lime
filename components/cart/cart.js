@@ -36,7 +36,7 @@ export default function MiniCart({ cart }) {
 
   return (
     <>
-      <div className={cn("menu", { open: cartOpen })}>
+      <div className={cn("cart-menu", { open: cartOpen })}>
         <CartBoxInner>
           <CartHeader
             onClick={() => {
@@ -108,7 +108,7 @@ export default function MiniCart({ cart }) {
           </main>
         </CartBoxInner>
       </div>
-      <div className={cn("menu-overlay", { open: cartOpen })} />
+      <div className={cn("cart-menu-overlay", { open: cartOpen })} />
     </>
   );
 }

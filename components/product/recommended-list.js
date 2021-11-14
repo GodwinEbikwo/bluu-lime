@@ -47,12 +47,10 @@ const RecommendedContainer = styled.section`
 
   .recommend-products_grid {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 1em;
 
     @media (min-width: 640px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
       & > li {
         cursor: pointer;
         transition: opacity 0.8s var(--easeOutCubic);
