@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const MobileMenuHeader = styled.header`
   margin-bottom: var(--spacer);
+
+  button {
+    color: white;
+    text-transform: uppercase;
+  }
 `;
 
 export const MobileMenuMain = styled.main`
@@ -24,5 +29,5 @@ export const MobileMenuUL = styled.ul`
 
 export const MobileMenuFooter = styled.footer`
   position: absolute;
-  bottom: 3rem;
+  bottom: 8rem;
 `;

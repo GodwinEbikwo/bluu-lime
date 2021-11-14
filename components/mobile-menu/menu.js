@@ -30,7 +30,7 @@ export default function MobileMenu({}) {
   const { setMenuOpen, menuOpen } = useContext(CartContext);
   return (
     <m.aside animate="enter" initial="initial" exit="exit">
-      <Div100vh>
+      <>
         <div className={cn("mobile-menu", { open: menuOpen })}>
           <m.div
             className="mm-inner"
@@ -93,7 +93,7 @@ export default function MobileMenu({}) {
             </MobileMenuFooter>
           </m.div>
         </div>
-      </Div100vh>
+      </>
     </m.aside>
   );
 }

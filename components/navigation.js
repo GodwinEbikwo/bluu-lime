@@ -135,6 +135,10 @@ const LogoContainer = styled.aside`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  button {
+    font-family: var(--font);
+  }
 `;
 
 function Logo() {
@@ -179,13 +183,15 @@ export default function Navigation() {
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
             <button
-              style={{ color: "white" }}
               className="text-uppercase"
+              style={{ color: "white" }}
               onClick={() => setMenuOpen(!menuOpen)}
             >
               Menu
             </button>
+
             <MobileMenu />
+
             <Link href="/" passHref>
               <a className="hide-for-mobile">
                 <Logo />
@@ -205,7 +211,7 @@ export default function Navigation() {
             ))}
           </NavList>
 
-          <div className="hide-for-desktop flex align-center justify-center text-center">
+          <aside className="hide-for-desktop flex align-center justify-center text-center">
             <div
               style={{
                 fontFamily: "var(--font-3)",
@@ -215,9 +221,9 @@ export default function Navigation() {
             >
               BluuLime
             </div>
-          </div>
+          </aside>
 
-          <div>
+          <aside>
             <button
               style={{ color: "white" }}
               className="text-uppercase"
@@ -226,7 +232,7 @@ export default function Navigation() {
               Bag ({cartQuantity})
             </button>
             <MiniCart cart={cart} />
-          </div>
+          </aside>
         </NavBox>
       </HeaderBox>
     </LazyMotion>
