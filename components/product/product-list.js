@@ -8,7 +8,7 @@ import ProductCard from "./product-card";
 
 const ProductList = ({ products }) => {
   return (
-    <StyledSectionBox>
+    <StyledSectionBox className="no-my">
       <ProductListHeader>
         <h3 className="product-header-title">Explore New Arrivals</h3>
       </ProductListHeader>

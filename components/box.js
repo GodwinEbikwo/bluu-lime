@@ -80,7 +80,7 @@ export const StyledSectionBox = styled.section`
   }
 
   &.no-my {
-    margin: 4rem auto;
+    margin: 1rem auto;
   }
 
   &.mx-half {

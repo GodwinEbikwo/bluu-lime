@@ -88,9 +88,18 @@ export const FW = styled(m.aside)`
   flex-wrap: wrap;
   width: 100%;
 
+  h5 {
+    max-width: 40ch;
+    margin-bottom: var(--spacing-md);
+    @media (max-width: 640px) {
+      font-size: 1.15rem;
+      max-width: none;
+    }
+  }
+
   & > * {
     &:nth-child(1) {
-      margin-bottom: var(--spacing-lg);
+      margin-bottom: var(--spacing-md);
     }
   }
 
@@ -106,14 +115,6 @@ export const FW = styled(m.aside)`
       &:nth-child(2) {
         width: 70%;
         padding-left: 30%;
-
-        h5 {
-          max-width: 40ch;
-          margin-bottom: var(--spacing-lg);
-          @media (max-width: 640px) {
-            font-size: 1rem;
-          }
-        }
       }
     }
   }
