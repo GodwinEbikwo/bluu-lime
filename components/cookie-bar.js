@@ -6,6 +6,33 @@ import FancyLink from "./fancy-link";
 import styled from "styled-components";
 import { barAnim } from "@/helpers/transitions";
 
+function useAcceptCookies(cookieName = "accept_cookies") {
+  const [acceptedCookies, setAcceptedCookies] = useState(true);
+
+  useEffect(() => {
+    if (!Cookies.get(cookieName)) {
+      setAcceptedCookies(false);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    setAcceptedCookies(true);
+    Cookies.set(cookieName, "accepted", { expires: 365 });
+  };
+
+  const notAcceptCookies = () => {
+    setAcceptedCookies(false);
+    Cookies.remove(cookieName);
+  };
+
+  return {
+    acceptedCookies,
+    notAcceptCookies,
+    onAcceptCookies: acceptCookies,
+    onNotAcceptCookies: notAcceptCookies,
+  };
+}
+
 const CookieBar = React.memo(({ message }) => {
   const hasMounted = useHasMounted();
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies();
@@ -37,16 +64,20 @@ const CookieBar = React.memo(({ message }) => {
                     );
                   })}
                 </p>
-              </CookieBarMessage>
 
-              <CookieBarActions>
                 <FancyLink
                   label="Learn more"
                   destination="/policy"
-                  a11yText="navigate to our policy page"
+                  a11yText="navigate to our policy page →"
                   className="link link--metis"
                 />
-                <button onClick={() => onAcceptCookies()}>Accept</button>
+              </CookieBarMessage>
+
+              <CookieBarActions>
+                {/* <button onClick={() => onAcceptCookies()}>No, thanks</button> */}
+                <button className="outline" onClick={() => onAcceptCookies()}>
+                  Accept
+                </button>
               </CookieBarActions>
             </CookieBarContent>
           </CookieBarBox>
@@ -56,55 +87,42 @@ const CookieBar = React.memo(({ message }) => {
   );
 });
 
-function useAcceptCookies(cookieName = "accept_cookies") {
-  const [acceptedCookies, setAcceptedCookies] = useState(true);
-
-  useEffect(() => {
-    if (!Cookies.get(cookieName)) {
-      setAcceptedCookies(false);
-    }
-  }, []);
-
-  const acceptCookies = () => {
-    setAcceptedCookies(true);
-    Cookies.set(cookieName, "accepted", { expires: 365 });
-  };
-
-  return {
-    acceptedCookies,
-    onAcceptCookies: acceptCookies,
-  };
-}
-
 export default CookieBar;
 
 const CookieBarBox = styled(m.aside)`
   position: fixed;
-  bottom: var(--spacer);
+  bottom: 0.85rem;
   right: 0;
   z-index: 90;
   width: 100%;
-  max-width: 25rem;
   padding: 1rem;
+  overflow: hidden;
+
   @media (min-width: 768px) {
     right: var(--spacer);
+    max-width: 25rem;
   }
-  overflow: hidden;
 `;
 
 const CookieBarContent = styled.article`
   display: grid;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   border: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
   padding: 1.25rem;
-  background-color: rgba(90, 90, 90, 0.5);
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 5px;
 `;
 
 const CookieBarMessage = styled.div`
   flex: 1 1;
-  text-align: center;
+  p {
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: var(--accent);
+  }
 `;
 
 const CookieBarActions = styled.div`
@@ -124,7 +142,7 @@ const CookieBarActions = styled.div`
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
-    border-radius: 9999px;
+    border-radius: 999px;
     width: auto;
     height: 48.5px;
     position: relative;
