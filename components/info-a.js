@@ -110,6 +110,9 @@ export const FW = styled(m.aside)`
         h5 {
           max-width: 40ch;
           margin-bottom: var(--spacing-lg);
+          @media (max-width: 640px) {
+            font-size: 1rem;
+          }
         }
       }
     }

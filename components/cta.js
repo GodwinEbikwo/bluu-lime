@@ -46,12 +46,9 @@ const CtaBox = styled.div`
   margin-top: var(--golden-ratio);
   margin-bottom: var(--golden-ratio);
   padding: 60px 0;
-
-  /* just added */
   .c-header_title {
     perspective: 600px;
   }
-
   .c-header_title_line {
     display: block;
     transform-origin: center top;
@@ -60,9 +57,6 @@ const CtaBox = styled.div`
     line-height: normal;
     transition-duration: 1s;
   }
-
-  /* just added */
-
   .cta-inner {
     display: flex;
     align-items: center;

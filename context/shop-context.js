@@ -22,19 +22,6 @@ export default function ShopProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-
-  function toogleMenu() {
-    setMenuOpen(!menuOpen);
-  }
-
-  function closeMenu() {
-    setMenuOpen(false);
-  }
-
-  function openMenu() {
-    setMenuOpen(true);
-  }
-
   useEffect(() => {
     if (localStorage.checkout_id) {
       const cartObject = JSON.parse(localStorage.checkout_id);
@@ -135,7 +122,7 @@ export default function ShopProvider({ children }) {
         updateQuantity,
         isLoading,
         menuOpen,
-        setMenuOpen
+        setMenuOpen,
       }}
     >
       {children}

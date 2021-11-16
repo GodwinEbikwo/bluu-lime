@@ -96,7 +96,6 @@ const CookieBarContent = styled.article`
   display: grid;
   align-items: center;
   gap: 1.5rem;
-  border-radius: 0.5rem;
   border: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
   padding: 1.25rem;

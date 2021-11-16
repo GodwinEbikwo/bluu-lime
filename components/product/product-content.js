@@ -103,8 +103,6 @@ const ProductContentContainer = styled.div`
     .help {
       display: flex;
       flex-direction: column;
-      /* justify-content: center;
-      align-items: center; */
     }
   }
 

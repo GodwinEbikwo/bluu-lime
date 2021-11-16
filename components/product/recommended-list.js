@@ -53,14 +53,14 @@ const RecommendedContainer = styled.section`
     @media (min-width: 640px) {
       & > li {
         cursor: pointer;
-        transition: opacity 0.8s var(--easeOutCubic);
+        transition: opacity var(--duration) var(--easeOutCubic);
         @media (max-width: 767px) {
           margin-bottom: var(--spacing-md);
         }
       }
 
       &:hover > li {
-        transition: opacity 0.8s var(--easeOutCubic);
+        transition: opacity var(--duration) var(--easeOutCubic);
         opacity: 0.25;
       }
 

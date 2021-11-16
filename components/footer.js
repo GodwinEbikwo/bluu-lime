@@ -5,7 +5,7 @@ export default function Footer() {
     <FooterBox>
       <FooterInnner className="flex flex-column align-center justify-center">
         <aside className="m-bottom text-center">
-          <p>100% VEGAN — 100% ORGANIC — SUSTAINABLE — CRUELTY FREE</p>
+          <p>100% ORGANIC — SUSTAINABLE — CRUELTY FREE</p>
         </aside>
 
         <aside className="flex flex-wrap align-center space-between w-full m-bottom md-flex-column">
@@ -30,7 +30,8 @@ export default function Footer() {
 }
 
 const FooterBox = styled.footer`
-  background: var(--bg);
+  /* background: var(--bg); */
+  border-top: 1px solid var(--border-color);
   padding: 150px calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
@@ -52,7 +53,7 @@ const FooterInnner = styled.div`
     }
   }
 
- h3 {
+  h3 {
     font-weight: 100;
     font-family: var(--font-6);
     text-align: center;

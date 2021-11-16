@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const MobileMenuHeader = styled.header`
   margin-bottom: var(--spacer);
-
   button {
     color: white;
     text-transform: uppercase;
@@ -18,7 +17,6 @@ export const MobileMenuUL = styled.ul`
 
   li {
     margin-bottom: var(--spacing-sm);
-
     div {
       font-size: 1.5rem;
       font-family: var(--font-6);

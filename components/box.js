@@ -51,7 +51,7 @@ export const StyledButton = styled.button`
   &:disabled {
     background: #f94144;
     cursor: not-allowed;
-    color: white
+    color: white;
   }
 
   &.loading {
@@ -98,38 +98,3 @@ export const StyledSectionBox = styled.section`
     padding: 50px 0 !important;
   }
 `;
-
-// export const FeaturedContainer = styled.aside`
-//   display: grid;
-//   grid-column-gap: var(--spacer);
-//   grid-row-gap: var(--spacer-double);
-//   min-height: 70vh;
-
-//   @media (min-width: 1024px) {
-//     grid-column-gap: 2vw;
-//     grid-template-columns: repeat(12, 1fr);
-
-//     & > a {
-//       height: 32.472vw;
-//       grid-column: 1/12;
-
-//       &:not(:last-child) {
-//         margin-bottom: calc(var(--spacer) + 13rem);
-//       }
-
-//       &:nth-child(1n) {
-//         grid-column: 1/5;
-//       }
-
-//       &:nth-child(3n - 1) {
-//         /* margin-top: 20rem; */
-//         grid-column: 5/8;
-//       }
-
-//       &:nth-child(3n) {
-//         grid-column: 8/13;
-//       }
-//     }
-//   }
-
-// `;

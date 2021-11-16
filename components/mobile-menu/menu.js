@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useContext, useLayoutEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "context/shop-context";
 import cn from "classnames";
 import FancySpan from "../fancy-span";

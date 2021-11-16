@@ -28,59 +28,35 @@ export const AppStyles = createGlobalStyle`
   --px-2: 1.55rem;
   --golden-ratio: 2.75rem;
   --max-width: 100rem;
-
   --bg: hsla(200, 50%, 0%, 93%);
   --accent: #d3fd50;
-  
   --text-white: #fff;
   --text-black: #2b2b2b;
   --off-white: rgba(255, 255, 255, 0.85);
-
   --black: #000;
   --white: #fff;
-
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
-  --font-2: "EditorialNew-Regular", 'Times New Roman', Times, serif;
+  --font-2: "EditorialNew-Regular", 'Times New Roman', serif;
   --font-3: "NeueMontreal-Bold", "Helvetica Neue", sans-serif;
-  --font-6: "ivypresto-display", var(--font-2), serif;
- 
+  --font-6: "ivypresto-display", var(--font-2);
   --font-sm: 400;
   --font-md: 500;
   --font-lg: 700;
-
   --border-color: rgba(100, 100, 100, 0.8);
- 
   --ls-sm: -0.02em;
   --ls-md: -0.035em;
   --ls-lg: -0.055em;
-
   --spacing-sm: 11px;
   --spacing-md: 16px;
   --spacing-lg: 21px;
-
   --spacer: 2rem;
   --spacer-md: 3rem;
   --spacer-lg: 5rem;
-
   --easing: cubic-bezier(0.215, 0.61, 0.355, 1);  
-  --linear: cubic-bezier(0.25,0.25,0.75,0.75);
-  --easeInQuad: cubic-bezier(0.26,0,0.6,0.2);
-  --easeOutQuad: cubic-bezier(0.4,0.8,0.74,1);
-  --easeInOutQuad: cubic-bezier(0.48,0.04,0.52,0.96);
   --easeInCubic: cubic-bezier(0.4,0,0.68,0.06);
   --easeOutCubic: cubic-bezier(0.34,1.02,0.68,1);
   --easeInOutCubic: cubic-bezier(0.66,0,0.34,1);
-  --easeInExpo: cubic-bezier(0.66,0,0.86,0);
-  --easeOutExpo: cubic-bezier(0.16,1.08,0.38,0.98);
-  --easeInOutExpo: cubic-bezier(0.9,0,0.1,1);
-  --easeInQuart: cubic-bezier(0.52,0,0.74,0);
-  --easeOutQuart: cubic-bezier(0.26,1.04,0.54,1);
-  --easeInOutQuart: cubic-bezier(0.77,0,0.175,1);
-  --easeInBack: cubic-bezier(0.6,-0.28,0.735,0.045);
-  --easeOutBack: cubic-bezier(0.175,0.885,0.32,1.275);
-  --easeInOutBack: cubic-bezier(0.175,0.885,0.32,1.275);
   --duration: 0.8s;
-
   --fluid-type-min: 2rem;
   --fluid-type-max: 2.5rem;
   --fluid-type-target: 2.5vw;
@@ -90,7 +66,6 @@ export const AppStyles = createGlobalStyle`
 *::before,
 *::after {
   box-sizing: border-box;
-  border: 0 solid #444;
 }
 
 html.has-scroll-smooth {
@@ -197,17 +172,13 @@ body {
   width: 100%;
   min-height: 100vh;
   font-feature-settings: 'kern';
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   color: var(--off-white);
   font-family: var(--font);
   font-weight: normal;
-  font-size: 0.95rem;
-  &.no-scroll {
-    overflow-y: hidden;
-    touch-action: none;
-  }
+  font-size: 1rem;
 }
 
 button,
@@ -257,25 +228,17 @@ input[type="text"] {
   display: none !important;
 }
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  border-left: 40px solid currentColor;
-}
-
 h1 {
-    line-height: 1.6;
-    letter-spacing: var(--ls-sm);
-    font-family: var(--font-6), serif;
-    font-weight: 100;
-    font-size: clamp(
-      var(--fluid-type-min, 1rem),
-      calc(1rem + var(--fluid-type-target, 3vw)),
-      var(--fluid-type-max, 1.3rem)
-    );
-  }
+  line-height: 1.6;
+  letter-spacing: var(--ls-sm);
+  font-family: var(--font-6), serif;
+  font-weight: 100;
+  font-size: clamp(
+    var(--fluid-type-min, 1rem),
+    calc(1rem + var(--fluid-type-target, 3vw)),
+    var(--fluid-type-max, 1.3rem)
+  );
+}
 
   p {
     hyphens: auto;
@@ -301,7 +264,6 @@ h1 {
     background-color: transparent;
   }
 
-  /* common utilities that I find helpful */
   .center-absolute {
     position: absolute;
     top: 50%;
@@ -335,11 +297,6 @@ h1 {
 
   .h-full{
     height: 100%;
-  }
-
-  .inset-0 {
-    top: 0;
-    left: 0;
   }
 
   .flex {
@@ -383,13 +340,6 @@ h1 {
     flex-direction: column
   }
 
-  .sm-spacing {
-    --absolute: 0;
-    margin-right: calc(0.75rem * var(--absolute));
-    margin-left: calc(0.75rem * calc(1 - var(--absolute)));
-    display: block;
-  }
-
   .block {
     display: block;
   }
@@ -426,7 +376,6 @@ h1 {
     overflow: hidden;
   }
 
-  /* hide elements for different viewports */
   .hide-for-mobile {
     @media (max-width: 767px) {
       display: none;
@@ -441,7 +390,6 @@ h1 {
     }
   }
 
-  /* hover line animation  */
   .link {
     cursor: pointer;
     position: relative;
@@ -478,7 +426,6 @@ h1 {
     transform: scale3d(1, 1, 1);
   }
 
-  /* animated image styles using locomotive scroll */
   .a-img {
     overflow: hidden;
     width: 100%;
@@ -498,7 +445,6 @@ h1 {
     }
   }
 
-  /* background images styles */
   .bg-full {
     position: fixed;
     height: 100vh;
@@ -511,7 +457,6 @@ h1 {
     left: 0;
   }
 
-  /* swiper styles */
   .swiper-button-prev,
   .swiper-button-next  {
     background-image: none;
@@ -525,7 +470,6 @@ h1 {
     display: none;
   }
 
-  /* menu styles */
   .cart-menu, 
   .mobile-menu {
     position: fixed;
@@ -558,7 +502,7 @@ h1 {
   }
 
   .mobile-menu {
-    clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 100% 0 0);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
     background: #111;
