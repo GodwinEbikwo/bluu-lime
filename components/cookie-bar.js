@@ -74,7 +74,6 @@ const CookieBar = React.memo(({ message }) => {
               </CookieBarMessage>
 
               <CookieBarActions>
-                {/* <button onClick={() => onAcceptCookies()}>No, thanks</button> */}
                 <button className="outline" onClick={() => onAcceptCookies()}>
                   Accept
                 </button>
