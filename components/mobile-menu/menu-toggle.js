@@ -15,7 +15,7 @@ export const MenuToggle = ({ toggle }) => (
     role="button"
     onClick={toggle}
     className="hide-for-desktop"
-    style={{ marginTop: "0.65rem" }}
+    style={{ marginTop: "0.55rem" }}
   >
     <svg width="24" height="24" viewBox="0 0 23 23">
       <Path

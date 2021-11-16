@@ -47,16 +47,16 @@ export const ProductContainer = styled.li`
     z-index: 2;
 
     .img-icon {
+      margin: auto;
       grid-row: 1;
       grid-column: 1;
       border-radius: 50%;
-      margin: auto;
-      background-color: var(--accent);
       width: 3rem;
       height: 3rem;
-      transition: all var(--duration) var(--easing);
       opacity: 0;
       z-index: 0;
+      background-color: var(--white);
+      transition: all var(--duration) var(--easing);
     }
 
     .img-txt {
@@ -67,6 +67,8 @@ export const ProductContainer = styled.li`
       z-index: 1;
       text-align: center;
       color: black;
+      font-family: var(--font-6);
+      font-weight: 100
     }
   }
 `;

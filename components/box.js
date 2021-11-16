@@ -78,7 +78,6 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledSectionBox = styled.section`
-  min-height: 100vh;
   margin: 7rem auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {
@@ -87,7 +86,7 @@ export const StyledSectionBox = styled.section`
   }
 
   &.no-my {
-    margin: 1rem auto;
+    margin: 2.75rem auto;
   }
 
   &.mx-half {
