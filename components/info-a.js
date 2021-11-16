@@ -87,6 +87,7 @@ export const FW = styled(m.aside)`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: var(--spacing-md);
 
   h5 {
     max-width: 40ch;
