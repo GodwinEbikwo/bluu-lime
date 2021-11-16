@@ -7,6 +7,7 @@ import { CartContext } from "context/shop-context";
 import MiniCart from "./cart/cart";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu/menu";
+import { MenuToggle } from "./mobile-menu/menu-toggle";
 
 const data = [
   {
@@ -41,9 +42,14 @@ const HeaderBox = styled(m.header)`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
   z-index: 100;
+
+  @media (max-width: 767px) {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    background: var(--bg);
+  }
 `;
 
 const NavBox = styled(m.nav)`
@@ -182,15 +188,14 @@ export default function Navigation() {
       >
         <NavBox className="flex space-between justify-center align-center">
           <LogoContainer className="nav-logo">
-            <button
-              className="text-uppercase hide-for-desktop"
-              style={{ color: "white" }}
-              onClick={() => setMenuOpen(!menuOpen)}
+            <m.div
+              initial={false}
+              animate={menuOpen ? "enter" : "exit"}
+              exit="exit"
             >
-              Menu
-            </button>
-
-            <MobileMenu />
+              <MenuToggle toggle={() => setMenuOpen(!menuOpen)} />
+              <MobileMenu />
+            </m.div>
 
             <Link href="/" passHref>
               <a className="hide-for-mobile">
@@ -212,15 +217,19 @@ export default function Navigation() {
           </NavList>
 
           <aside className="hide-for-desktop flex align-center justify-center text-center">
-            <div
-              style={{
-                fontFamily: "var(--font-3)",
-                letterSpacing: "-0.04em",
-                fontSize: "25px",
-              }}
-            >
-              BluuLime
-            </div>
+            <Link href="/" passHref>
+              <a>
+                <div
+                  style={{
+                    fontFamily: "var(--font-3)",
+                    letterSpacing: "-0.04em",
+                    fontSize: "25px",
+                  }}
+                >
+                  BluuLime
+                </div>
+              </a>
+            </Link>
           </aside>
 
           <aside>

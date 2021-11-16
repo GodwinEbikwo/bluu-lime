@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-export const AppStyles = createGlobalStyle`
 
+export const AppStyles = createGlobalStyle`
 @font-face {
   font-family:'NeueMontreal-Regular';
   font-style: normal;
@@ -28,7 +28,7 @@ export const AppStyles = createGlobalStyle`
   --px-2: 1.55rem;
   --golden-ratio: 2.75rem;
   --max-width: 100rem;
-  --bg: hsla(200, 50%, 0%, 93%);
+  --bg: #151517;
   --accent: #d3fd50;
   --text-white: #fff;
   --text-black: #2b2b2b;
@@ -505,7 +505,8 @@ h1 {
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-    background: #111;
+    background: var(--bg);
+    z-index: -1;
 
     &.open {
       clip-path: inset(0%); 

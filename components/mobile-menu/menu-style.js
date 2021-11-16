@@ -1,14 +1,7 @@
 import styled from "styled-components";
 
-export const MobileMenuHeader = styled.header`
-  margin-bottom: var(--spacer);
-  button {
-    color: white;
-    text-transform: uppercase;
-  }
-`;
-
-export const MobileMenuMain = styled.main`
+export const MobileMenuNav = styled.nav`
+  margin-top: calc(var(--spacer) + 20px);
   margin-bottom: var(--spacer);
 `;
 
