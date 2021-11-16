@@ -65,7 +65,7 @@ export default function InfoA({ responsiveImage, title }) {
             useful in your wadrobe and focus on what’s important, championing
             sustainably sourced and slow-made products.
           </h5>
-          <StyledButton className="outline">read our story</StyledButton>
+          <StyledButton className="filled">read our story</StyledButton>
         </div>
       </FW>
 
