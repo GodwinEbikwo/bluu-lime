@@ -77,7 +77,7 @@ export default function InfoA({ responsiveImage, title }) {
 }
 
 const DL = styled.aside`
-  margin-top: var(--spacer);
+  margin-top: 3.5rem;
   @media (min-width: 1024px) {
     margin-top: 5rem;
   }

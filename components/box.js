@@ -79,14 +79,14 @@ export const StyledButton = styled.button`
 
 export const StyledSectionBox = styled.section`
   margin: 7rem auto;
-  padding: 50px calc(var(--golden-ratio) - var(--px-2));
+  padding: 0 calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
-    padding: 50px var(--golden-ratio);
+    padding: 0 var(--golden-ratio);
   }
 
   &.no-my {
-    margin: 2.75rem auto;
+    margin: 5rem auto;
   }
 
   &.mx-half {
