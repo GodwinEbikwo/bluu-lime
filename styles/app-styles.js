@@ -251,7 +251,12 @@ h1 {
 
   h4 { font-size: 1.563rem;}
 
-  h5 { font-size: 1.25rem;}
+  h5 { 
+    font-size: 1.25rem;
+    @media (max-width: 640px) {
+      font-size: 1.15rem;
+    }
+  }
 
   li,
   ul {
@@ -484,16 +489,13 @@ h1 {
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: var(--px-2);
+    visibility: hidden;
     clip-path: inset(0 0 0 100%);
     transition: clip-path 1.15s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1.15s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-    will-change: clip-path;
-    visibility: hidden;
-
     @media (max-width: 767px) {
       min-width: 100%;
     }
-
     &.open {
       clip-path: inset(0%); 
       transition: clip-path 1s cubic-bezier(.76,0,.24,1); 
@@ -507,7 +509,6 @@ h1 {
     visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
     background: var(--bg);
     z-index: -1;
-
     &.open {
       clip-path: inset(0%); 
       transition: clip-path 1s cubic-bezier(.76,0,.24,1); 
@@ -531,7 +532,6 @@ h1 {
     transition: opacity 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1.2s cubic-bezier(0.77, 0, 0.18, 1);
     backdrop-filter: blur(20px) saturate(180%);
-
     &.open {
       opacity: 1;
       visibility: visible;

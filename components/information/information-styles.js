@@ -16,7 +16,9 @@ export const Container = styled.section`
   }
 
   strong {
-    letter-spacing: var(--ls);
+    letter-spacing: var(--ls-sm);
+    display: inline-block;
+    margin-bottom: 0.2em;
   }
 
   h3 {

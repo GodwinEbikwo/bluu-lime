@@ -18,18 +18,20 @@ function useAcceptCookies(cookieName = "accept_cookies") {
   const acceptCookies = () => {
     setAcceptedCookies(true);
     Cookies.set(cookieName, "accepted", { expires: 365 });
+    console.log("accepted cookie");
   };
 
-  const notAcceptCookies = () => {
+  const rejectCookies = () => {
     setAcceptedCookies(false);
     Cookies.remove(cookieName);
+    console.log("reject cookie");
   };
 
   return {
     acceptedCookies,
-    notAcceptCookies,
+    rejectCookies,
     onAcceptCookies: acceptCookies,
-    onNotAcceptCookies: notAcceptCookies,
+    onNotAcceptCookies: rejectCookies,
   };
 }
 
@@ -53,7 +55,7 @@ const CookieBar = React.memo(({ message }) => {
             className="cookie-bar"
           >
             <CookieBarContent>
-              <CookieBarMessage>
+              <CookieBarMessage className="text-center">
                 <p>
                   {message.split("\n").map((text, i) => {
                     return (
@@ -67,13 +69,14 @@ const CookieBar = React.memo(({ message }) => {
 
                 <FancyLink
                   label="Learn more"
-                  destination="/policy"
+                  destination="/privacy"
                   a11yText="navigate to our policy page →"
                   className="link link--metis"
                 />
               </CookieBarMessage>
 
               <CookieBarActions>
+                {/* <button onClick={() => onAcceptCookies()}>No, thanks</button> */}
                 <button className="outline" onClick={() => onAcceptCookies()}>
                   Accept
                 </button>
@@ -90,7 +93,7 @@ export default CookieBar;
 
 const CookieBarBox = styled(m.aside)`
   position: fixed;
-  bottom: 0.85rem;
+  bottom: 0.5rem;
   right: 0;
   z-index: 90;
   width: 100%;

@@ -188,5 +188,6 @@ const HeroContainer = styled(m.article)`
     font-family: var(--font-3);
     text-transform: uppercase;
     color: white;
+    font-weight: 800;
   }
 `;

@@ -77,10 +77,7 @@ export default function InfoA({ responsiveImage, title }) {
 }
 
 const DL = styled.aside`
-  margin-top: 3.5rem;
-  @media (min-width: 1024px) {
-    margin-top: 5rem;
-  }
+  margin-top: 5.5rem;
 `;
 
 export const FW = styled(m.aside)`
@@ -93,7 +90,6 @@ export const FW = styled(m.aside)`
     max-width: 40ch;
     margin-bottom: var(--spacing-md);
     @media (max-width: 640px) {
-      font-size: 1.15rem;
       max-width: none;
     }
   }
