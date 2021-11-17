@@ -8,15 +8,16 @@ export default function ProductOptions({
 }) {
   return (
     <FieldForm>
-      <legend>{name}</legend>
-      <div className="field-inner">
+      <legend className="text-uppercase">{name}</legend>
+      <div className="inline-flex flex-wrap align-center">
         {values.map((value) => {
           const id = `option-${name}-${value}`;
           const checked = selectedOptions[name] === value;
+          const shortenValue = value.charAt(0);
           return (
             <label key={id} htmlFor={id}>
               <input
-                className="sr-only"
+                className="sr-only absolute overflow-hidden"
                 type="radio"
                 id={id}
                 name={`option-${name}`}
@@ -27,7 +28,7 @@ export default function ProductOptions({
                 }}
               />
               <div className={`field-btn ${checked ? "active" : "inactive"}`}>
-                <span className="px-2">{value}</span>
+                <span className="px-2">{shortenValue}</span>
               </div>
             </label>
           );
@@ -42,55 +43,51 @@ const FieldForm = styled.fieldset`
   margin-bottom: var(--spacing-md);
 
   legend {
-    font-size: 1rem;
+    letter-spacing: 0.035em;
     font-weight: 600;
-    letter-spacing: var(--ls-md);
+    font-size: 0.875rem;
   }
 
   .sr-only {
-    position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
     margin: -1px;
-    overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
   }
 
-  .field-inner {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
   .field-btn {
-    width: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
     border-radius: 999px;
     cursor: pointer;
     margin-top: 0.75rem;
-    margin-right: 0.75rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     transition: all 300ms ease;
-
-    &:hover {
-      color: black;
-      background: white;
-    }
+    margin-right: calc(0.75rem - 1px);
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
   }
 
   .active {
-    color: black;
-    background: white;
+    color: var(--white);
+    border: 2px solid var(--accent);
   }
 
   .inactive {
-    color: white;
-    background: gray;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    transform: translateZ(0) scale(1);
+    transition: transform 300ms var(--easing);
+
+    &:hover {
+      transform: translateZ(0) scale(1.12);
+      border: 1px solid var(--accent);
+    }
   }
 `;

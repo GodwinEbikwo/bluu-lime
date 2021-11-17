@@ -247,7 +247,11 @@ h1 {
 
   h2 { font-size: 2.441rem;}
 
-  h3 { font-size: 1.953rem;}
+  h3 { font-size: 1.953rem; 
+    @media (max-width: 640px) {
+      font-size: 1.45rem;
+    }
+  }
 
   h4 { font-size: 1.563rem;}
 

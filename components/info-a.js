@@ -65,7 +65,7 @@ export default function InfoA({ responsiveImage, title }) {
             useful in your wadrobe and focus on what’s important, championing
             sustainably sourced and slow-made products.
           </h5>
-          <StyledButton className="filled">read our story</StyledButton>
+          {/* <StyledButton className="filled">read our story</StyledButton> */}
         </div>
       </FW>
 
@@ -78,6 +78,9 @@ export default function InfoA({ responsiveImage, title }) {
 
 const DL = styled.aside`
   margin-top: 5.5rem;
+  @media (max-width: 320px) {
+    margin-top: 3.5rem;
+  }
 `;
 
 export const FW = styled(m.aside)`
@@ -97,6 +100,15 @@ export const FW = styled(m.aside)`
   & > * {
     &:nth-child(1) {
       margin-bottom: var(--spacing-md);
+      @media (max-width: 640px) {
+        order: 2;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (max-width: 640px) {
+        order: 1;
+      }
     }
   }
 

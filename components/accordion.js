@@ -22,7 +22,7 @@ const AccordionComponent = ({ i, expanded, setExpanded, title, content }) => {
   return (
     <AccordionBody>
       <m.header initial={false} onClick={() => setExpanded(isOpen ? false : i)}>
-        <div className="header-inner">
+        <div className="flex space-between align-center">
           <p>{title}</p>
           <m.div
             initial={false}
@@ -74,34 +74,24 @@ export default Accordion;
 const AccordionBody = styled.aside`
   margin-bottom: var(--spacing-md);
   width: 100%;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(20px) saturate(180%);
-  background-color: rgba(60, 60, 60, 0.5);
-
+  border-bottom: 1px solid var(--border-color);
   @media (min-width: 768px) {
     width: auto;
   }
 
   header {
-    border-radius: 5px;
     cursor: pointer;
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 0;
     width: 100%;
-  }
-
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   header p {
     line-height: 1;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     text-transform: uppercase;
   }
 
   .content-placeholder {
-    padding: 0 1rem;
+    padding: 0 0.45rem 0 0;
   }
 `;

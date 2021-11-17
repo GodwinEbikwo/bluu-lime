@@ -79,7 +79,7 @@ export function CartHeader({ onClick, cartItems }) {
   );
 }
 
-export function CartActions({ product, minusAction, addAction, removeAction }) {
+export function CartActions({ product, minusAction, addAction, removeAction, updateItem }) {
   return (
     <div className="flex-end-1 flex space-between">
       <span className="w-full flex align-center">
@@ -99,7 +99,7 @@ export function CartActions({ product, minusAction, addAction, removeAction }) {
           id="variant-quantity"
           name="variant-quantity"
           value={product.variantQuantity}
-          onChange={(e) => updateItem(product.id, e.target.value)}
+          onChange={updateItem}
           className="input-actions"
           aria-label="Manually enter quantity"
         />

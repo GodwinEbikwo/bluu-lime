@@ -74,7 +74,7 @@ export default function MiniCart({ cart }) {
                           </p>
                           <p>{formatMoney(product.variantPrice)}</p>
                         </div>
-                        <p>{product.variantTitle}</p>
+                        <p>size: {product.variantTitle}</p>
                         <p>qty {product.variantQuantity}</p>
                       </div>
 
@@ -87,6 +87,9 @@ export default function MiniCart({ cart }) {
                           updateItem(product.id, product.variantQuantity + 1);
                         }}
                         removeAction={() => removeCartItem(product.id)}
+                        updateItem={(e) =>
+                          updateItem(product.id, e.target.value)
+                        }
                       />
                     </div>
                   </li>

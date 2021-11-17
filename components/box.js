@@ -36,7 +36,7 @@ export const StyledButton = styled.button`
   &.filled {
     color: var(--black);
     background-color: var(--white);
-    box-shadow: 5px 5px rgba(211, 253, 80, 0.4),
+    /* box-shadow: 5px 5px rgba(211, 253, 80, 0.4),
       10px 10px rgba(211, 253, 80, 0.3), 15px 15px rgba(211, 253, 80, 0.2),
       20px 20px rgba(211, 253, 80, 0.1), 25px 25px rgba(211, 253, 80, 0.05);
     &:hover {
@@ -46,7 +46,7 @@ export const StyledButton = styled.button`
       box-shadow: 0 5px rgba(211, 253, 80, 0.4), 0 10px rgba(211, 253, 80, 0.3),
         0 15px rgba(211, 253, 80, 0.2), 0 20px rgba(211, 253, 80, 0.1),
         0 25px rgba(211, 253, 80, 0.05), -5px 5px 40px rgba(211, 253, 80, 0.4);
-    }
+    } */
   }
 
   &.add-to-bag {
@@ -86,7 +86,7 @@ export const StyledSectionBox = styled.section`
   }
 
   &.no-my {
-    margin: 5rem auto;
+    margin: 4rem auto 3.5rem;
   }
 
   &.mx-half {

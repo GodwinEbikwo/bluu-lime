@@ -59,6 +59,14 @@ export default function ShopProvider({ children }) {
     setIsLoading(false);
   }
 
+  async function buyNow(selectedVariant) {
+    setIsLoading(true);
+    const checkout = await createCheckout(selectedVariant.id);
+    setCheckoutId(checkout.id);
+    setCheckoutUrl(checkout.webUrl);
+    setIsLoading(false);
+  }
+
   async function addToCart(newItem) {
     setIsLoading(true);
     setCartOpen(true);
@@ -123,6 +131,7 @@ export default function ShopProvider({ children }) {
         isLoading,
         menuOpen,
         setMenuOpen,
+        buyNow,
       }}
     >
       {children}

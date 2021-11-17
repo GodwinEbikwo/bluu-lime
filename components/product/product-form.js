@@ -9,8 +9,28 @@ import LoadingDots from "../loading-dots";
 import Accordion from "../accordion";
 import Rating from "../ratings";
 
+const faqData = [
+  {
+    title: "Does Sav have a smelly bum... YES ;)",
+  },
+];
+
+const data = [
+  {
+    title: "Before washing, turn your garments inside out",
+  },
+  {
+    title:
+      "Use the wool cycle on your washing machine or wash on low spin speed (high spin speed will destroy the fibre and cause it to shrink)",
+  },
+  {
+    title:
+      "Use neutral or mild detergents, preferably a special wool detergent. The enzymes in normal detergents will damage the lanolin in the wool, removing the natural protective qualities of the wool",
+  },
+];
+
 export default function ProductForm({ product }) {
-  const { addToCart, isLoading } = useContext(CartContext);
+  const { addToCart, buyNow, isLoading } = useContext(CartContext);
 
   const allVariantOptions = product.variants.edges?.map((variant) => {
     const allOptions = {};
@@ -87,6 +107,27 @@ export default function ProductForm({ product }) {
         </div>
       )}
 
+      {/* <StyledButton
+        style={{ marginBottom: "var(--spacing-md)" }}
+        aria-busy={isLoading}
+        aria-label="Buy now"
+        onClick={() => {
+          buyNow(selectedVariant);
+        }}
+        className={cn("add-to-bag", { loading: isLoading })}
+        disabled={availableForSale === false}
+      >
+        {availableForSale === false ? "Not Available" : "Buy now"}
+        {isLoading && (
+          <div
+            className="flex"
+            style={{ marginTop: "3.85px", paddingLeft: "0.5rem" }}
+          >
+            <LoadingDots />
+          </div>
+        )}
+      </StyledButton> */}
+
       <StyledButton
         style={{ marginBottom: "var(--spacing-md)" }}
         aria-busy={isLoading}
@@ -108,40 +149,26 @@ export default function ProductForm({ product }) {
         )}
       </StyledButton>
 
-      <Accordion
-        title="Care guide"
-        content={data.map((faq, index) => (
-          <ProductFaqs key={index}>{faq.title}</ProductFaqs>
-        ))}
-      />
+      {data && (
+        <Accordion
+          title="Care guide"
+          content={data.map((faq, index) => (
+            <ProductFaqs key={index}>{faq.title}</ProductFaqs>
+          ))}
+        />
+      )}
 
-      <Accordion
-        title="Frequently Asked Questions"
-        content={faqData.map((faq, index) => (
-          <ProductFaqs key={index}>{faq.title}</ProductFaqs>
-        ))}
-      />
+      {faqData && (
+        <Accordion
+          title="Details"
+          content={faqData.map((faq, index) => (
+            <ProductFaqs key={index}>{faq.title}</ProductFaqs>
+          ))}
+        />
+      )}
     </ProductFormContainer>
   );
 }
-
-const faqData = [{
-  title: "Does Sav have a smelly bum... YES ;)"
-}]
-
-const data = [
-  {
-    title: "Before washing, turn your garments inside out",
-  },
-  {
-    title:
-      "Use the wool cycle on your washing machine or wash on low spin speed (high spin speed will destroy the fibre and cause it to shrink)",
-  },
-  {
-    title:
-      "Use neutral or mild detergents, preferably a special wool detergent. The enzymes in normal detergents will damage the lanolin in the wool, removing the natural protective qualities of the wool",
-  },
-];
 
 export const ProductFaqs = styled.span`
   display: block;
@@ -162,6 +189,15 @@ const ProductFormContainer = styled.article`
     --reverse: 0;
     margin-right: calc(1rem * var(--reverse));
     margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+
+  button {
+    height: 52px;
+    max-height: 64px;
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    font-weight: 500;
+    font-size: 0.875rem;
   }
 
   .p-title {

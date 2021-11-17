@@ -93,7 +93,7 @@ export default CookieBar;
 
 const CookieBarBox = styled(m.aside)`
   position: fixed;
-  bottom: 0.5rem;
+  bottom: 3rem;
   right: 0;
   z-index: 90;
   width: 100%;

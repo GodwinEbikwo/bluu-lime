@@ -64,7 +64,7 @@ const ProductContentBox = styled.section`
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
 
   @media (max-width: 768px) {
-    margin: 2rem auto;
+    margin: 3rem auto;
   }
 
   @media (min-width: 991px) {
@@ -99,11 +99,6 @@ const ProductContentContainer = styled.div`
     margin: 3rem auto;
     flex-direction: row;
     align-items: flex-start;
-
-    .help {
-      display: flex;
-      flex-direction: column;
-    }
   }
 
   .product-container-inner {

@@ -68,7 +68,7 @@ export const ProductContainer = styled.li`
       text-align: center;
       color: black;
       font-family: var(--font-6);
-      font-weight: 100
+      font-weight: 100;
     }
   }
 `;
@@ -93,22 +93,10 @@ export const ProductPrice = styled.span`
 `;
 
 export const ProductListHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
   .product-header-title {
     font-weight: 100;
     font-family: var(--font-6);
-    margin-bottom: var(--spacing-md);
   }
-`;
-
-export const GridContainer = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 `;
 
 export const GridItemThree = styled.ul`
