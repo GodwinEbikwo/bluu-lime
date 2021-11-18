@@ -1,5 +1,9 @@
 import { createContext, useState, useEffect } from "react";
-import { createCheckout, updateCheckout } from "@/lib/shopify";
+import {
+  createCheckout,
+  updateCheckout,
+  createCheckoutNow,
+} from "@/lib/shopify";
 
 const CartContext = createContext();
 const CartStateProvider = CartContext.Provider;
@@ -21,6 +25,7 @@ export default function ShopProvider({ children }) {
   const [checkoutUrl, setCheckoutUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoadingCheckout, setIsLoadingCheckout] = useState(false);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -59,12 +64,13 @@ export default function ShopProvider({ children }) {
     setIsLoading(false);
   }
 
-  async function buyNow(selectedVariant) {
-    setIsLoading(true);
-    const checkout = await createCheckout(selectedVariant.id);
-    setCheckoutId(checkout.id);
-    setCheckoutUrl(checkout.webUrl);
-    setIsLoading(false);
+  async function onCheckout(item) {
+    setIsLoadingCheckout(true);
+    const { data } = await createCheckoutNow(item.id);
+    const { webUrl } = data.checkoutCreate.checkout;
+    console.log(webUrl);
+    window.location.href = webUrl;
+    setIsLoadingCheckout(false);
   }
 
   async function addToCart(newItem) {
@@ -125,13 +131,14 @@ export default function ShopProvider({ children }) {
         cartOpen,
         setCartOpen,
         addToCart,
+        onCheckout,
         checkoutUrl,
         removeCartItem,
         updateQuantity,
         isLoading,
+        isLoadingCheckout,
         menuOpen,
         setMenuOpen,
-        buyNow,
       }}
     >
       {children}

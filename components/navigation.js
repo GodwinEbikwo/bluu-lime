@@ -47,7 +47,7 @@ const HeaderBox = styled(m.header)`
 
   @media (max-width: 767px) {
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     background: var(--bg);
   }
 `;
@@ -232,16 +232,36 @@ export default function Navigation() {
             </Link>
           </aside>
 
-          <aside>
+          <>
             <button
-              style={{ color: "white", cursor: "pointer" }}
-              className="text-uppercase"
+              style={{
+                color: "white",
+                cursor: "pointer",
+              }}
               onClick={() => setCartOpen(!cartOpen)}
             >
-              Bag ({cartQuantity})
+              <div className="flex space-between">
+                <svg
+                  style={{ marginRight: "0.15rem" }}
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+                <span className="inline-flex">({cartQuantity})</span>
+              </div>
             </button>
             <MiniCart cart={cart} />
-          </aside>
+          </>
         </NavBox>
       </HeaderBox>
     </LazyMotion>

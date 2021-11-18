@@ -8,6 +8,7 @@ import cn from "classnames";
 import LoadingDots from "../loading-dots";
 import Accordion from "../accordion";
 import Rating from "../ratings";
+import { checkout } from "@/lib/shopify";
 
 const faqData = [
   {
@@ -30,7 +31,9 @@ const data = [
 ];
 
 export default function ProductForm({ product }) {
-  const { addToCart, buyNow, isLoading } = useContext(CartContext);
+  const { addToCart, isLoading, onCheckout, isLoadingCheckout } = useContext(
+    CartContext
+  );
 
   const allVariantOptions = product.variants.edges?.map((variant) => {
     const allOptions = {};
@@ -107,18 +110,21 @@ export default function ProductForm({ product }) {
         </div>
       )}
 
-      {/* <StyledButton
-        style={{ marginBottom: "var(--spacing-md)" }}
-        aria-busy={isLoading}
+      <StyledButton
+        style={{
+          marginBottom: "var(--spacing-md)",
+          background: "var(--white)",
+        }}
+        aria-busy={isLoadingCheckout}
         aria-label="Buy now"
         onClick={() => {
-          buyNow(selectedVariant);
+          onCheckout(selectedVariant);
         }}
-        className={cn("add-to-bag", { loading: isLoading })}
-        disabled={availableForSale === false}
+        className={cn("add-to-bag", { loading: isLoadingCheckout })}
+        disabled={!selectedVariant && availableForSale === false}
       >
         {availableForSale === false ? "Not Available" : "Buy now"}
-        {isLoading && (
+        {isLoadingCheckout && (
           <div
             className="flex"
             style={{ marginTop: "3.85px", paddingLeft: "0.5rem" }}
@@ -126,7 +132,7 @@ export default function ProductForm({ product }) {
             <LoadingDots />
           </div>
         )}
-      </StyledButton> */}
+      </StyledButton>
 
       <StyledButton
         style={{ marginBottom: "var(--spacing-md)" }}
