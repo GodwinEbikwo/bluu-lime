@@ -34,12 +34,21 @@ export default function MobileMenu({}) {
         <MobileMenuNav>
           <MobileMenuUL>
             <List
+              a11y="go to shop page"
+              href="/"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <m.div variants={menuInOut}>Shop</m.div>
+            </List>
+
+            <List
               a11y="go to home page"
               href="/"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               <m.div variants={menuInOut}>Home</m.div>
             </List>
+
             <List
               a11y="go to about page"
               href="/"
@@ -48,13 +57,6 @@ export default function MobileMenu({}) {
               <m.div variants={menuInOut}>About</m.div>
             </List>
 
-            <List
-              a11y="go to shop page"
-              href="/"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <m.div variants={menuInOut}>Shop</m.div>
-            </List>
             <List
               a11y="go to journal page"
               href="/"
@@ -73,9 +75,13 @@ export default function MobileMenu({}) {
         </MobileMenuNav>
 
         <MobileMenuFooter>
-          <FancySpan>
-            <m.div variants={menuInOut}>footer</m.div>
-          </FancySpan>
+          <h5>
+            <FancySpan>
+              <m.div variants={menuInOut} className="text-uppercase">
+                site credits
+              </m.div>
+            </FancySpan>
+          </h5>
         </MobileMenuFooter>
       </m.div>
     </div>

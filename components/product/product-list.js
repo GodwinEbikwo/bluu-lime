@@ -11,9 +11,9 @@ const ProductList = ({ products }) => {
 
       <section
         className="flex space-between flex-wrap"
-        data-scroll
-        data-scroll-direction="horizontal"
-        data-scroll-speed="-3"
+        // data-scroll
+        // data-scroll-direction="horizontal"
+        // data-scroll-speed="-3"
       >
         <GridItemThree className="grid">
           {products.map((product) => (
