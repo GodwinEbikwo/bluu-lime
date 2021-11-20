@@ -86,7 +86,10 @@ export const StyledSectionBox = styled.section`
   }
 
   &.no-my {
-    margin: 4rem auto 3.5rem;
+    margin: 7rem auto 3.5rem;
+    @media (max-width: 768px) {
+      margin: 5rem auto 3.5rem;
+    }
   }
 
   &.mx-half {

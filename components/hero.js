@@ -96,7 +96,12 @@ export default function HeroN() {
               data-scroll-direction="vertical"
               data-scroll-speed="1"
             >
-              <h2 className="hero-bottom_title">
+              <div className="hide-for-desktop">
+                <h5 className="text-center">scroll for more</h5>
+                <div className="text-center">↓</div>
+              </div>
+
+              <h2 className="hero-bottom_title hide-for-mobile">
                 <FancySpan>
                   <m.span className="block" variants={revealInOut}>
                     BluuLime

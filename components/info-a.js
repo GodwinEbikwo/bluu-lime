@@ -81,6 +81,9 @@ const DL = styled.aside`
   @media (max-width: 320px) {
     margin-top: 3.5rem;
   }
+  @media (max-width: 640px) {
+    margin-top: 2.5rem;
+  }
 `;
 
 export const FW = styled(m.aside)`

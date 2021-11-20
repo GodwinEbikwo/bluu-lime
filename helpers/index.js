@@ -63,3 +63,44 @@ export function formatMoney(amount = 0) {
   const formatter = Intl.NumberFormat("en-GB", options);
   return formatter.format(amount / 1);
 }
+
+{/* <FancySpan>
+<m.span variants={HeroRevealIn} className="inline-block">
+  Sunken
+</m.span>
+<m.span
+  variants={revealInOutReserve}
+  className="inline-block m-left">
+  Interior
+</m.span>
+</FancySpan>
+
+export const revealInOutReserve = {
+  initial: { y: '-110%', opacity: 0 },
+  enter: {
+    y: '0%',
+    opacity: 1.1,
+    transition: { duration: 1, ease: [0.77, 0, 0.175, 1] },
+  },
+  exit: {
+    y: '-110%',
+    transition: { duration: 0.8, ease: [0.77, 0, 0.175, 1] },
+  },
+};
+
+const HeroRevealIn = {
+  initial: { y: '110%', opacity: 0, },
+  enter: {
+    y: '0%',
+    opacity: 1,
+    transition: {
+      duration: 1.1,
+      ease: [0.77, 0, 0.175, 1],
+      staggerChildren: 0.03,
+    },
+  },
+  exit: {
+    y: '110%',
+    transition: { duration: 1.5, ease: [0.77, 0, 0.175, 1] },
+  },
+}; */}

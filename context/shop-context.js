@@ -44,9 +44,11 @@ export default function ShopProvider({ children }) {
 
   async function updateQuantity(id, quantity) {
     setIsLoading(true);
-    let newQuantity = Math.floor(quantity);
+
     if (quantity === "") {
       newQuantity = "";
+    } else {
+      newQuantity = Math.floor(quantity);
     }
 
     let newCart = [...cart];
