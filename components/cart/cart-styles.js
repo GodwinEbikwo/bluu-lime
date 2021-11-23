@@ -99,17 +99,20 @@ export const CartBoxInner = styled.div`
 
   footer {
     position: absolute;
-    bottom: var(--spacing-lg);
+    bottom: 0;
     left: 0;
     right: 0;
     border-top: 1px solid var(--border-color);
     padding: 25px var(--px-2) 0;
 
+    @media (max-width: 767px) {
+      bottom: 3rem;
+    }
+
     @media (min-width: 991px) {
       margin: var(--spacing-md) auto;
     }
 
- 
     .footer-info {
       color: gray;
       margin-bottom: var(--spacing-md);
@@ -119,8 +122,7 @@ export const CartBoxInner = styled.div`
       width: 100%;
       margin-top: var(--spacing-md);
       margin-bottom: var(--spacing-md);
-      
-      
+    
       .footer-btn {
         display: flex;
         align-items: center;
@@ -136,7 +138,6 @@ export const CartBoxInner = styled.div`
         text-transform: uppercase;
         font-size: 14px;
         color: var(--white);
-
         @media (max-width: 767px) {
           width: 100%;
         }

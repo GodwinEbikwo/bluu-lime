@@ -12,6 +12,7 @@ import {
 } from "./cart-helpers";
 import { EmptyIcon } from "../icons";
 import cn from "classnames";
+import Div100vh from "react-div-100vh";
 
 export default function MiniCart({ cart }) {
   const {
@@ -36,7 +37,7 @@ export default function MiniCart({ cart }) {
 
   return (
     <>
-      <article className={cn("cart-menu", { open: cartOpen })}>
+      <Div100vh className={cn("cart-menu", { open: cartOpen })}>
         <CartBoxInner>
           <CartHeader
             onClick={() => {
@@ -110,7 +111,7 @@ export default function MiniCart({ cart }) {
             />
           ) : null}
         </CartBoxInner>
-      </article>
+      </Div100vh>
       <div className={cn("cart-menu-overlay", { open: cartOpen })} />
     </>
   );

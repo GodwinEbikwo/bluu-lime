@@ -488,7 +488,7 @@ h1 {
     position: fixed;
     background-color: var(--bg);
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     top: 0;
     right: 0;
     bottom: 0;
