@@ -7,7 +7,6 @@ export const MobileMenuNav = styled.nav`
 
 export const MobileMenuUL = styled.ul`
   margin-bottom: var(--spacer);
-
   li {
     margin-bottom: var(--spacing-sm);
     div {

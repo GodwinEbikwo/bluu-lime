@@ -18,7 +18,10 @@ export default function ProductCard({ product }) {
     <ProductContainer>
       <Link href={`/products/${handle}`} passHref>
         <ProductLink>
-          <div className="img-container" data-scroll>
+          <div
+            className="img-container inline-block overflow-hidden"
+            data-scroll
+          >
             <Image
               src={originalSrc ? originalSrc : undefined}
               alt={altText ? altText : "bluu-lime-product"}
@@ -31,6 +34,7 @@ export default function ProductCard({ product }) {
                 shimmer(504, 672)
               )}`}
             />
+
             <div className="img-c-center">
               <div className="img-icon" />
               <p className="img-txt">view</p>

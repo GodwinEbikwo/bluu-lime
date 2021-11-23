@@ -8,7 +8,6 @@ import cn from "classnames";
 import LoadingDots from "../loading-dots";
 import Accordion from "../accordion";
 import Rating from "../ratings";
-import { checkout } from "@/lib/shopify";
 
 const faqData = [
   {

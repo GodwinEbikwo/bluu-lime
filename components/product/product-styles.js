@@ -7,8 +7,20 @@ export const ProductContainer = styled.li`
   margin-top: 1rem;
 
   .img-container {
-    display: inline-block;
-    overflow: hidden;
+    position: relative;
+    &:hover .img-icon {
+      opacity: 1;
+      /* transform: translateY(-37%); */
+
+      /* &:hover {
+        border: 1px solid;
+        background: transparent;
+      } */
+    }
+  }
+
+  .img-container {
+    position: relative;
 
     &:hover .img-txt {
       opacity: 1;
@@ -32,7 +44,7 @@ export const ProductContainer = styled.li`
   }
 
   .img-container:hover img {
-    transform: translateZ(0) scale(1.2);
+    transform: translateZ(0) scale(1.1);
     transform-origin: 50% 50%;
   }
 
@@ -41,7 +53,7 @@ export const ProductContainer = styled.li`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -81,15 +93,19 @@ export const ProductLink = styled.a`
 export const ProductInfoContainer = styled.div`
   padding: 1rem 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const ProductTitle = styled.span`
-  letter-spacing: var(-ls-sm);
+  letter-spacing: var(--ls-sm);
 `;
 
 export const ProductPrice = styled.span`
-  letter-spacing: var(-ls-sm);
+  letter-spacing: var(--ls-sm);
+  font-family: "Helvetica Neue", var(--font-3);
+  font-weight: 700;
 `;
 
 export const ProductListHeader = styled.div`

@@ -10,7 +10,7 @@ import { options } from "@/lib/scroll";
 import CookieBar from "@/components/cookie-bar";
 import { recursiveCatalog, getProduct } from "@/lib/shopify";
 import ProductContent from "@/components/product/product-content";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";

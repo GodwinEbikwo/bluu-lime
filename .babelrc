@@ -1,7 +1,0 @@
-{
-  "presets": ["next/babel"],
-  "plugins": [
-    ["date-fns"],
-    ["babel-plugin-styled-components", { "ssr": true, "displayName": false }]
-  ]
-}

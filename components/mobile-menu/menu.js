@@ -21,7 +21,6 @@ function List({ href, onClick, children, a11y }) {
 
 export default function MobileMenu({}) {
   const { setMenuOpen, menuOpen } = useContext(CartContext);
-
   return (
     <div className={cn("mobile-menu", { open: menuOpen })}>
       <m.div

@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import Layout from "@/components/layout";
 import Hero from "@/components/hero";
 import InfoA from "@/components/info-a";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 import Navigation from "@/components/navigation";
 import { fade } from "@/helpers/transitions";
 import { StyledBox } from "@/components/box";
