@@ -64,30 +64,6 @@ export function formatMoney(amount = 0) {
   return formatter.format(amount / 1);
 }
 
-export const getAllVariantOptions = (product) => {
-  const { variants } = product;
-  variants.edges?.map((variant) => {
-    const allOptions = {};
-
-    variant.node.selectedOptions.map((item) => {
-      allOptions[item.name] = item.value;
-    });
-
-    return {
-      id: variant.node.id,
-      title: product.title,
-      handle: product.handle,
-      image: variant.node.image?.originalSrc,
-      options: allOptions,
-      variantTitle: variant.node.title,
-      variantPrice: variant.node.priceV2.amount,
-      varaintAvailableForSale: variant.node.availableForSale,
-      variantQuantity: 1,
-    };
-  });
-  return variants;
-};
-
 {
   /* <FancySpan>
 <m.span variants={HeroRevealIn} className="inline-block">
