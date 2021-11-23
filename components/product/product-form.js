@@ -113,6 +113,7 @@ export default function ProductForm({ product }) {
         style={{
           marginBottom: "var(--spacing-md)",
           background: "var(--white)",
+          borderRadius: "2px",
         }}
         aria-busy={isLoadingCheckout}
         aria-label="Buy now"
@@ -120,21 +121,18 @@ export default function ProductForm({ product }) {
           onCheckout(selectedVariant);
         }}
         className={cn("add-to-bag", { loading: isLoadingCheckout })}
-        disabled={!selectedVariant && availableForSale === false}
+        disabled={availableForSale === false}
       >
         {availableForSale === false ? "Not Available" : "Buy now"}
         {isLoadingCheckout && (
-          <div
-            className="flex"
-            style={{ marginTop: "3.85px", paddingLeft: "0.5rem" }}
-          >
+          <div className="flex" style={{ paddingLeft: "0.5rem" }}>
             <LoadingDots />
           </div>
         )}
       </StyledButton>
 
       <StyledButton
-        style={{ marginBottom: "var(--spacing-md)" }}
+        style={{ marginBottom: "var(--spacing-md)", borderRadius: "2px" }}
         aria-busy={isLoading}
         aria-label="Add to Bag"
         onClick={() => {
@@ -145,10 +143,7 @@ export default function ProductForm({ product }) {
       >
         {availableForSale === false ? "Not Available" : "Add To Bag"}
         {isLoading && (
-          <div
-            className="flex"
-            style={{ marginTop: "2px", paddingLeft: "0.5rem" }}
-          >
+          <div className="flex" style={{ paddingLeft: "0.5rem" }}>
             <LoadingDots />
           </div>
         )}

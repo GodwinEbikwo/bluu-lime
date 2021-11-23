@@ -105,10 +105,6 @@ export const CartBoxInner = styled.div`
     border-top: 1px solid var(--border-color);
     padding: 25px var(--px-2) 0;
 
-    /* @media (max-width: 767px) {
-      bottom: 3rem;
-    } */
-
     @media (min-width: 991px) {
       margin: var(--spacing-md) auto;
     }
