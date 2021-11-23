@@ -10,12 +10,6 @@ export const ProductContainer = styled.li`
     position: relative;
     &:hover .img-icon {
       opacity: 1;
-      /* transform: translateY(-37%); */
-
-      /* &:hover {
-        border: 1px solid;
-        background: transparent;
-      } */
     }
   }
 

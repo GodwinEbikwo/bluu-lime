@@ -99,7 +99,7 @@ export const CartBoxInner = styled.div`
 
   footer {
     position: absolute;
-    bottom: 0;
+    bottom: var(--spacing-lg);
     left: 0;
     right: 0;
     border-top: 1px solid var(--border-color);

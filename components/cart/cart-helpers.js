@@ -1,4 +1,3 @@
-import { StyledButton } from "../box";
 import { formatMoney } from "@/helpers/index";
 import { PlusIcon, MinusIcon } from "../icons";
 

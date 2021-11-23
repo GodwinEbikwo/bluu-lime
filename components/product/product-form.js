@@ -141,13 +141,13 @@ export default function ProductForm({ product }) {
           addToCart(selectedVariant);
         }}
         className={cn("add-to-bag", { loading: isLoading })}
-        disabled={isLoading}
+        disabled={availableForSale === false}
       >
         {availableForSale === false ? "Not Available" : "Add To Bag"}
         {isLoading && (
           <div
             className="flex"
-            style={{ marginTop: "3.85px", paddingLeft: "0.5rem" }}
+            style={{ marginTop: "2px", paddingLeft: "0.5rem" }}
           >
             <LoadingDots />
           </div>
