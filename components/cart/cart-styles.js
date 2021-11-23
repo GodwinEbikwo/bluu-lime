@@ -93,28 +93,23 @@ export const CartBoxInner = styled.div`
     }
 
     .btn-actions {
-      font-size: 1.25rem;
       color: white;
     }
   }
 
   footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border-top: 1px solid var(--border-color);
-    padding: 30px calc(var(--golden-ratio) - var(--px-2));
+    padding: 25px var(--px-2) 0;
 
     @media (min-width: 991px) {
       margin: var(--spacing-md) auto;
-      padding: 40px var(--px-2) 10px;
     }
 
-    .footer-title {
-      font-size: 1.2rem;
-    }
-
-    .footer-price {
-      font-size: 1.2rem;
-    }
-
+ 
     .footer-info {
       color: gray;
       margin-bottom: var(--spacing-md);
@@ -125,42 +120,38 @@ export const CartBoxInner = styled.div`
       margin-top: var(--spacing-md);
       margin-bottom: var(--spacing-md);
       
+      
       .footer-btn {
         display: flex;
         align-items: center;
         width: auto;
         height: 40px;
         justify-content: center;
-        border-radius: 999px;
+        border-radius: 2px;
         padding: 1rem 2rem;
         text-align: center;
         cursor: pointer;
         transition: all 300ms var(--easing);
         border: 1px solid var(--off-white);
-        text-transform: capitalize;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: var(--white);
 
-        &.filled {
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+
+        &.bg-accent {
+          border: none;
           color: var(--black);
-          background-color: var(--white);
+          background-color: var(--accent);
 
           &:hover {
             color: var(--off-white);
+            border: 1px solid var(--off-white);
             background-color: transparent;
           }
         }
-      }
-    }
-
-    .footer-end {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-
-      button {
-        margin-top: var(--spacing-sm);
-        color: white;
-        border: 0;
       }
     }
 `;

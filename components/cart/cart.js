@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState, useEffect } from "react";
-import { CartBoxInner } from "./cart-box";
+import { CartBoxInner } from "./cart-styles";
 import { formatMoney } from "@/helpers/index";
 import { CartContext } from "context/shop-context";
 import {
@@ -36,7 +36,7 @@ export default function MiniCart({ cart }) {
 
   return (
     <>
-      <div className={cn("cart-menu", { open: cartOpen })}>
+      <article className={cn("cart-menu", { open: cartOpen })}>
         <CartBoxInner>
           <CartHeader
             onClick={() => {
@@ -62,7 +62,7 @@ export default function MiniCart({ cart }) {
                     <div className="list-box">
                       <div>
                         <div className="flex space-between flex-wrap">
-                          <p className="product-title">
+                          <h5 className="product-title">
                             <Link href={`/products/${product.handle}`} passHref>
                               <a
                                 onClick={() => setCartOpen(false)}
@@ -71,11 +71,11 @@ export default function MiniCart({ cart }) {
                                 {product.title}
                               </a>
                             </Link>
-                          </p>
+                          </h5>
                           <p>{formatMoney(product.variantPrice)}</p>
                         </div>
-                        <p>size: {product.variantTitle}</p>
-                        <p>qty {product.variantQuantity}</p>
+                        <p>{product.variantTitle}</p>
+                        <p>qty: {product.variantQuantity}</p>
                       </div>
 
                       <CartActions
@@ -100,17 +100,17 @@ export default function MiniCart({ cart }) {
                 <EmptyIcon />
               </div>
             )}
-
-            {cartItems.length > 0 ? (
-              <CartFooter
-                subtotal={subtotal}
-                onClick={() => setCartOpen(false)}
-                checkoutUrl={checkoutUrl}
-              />
-            ) : null}
           </main>
+
+          {cartItems.length > 0 ? (
+            <CartFooter
+              subtotal={subtotal}
+              onClick={() => setCartOpen(false)}
+              checkoutUrl={checkoutUrl}
+            />
+          ) : null}
         </CartBoxInner>
-      </div>
+      </article>
       <div className={cn("cart-menu-overlay", { open: cartOpen })} />
     </>
   );

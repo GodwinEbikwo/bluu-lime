@@ -26,6 +26,7 @@ export default function ShopProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoadingCheckout, setIsLoadingCheckout] = useState(false);
+  const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false);
 
   useEffect(() => {
     if (localStorage.checkout_id) {
@@ -43,12 +44,10 @@ export default function ShopProvider({ children }) {
   }, []);
 
   async function updateQuantity(id, quantity) {
-    setIsLoading(true);
-
+    // setIsLoading(true);
+    let newQuantity = Math.floor(quantity);
     if (quantity === "") {
       newQuantity = "";
-    } else {
-      newQuantity = Math.floor(quantity);
     }
 
     let newCart = [...cart];
@@ -63,7 +62,7 @@ export default function ShopProvider({ children }) {
     setCart(newCart);
     const newCheckout = await updateCheckout(checkoutId, newCart);
     localStorage.setItem("checkout_id", JSON.stringify([newCart, newCheckout]));
-    setIsLoading(false);
+    // setIsLoading(false);
   }
 
   async function onCheckout(item) {

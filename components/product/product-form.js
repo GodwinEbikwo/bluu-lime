@@ -141,7 +141,7 @@ export default function ProductForm({ product }) {
           addToCart(selectedVariant);
         }}
         className={cn("add-to-bag", { loading: isLoading })}
-        disabled={availableForSale === false}
+        disabled={isLoading}
       >
         {availableForSale === false ? "Not Available" : "Add To Bag"}
         {isLoading && (

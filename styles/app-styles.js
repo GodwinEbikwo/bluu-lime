@@ -340,6 +340,10 @@ h1 {
     margin-top: auto;
   }
 
+  .cursor-pointer{
+    cursor: pointer
+  }
+
   .mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -500,6 +504,7 @@ h1 {
     @media (max-width: 767px) {
       min-width: 100%;
     }
+
     &.open {
       clip-path: inset(0%); 
       transition: clip-path 1s cubic-bezier(.76,0,.24,1); 

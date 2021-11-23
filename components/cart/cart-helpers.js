@@ -20,27 +20,28 @@ export function CartFooter({ subtotal, onClick, checkoutUrl }) {
   return (
     <footer>
       <div className="flex space-between">
-        <p className="inline-block footer-title">Subtotal: </p>
-        <p className="inline-block footer-price">{formatMoney(subtotal)}</p>
+        <p className="inline-block">Subtotal: </p>
+        <p className="inline-block">{formatMoney(subtotal)}</p>
       </div>
 
       <p className="footer-info">Shipping and taxes calculated at checkout.</p>
 
-      <div className="footer-btn_container">
+      <div className="footer-btn_container flex flex-wrap space-between">
+        <button
+          className="footer-btn"
+          onClick={onClick}
+          style={{ marginBottom: "var(--spacing-md)" }}
+        >
+          <span>continue Shopping</span>
+        </button>
+
         <a
           aria-label="navigate to payment page"
           href={checkoutUrl}
-          className="footer-btn filled"
+          className="footer-btn bg-accent"
         >
-          Checkout
+          proceed to Checkout
         </a>
-      </div>
-
-      <div className="footer-end">
-        <span>or</span>
-        <StyledButton className="no-height" onClick={onClick}>
-          <span>continue Shopping</span>
-        </StyledButton>
       </div>
     </footer>
   );
@@ -79,14 +80,20 @@ export function CartHeader({ onClick, cartItems }) {
   );
 }
 
-export function CartActions({ product, minusAction, addAction, removeAction, updateItem }) {
+export function CartActions({
+  product,
+  minusAction,
+  addAction,
+  removeAction,
+  updateItem,
+}) {
   return (
     <div className="flex-end-1 flex space-between">
       <span className="w-full flex align-center">
         {product.variantQuantity > 1 && (
           <button
             aria-label="Decrease quantity by one"
-            className="block btn-actions"
+            className="block btn-actions cursor-pointer"
             onClick={minusAction}
           >
             <MinusIcon />
@@ -106,7 +113,7 @@ export function CartActions({ product, minusAction, addAction, removeAction, upd
 
         <button
           aria-label="Increase quantity by one"
-          className="block btn-actions"
+          className="block btn-actions cursor-pointer"
           onClick={addAction}
         >
           <PlusIcon />
