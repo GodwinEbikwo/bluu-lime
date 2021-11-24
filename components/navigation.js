@@ -40,9 +40,10 @@ const data = [
 const HeaderBox = styled(m.header)`
   width: 100%;
   position: fixed;
-  top: 15px;
+  top: 0;
   left: 0;
   z-index: 100;
+  padding: 0.5rem 0;
   @media (max-width: 767px) {
     padding: 0.35rem 0;
   }
@@ -235,8 +236,8 @@ export default function Navigation() {
               <div className="flex space-between">
                 <svg
                   style={{ marginRight: "0.15rem" }}
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

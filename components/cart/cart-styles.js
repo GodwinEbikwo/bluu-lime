@@ -96,7 +96,7 @@ export const CartBoxInner = styled.div`
 
   footer {
     position: absolute;
-    bottom: 0;
+    bottom: var(--spacer);
     left: 0;
     right: 0;
     border-top: 1px solid var(--border-color);
@@ -107,15 +107,12 @@ export const CartBoxInner = styled.div`
     }
 
     .footer-info {
-      color: gray;
       margin-bottom: var(--spacing-md);
     }
 
     .footer-btn_container {
       width: 100%;
-      margin-top: var(--spacing-md);
-      margin-bottom: var(--spacing-md);
-    
+      margin-top: var(--spacing-md);    
       .footer-btn {
         display: flex;
         align-items: center;

@@ -19,11 +19,9 @@ export function CartFooter({ subtotal, onClick, checkoutUrl }) {
   return (
     <footer>
       <div className="flex space-between">
-        <p className="inline-block">Subtotal: </p>
-        <p className="inline-block">{formatMoney(subtotal)}</p>
+        <span className="inline-block text-uppercase">Subtotal: </span>
+        <span className="inline-block">{formatMoney(subtotal)}</span>
       </div>
-
-      <p className="footer-info">Shipping and taxes calculated at checkout.</p>
 
       <div className="footer-btn_container flex flex-wrap space-between">
         <button

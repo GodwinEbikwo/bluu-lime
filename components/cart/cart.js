@@ -105,10 +105,10 @@ export default function MiniCart({ cart }) {
                         </div>
                         <div className="flex flex-column">
                           <span style={{ fontSize: "13.5px" }}>
-                            {product.variantTitle}
+                            {formatMoney(product.variantPrice)}
                           </span>
                           <span style={{ fontSize: "13.5px" }}>
-                            {formatMoney(product.variantPrice)}
+                            {product.variantTitle}
                           </span>
                         </div>
                       </div>
