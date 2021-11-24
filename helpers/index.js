@@ -39,12 +39,12 @@ export const shimmer = (w, h) => `
   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
-      <stop stop-color="#3c3c3c" offset="20%" />
-      <stop stop-color="#5c5c5c" offset="50%" />
-      <stop stop-color="#3c3c3c" offset="70%" />
+      <stop stop-color="#eaeaea" offset="20%" />
+      <stop stop-color="#c9c9c9" offset="50%" />
+      <stop stop-color="#eaeaea" offset="70%" />
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="#3c3c3c" />
+  <rect width="${w}" height="${h}" fill="#eaeaea" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.5s" repeatCount="indefinite"  />
 </svg>`;
