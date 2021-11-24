@@ -10,6 +10,7 @@ import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { options } from "@/lib/scroll";
 import CookieBar from "@/components/cookie-bar";
 import Terms from "@/components/information/terms";
+import Gradient from "@/components/gradient";
 
 const policyData =
   "We use cookies to personalize and deliver content. By using our site, you agree to our terms";
@@ -20,6 +21,7 @@ export default function TermsPage() {
     <Layout>
       <NextSeo title="Terms & Conditions" />
       <CookieBar message={policyData} />
+      <Gradient />
       <Navigation />
       <LocomotiveScrollProvider
         options={options}

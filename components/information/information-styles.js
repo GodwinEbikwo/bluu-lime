@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  margin: var(--spacer) auto;
+  margin: var(--spacing-md) auto;
   max-width: 60rem;
   position: relative;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
+
   @media (min-width: 991px) {
-    margin: var(--spacing-md) auto;
     padding: 50px var(--golden-ratio);
   }
 
@@ -22,7 +22,6 @@ export const Container = styled.section`
   }
 
   h3 {
-    font-weight: 100;
     font-family: var(--font-6);
     border-bottom: 1px solid var(--border-color);
     margin: var(--spacing-md) 0;

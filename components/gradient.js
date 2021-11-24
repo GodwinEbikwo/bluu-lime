@@ -18,9 +18,9 @@ const GradientBox = styled.div`
       var(--violet),
       rgba(255, 255, 255, 0) 35%
     ),
-      radial-gradient(
-        circle at top right,
-        var(--cyan),
-        rgba(255, 255, 255, 0) 35%
-      );
+    radial-gradient(
+      circle at top right,
+      var(--cyan),
+      rgba(255, 255, 255, 0) 35%
+    );
 `;

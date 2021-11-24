@@ -110,8 +110,8 @@ export default function Privacy() {
             policy here.
           </p>
           <p>
-            <strong style={{ color: "var(--accent)" }}> MINORS</strong> Under age
-            13. We do not want to and do not knowingly collect any data from
+            <strong style={{ color: "var(--accent)" }}> MINORS</strong> Under
+            age 13. We do not want to and do not knowingly collect any data from
             people under age 13. If we learn that we collected any such data, we
             will take all reasonable measures to delete that information and to
             not use it for any purpose (except where necessary to protect the

@@ -60,11 +60,10 @@ export default function ProductContent({ product }) {
 }
 
 const ProductContentBox = styled.section`
-  margin: var(--spacer) auto;
+  margin: var(--spacing-md) auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
 
   @media (min-width: 991px) {
-    margin: var(--spacing-md) auto;
     padding: 50px var(--golden-ratio);
   }
 `;
@@ -78,8 +77,7 @@ const ProductContentContainer = styled.div`
   & > * {
     &:nth-child(2) {
       margin-top: var(--spacer);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 5px;
       @media (min-width: 768px) {
         margin-top: 0;
       }
