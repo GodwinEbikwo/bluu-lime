@@ -30,7 +30,7 @@ export default function ProductContent({ product }) {
 
   return (
     <ProductContentBox>
-      <ProductContentContainer>
+      <ProductContentContainer className="flex flex-column align-center justify-center">
         <div className="product-container-inner">
           <div className="w-full h-full relative" data-scroll>
             <Swiper
@@ -60,12 +60,8 @@ export default function ProductContent({ product }) {
 }
 
 const ProductContentBox = styled.section`
-  margin: 3rem auto;
+  margin: var(--spacer) auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
-
-  /* @media (max-width: 767px) {
-    margin: 3rem auto;
-  } */
 
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
@@ -74,11 +70,7 @@ const ProductContentBox = styled.section`
 `;
 
 const ProductContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  margin-top: var(--spacer);
   max-width: 100rem;
   margin: 0 auto;
   width: 100%;

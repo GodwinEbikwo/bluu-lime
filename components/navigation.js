@@ -46,6 +46,7 @@ const HeaderBox = styled(m.header)`
   padding: 0.5rem 0;
   @media (max-width: 767px) {
     padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border-color);
   }
 `;
 

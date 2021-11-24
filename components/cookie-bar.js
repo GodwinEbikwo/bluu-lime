@@ -112,12 +112,13 @@ const CookieBarContent = styled.article`
   border: 1px solid var(--border-color);
   backdrop-filter: blur(20px) saturate(180%);
   padding: 1.25rem;
-  background-color: rgba(50, 50, 50, 0.5);
+  background-color: rgba(200, 200, 200, 0.5);
   border-radius: 5px;
 `;
 
 const CookieBarMessage = styled.div`
   flex: 1 1;
+  
   p {
     margin-bottom: 5px;
   }
@@ -144,12 +145,12 @@ const CookieBarActions = styled.div`
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
-    border-radius: 999px;
+    border-radius: 10px;
     width: auto;
     height: 48.5px;
     position: relative;
     text-align: center;
     transition: all 0.3s linear;
-    padding: 1.25rem 3rem;
+    padding: 1rem 2rem;
   }
 `;
