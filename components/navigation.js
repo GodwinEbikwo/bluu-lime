@@ -40,15 +40,11 @@ const data = [
 const HeaderBox = styled(m.header)`
   width: 100%;
   position: fixed;
-  top: 0;
+  top: 15px;
   left: 0;
-  padding: 0.5rem 0;
   z-index: 100;
-
   @media (max-width: 767px) {
-    /* border-bottom: 1px solid var(--border-color); */
-    padding: 0.75rem 0;
-    /* background: var(--bg); */
+    padding: 0.35rem 0;
   }
 `;
 
@@ -66,10 +62,6 @@ const NavBox = styled(m.nav)`
   }
 
   .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
     font-family: var(--font-2);
     text-transform: capitalize;
   }
@@ -187,7 +179,7 @@ export default function Navigation() {
         variants={navAnim}
       >
         <NavBox className="flex space-between justify-center align-center">
-          <LogoContainer className="nav-logo">
+          <LogoContainer className="flex align-center justify-center cursor-pointer">
             <m.div
               initial={false}
               animate={menuOpen ? "enter" : "exit"}
