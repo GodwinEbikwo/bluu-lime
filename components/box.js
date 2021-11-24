@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
   width: auto;
   height: 40px;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 10px;
   padding: 1rem 2rem;
   text-align: center;
   cursor: pointer;
@@ -34,8 +34,8 @@ export const StyledButton = styled.button`
   }
 
   &.filled {
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--black);
   }
 
   &.add-to-bag {
@@ -71,6 +71,12 @@ export const StyledSectionBox = styled.section`
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
     padding: 0 var(--golden-ratio);
+  }
+
+  &.bg-py {
+    background: #151517;
+    padding-top: 150px;
+    padding-bottom: 150px
   }
 
   &.no-my {

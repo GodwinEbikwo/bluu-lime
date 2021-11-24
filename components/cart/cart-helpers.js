@@ -55,11 +55,9 @@ export function CartHeader({ onClick, cartItems }) {
           aria-label="close-cart"
           type="button"
           onClick={onClick}
-          className="button_label"
+          className="button_label cursor-pointer"
         >
-          <span className="inline-block" style={{ color: "white" }}>
-            CLOSE
-          </span>
+          <span className="inline-block">CLOSE</span>
         </button>
       </div>
 
@@ -79,13 +77,7 @@ export function CartHeader({ onClick, cartItems }) {
   );
 }
 
-export function CartActions({
-  product,
-  minusAction,
-  addAction,
-  removeAction,
-  updateItem,
-}) {
+export function CartActions({ product, minusAction, addAction, updateItem }) {
   return (
     <div className="flex-end-1 flex space-between">
       <span className="w-full flex align-center">
@@ -118,17 +110,6 @@ export function CartActions({
           <PlusIcon />
         </button>
       </span>
-
-      <div>
-        <a
-          role="button"
-          onClick={removeAction}
-          className="link link--metis"
-          aria-label="remove item from bag"
-        >
-          remove
-        </a>
-      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export const MobileMenuUL = styled.ul`
 
 export const MobileMenuFooter = styled.footer`
   position: absolute;
-  bottom: 0;
+  bottom: var(--spacer);
   font-family: var(--font-6);
   font-weight: 100;
   text-decoration: underline;

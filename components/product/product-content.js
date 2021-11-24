@@ -87,8 +87,6 @@ const ProductContentContainer = styled.div`
     &:nth-child(2) {
       margin-top: var(--spacer);
       border: 1px solid var(--border-color);
-      backdrop-filter: blur(20px) saturate(180%);
-      background-color: rgba(60, 60, 60, 0.5);
       @media (min-width: 768px) {
         margin-top: 0;
       }

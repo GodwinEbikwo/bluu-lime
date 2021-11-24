@@ -3,12 +3,12 @@ import React from "react";
 export const EmptyCart = () => (
   <svg width="120" height="120" viewBox="0 0 14 14">
     <path
-      style={{ fill: "var(--white)" }}
+      style={{ fill: "var(--text-black)" }}
       d="M5.087 8.34a.655.655 0 111.31 0 .655.655 0 01-1.31 0zm3.329.656a.655.655 0 100-1.31.655.655 0 000 1.31z"
     />
     <path
       fill="none"
-      stroke="var(--white)"
+      stroke="var(--text-black)"
       strokeWidth=".1"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -25,11 +25,10 @@ export const CloseIcon = () => (
     height="20"
     viewBox="0 0 24 24"
     fill="currentColor"
-    stroke="var(--white)"
+    stroke="var(--black)"
     strokeWidth="1"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-x"
   >
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
@@ -42,12 +41,11 @@ export const PlusIcon = () => (
     width="22"
     height="22"
     viewBox="0 0 24 24"
-    fill="#fff"
+    fill="var(--text-black)"
     stroke="currentColor"
     strokeWidth="1"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-plus"
   >
     <line x1="12" y1="5" x2="12" y2="19" />
     <line x1="5" y1="12" x2="19" y2="12" />
@@ -60,12 +58,11 @@ export const MinusIcon = () => (
     width="22"
     height="22"
     viewBox="0 0 24 24"
-    fill="#fff"
+    fill="var(--text-black)"
     stroke="currentColor"
     strokeWidth="1"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-minus"
   >
     <line x1="5" y1="12" x2="19" y2="12" />
   </svg>
@@ -77,7 +74,12 @@ export function EmptyIcon() {
       <div className="flex align-center justify-center">
         <EmptyCart />
       </div>
-      <p className="text-center text-uppercase">your bag is empty</p>
+      <span
+        className="text-center text-uppercase"
+        style={{ fontSize: "13.5px" }}
+      >
+        your bag is empty
+      </span>
     </div>
   );
 }

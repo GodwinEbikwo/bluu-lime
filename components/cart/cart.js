@@ -73,10 +73,44 @@ export default function MiniCart({ cart }) {
                               </a>
                             </Link>
                           </h5>
-                          <p>{formatMoney(product.variantPrice)}</p>
+                          <div>
+                            <button
+                              className="flex align-center justify-center"
+                              role="button"
+                              onClick={() => removeCartItem(product.id)}
+                              aria-label="remove item from bag"
+                              style={{
+                                border: "1px solid var(--border-color)",
+                                padding: "0.2rem",
+                                borderRadius: "999px",
+                              }}
+                            >
+                              <svg
+                                width="19"
+                                height="19"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
+                          </div>
                         </div>
-                        <p>{product.variantTitle}</p>
-                        <p>qty: {product.variantQuantity}</p>
+                        <div className="flex flex-column">
+                          <span style={{ fontSize: "13.5px" }}>
+                            {product.variantTitle}
+                          </span>
+                          <span style={{ fontSize: "13.5px" }}>
+                            {formatMoney(product.variantPrice)}
+                          </span>
+                        </div>
                       </div>
 
                       <CartActions
@@ -87,7 +121,6 @@ export default function MiniCart({ cart }) {
                         addAction={() => {
                           updateItem(product.id, product.variantQuantity + 1);
                         }}
-                        removeAction={() => removeCartItem(product.id)}
                         updateItem={(e) =>
                           updateItem(product.id, e.target.value)
                         }

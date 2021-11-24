@@ -15,6 +15,7 @@ import Cta from "@/components/cta";
 import { getHeroContent } from "@/lib/api";
 import { getProductsInCollection } from "@/lib/shopify";
 import ProductList from "@/components/product/product-list";
+import Gradient from "@/components/gradient";
 
 const policyData =
   "We use cookies to personalize and deliver content on this site. By using our site, you agree to our terms and conditions";
@@ -26,6 +27,7 @@ export default function HomePage({ heroContent, products }) {
     <Layout>
       <NextSeo title="Home" />
       <CookieBar message={policyData} />
+      <Gradient />
       <Navigation />
       <LocomotiveScrollProvider
         options={options}
@@ -49,7 +51,6 @@ export default function HomePage({ heroContent, products }) {
                       responsiveImage={heroImage.responsiveImage}
                     />
                     <ProductList products={products} />
-                    <Cta />
                   </StyledBox>
                   <Footer />
                 </m.div>

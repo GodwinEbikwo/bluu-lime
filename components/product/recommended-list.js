@@ -35,7 +35,7 @@ const RecommendedContainer = styled.section`
 
     @media (min-width: 640px) {
       text-align: center;
-      font-size: 2.441rem;
+      font-size: 2rem;
     }
   }
 

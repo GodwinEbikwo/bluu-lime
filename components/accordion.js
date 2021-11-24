@@ -23,7 +23,7 @@ const AccordionComponent = ({ i, expanded, setExpanded, title, content }) => {
     <AccordionBody>
       <m.header initial={false} onClick={() => setExpanded(isOpen ? false : i)}>
         <div className="flex space-between align-center">
-          <p>{title}</p>
+          <span className="title">{title}</span>
           <m.div
             initial={false}
             animate={{
@@ -74,24 +74,24 @@ export default Accordion;
 const AccordionBody = styled.aside`
   margin-bottom: var(--spacing-md);
   width: 100%;
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid var(--border-color);
   @media (min-width: 768px) {
     width: auto;
   }
 
   header {
     cursor: pointer;
-    padding: 0.85rem 0;
+    padding: 0.85rem;
     width: 100%;
   }
 
-  header p {
+  .title {
     line-height: 1;
-    font-size: 0.875rem;
+    font-size: 13.5px;
     text-transform: uppercase;
   }
 
   .content-placeholder {
-    padding: 0 0.45rem 0 0;
+    padding: 0 0.45rem 0 0.85rem;
   }
 `;

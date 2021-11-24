@@ -112,8 +112,9 @@ export default function ProductForm({ product }) {
       <StyledButton
         style={{
           marginBottom: "var(--spacing-md)",
-          background: "var(--white)",
+          background: "var(--black)",
           borderRadius: "2px",
+          color: "var(--white)",
         }}
         aria-busy={isLoadingCheckout}
         aria-label="Buy now"
@@ -132,7 +133,11 @@ export default function ProductForm({ product }) {
       </StyledButton>
 
       <StyledButton
-        style={{ marginBottom: "var(--spacing-md)", borderRadius: "2px" }}
+        style={{
+          marginBottom: "var(--spacing-md)",
+          borderRadius: "2px",
+          color: "var(--white)",
+        }}
         aria-busy={isLoading}
         aria-label="Add to Bag"
         onClick={() => {
@@ -180,8 +185,8 @@ const ProductFormContainer = styled.article`
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  background: #222222;
   margin-top: var(--spacer);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 
   @media (min-width: 768px) {
     margin-top: 0;

@@ -17,7 +17,6 @@ export const CartBoxInner = styled.div`
       position: absolute;
       right: var(--spacer);
       top: calc(var(--spacer) - 8px);
-      cursor: pointer;
     }
 
     .cart-title {
@@ -38,14 +37,13 @@ export const CartBoxInner = styled.div`
       position: relative;
       overflow: hidden;
       display: block;
-      border-radius: 999px;
       text-transform: uppercase;
       text-align: center;
       margin: 0 auto;
       font-size: 0.75rem;
       padding: 0.5rem;
       background-color: var(--accent);
-      color: var(--text-black);
+      color: var(--white)
     }
   }
 
@@ -84,16 +82,15 @@ export const CartBoxInner = styled.div`
     }
 
     .input-actions {
-      background-color: #3c3c3c;
+      border: 1px solid var(--border-color);
       border-radius: 20px;
       text-align: center;
       width: 3.5rem;
-      color: white;
       margin: 0 0.5em;
     }
 
     .btn-actions {
-      color: white;
+      color: black;
     }
   }
 
@@ -130,22 +127,21 @@ export const CartBoxInner = styled.div`
         text-align: center;
         cursor: pointer;
         transition: all 300ms var(--easing);
-        border: 1px solid var(--off-white);
+        border: 1px solid var(--border-color);
         text-transform: uppercase;
-        font-size: 14px;
-        color: var(--white);
+        font-size: 13px;
         @media (max-width: 767px) {
           width: 100%;
         }
 
         &.bg-accent {
           border: none;
-          color: var(--black);
+          color: var(--white);
           background-color: var(--accent);
 
           &:hover {
-            color: var(--off-white);
-            border: 1px solid var(--off-white);
+            color: var(--black);
+            border: 1px solid var(--border-color);
             background-color: transparent;
           }
         }

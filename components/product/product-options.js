@@ -74,19 +74,17 @@ const FieldForm = styled.fieldset`
   }
 
   .active {
-    color: var(--white);
-    border: 2px solid var(--accent);
+    border: 1px solid var(--accent);
   }
 
   .inactive {
-    color: var(--white);
     background: transparent;
     border: 1px solid var(--border-color);
-    transform: translateZ(0) scale(1);
+    transform: scale(1);
     transition: transform 300ms var(--easing);
 
     &:hover {
-      transform: translateZ(0) scale(1.12);
+      transform: scale(1.12);
       border: 1px solid var(--accent);
     }
   }

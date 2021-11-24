@@ -16,11 +16,11 @@ export const AppStyles = createGlobalStyle`
   src: url("/fonts/NeueMontreal-Bold.woff2") format('woff2');
 }
 @font-face {
-  font-family: 'EditorialNew-Regular';
+  font-family: 'EditorialNew-Ultralight';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/EditorialNew-Regular.woff2") format('woff2');
+  src: url("/fonts/EditorialNew-Ultralight.woff2") format('woff2');
 }
 
 :root {
@@ -28,21 +28,22 @@ export const AppStyles = createGlobalStyle`
   --px-2: 1.55rem;
   --golden-ratio: 2.75rem;
   --max-width: 100rem;
-  --bg: #151517;
-  --accent: #d3fd50;
+  --bg: #fafafa;
+  /* --bg: #151517; */
+  --accent: #866856;
   --text-white: #fff;
   --text-black: #2b2b2b;
   --off-white: rgba(255, 255, 255, 0.85);
   --black: #000;
   --white: #fff;
   --font: "NeueMontreal-Regular", 'Helvetica Neue', sans-serif;
-  --font-2: "EditorialNew-Regular", 'Times New Roman', serif;
+  --font-2: "EditorialNew-Ultralight", 'Times New Roman', serif;
   --font-3: "NeueMontreal-Bold", "Helvetica Neue", sans-serif;
   --font-6: "ivypresto-display", var(--font-2);
   --font-sm: 400;
   --font-md: 500;
   --font-lg: 700;
-  --border-color: rgba(100, 100, 100, 0.8);
+  --border-color: #eaeaea;
   --ls-sm: -0.02em;
   --ls-md: -0.035em;
   --ls-lg: -0.055em;
@@ -175,10 +176,10 @@ body {
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
-  color: var(--off-white);
+  color: var(--text-black);
   font-family: var(--font);
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 button,

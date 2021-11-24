@@ -8,6 +8,7 @@ import { StyledButton } from "./box";
 import One from "../public/image.jpg";
 import Two from "../public/5.jpg";
 import { revealInOut, barAnim } from "@/helpers/transitions";
+import Gradient from "./gradient";
 
 const work = ["hot girl", "fun girl", "sad girl", "bad b*tch"];
 
@@ -32,7 +33,8 @@ export default function HeroN() {
             enter: { transition: { staggerChildren: 0.1, delay: 0.35 } },
           }}
         >
-          <div className="hero-background">
+          {/* <div className="hero-background">
+           
             <div
               className="hide-for-mobile h-m-container hero-image_container-1"
               data-scroll
@@ -66,7 +68,7 @@ export default function HeroN() {
                 className="a-img img"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* .....fore-ground..... */}
           <div className="hero-inner">
@@ -116,9 +118,9 @@ export default function HeroN() {
   );
 }
 
-const HeroContainer = styled(m.article)`
+const HeroContainer = styled(m.div)`
   .hero-background {
-    z-index: 2;
+    z-index: -2;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -192,7 +194,7 @@ const HeroContainer = styled(m.article)`
     white-space: nowrap;
     font-family: var(--font-3);
     text-transform: uppercase;
-    color: white;
+    color: inherit;
     font-weight: 800;
   }
 `;

@@ -30,7 +30,8 @@ export default function Footer() {
 }
 
 const FooterBox = styled.footer`
-  /* background: var(--bg); */
+  background: var(--black);
+  color: var(--text-white);
   border-top: 1px solid var(--border-color);
   padding: 150px calc(var(--golden-ratio) - var(--px-2));
   @media (min-width: 991px) {

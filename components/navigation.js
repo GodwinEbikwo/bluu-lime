@@ -46,9 +46,9 @@ const HeaderBox = styled(m.header)`
   z-index: 100;
 
   @media (max-width: 767px) {
-    border-bottom: 1px solid var(--border-color);
+    /* border-bottom: 1px solid var(--border-color); */
     padding: 0.75rem 0;
-    background: var(--bg);
+    /* background: var(--bg); */
   }
 `;
 
@@ -159,7 +159,7 @@ function Logo() {
     >
       <path
         d="M21.5 0L23.0203 19.9797L43 21.5L23.0203 23.0203L21.5 43L19.9797 23.0203L0 21.5L19.9797 19.9797L21.5 0Z"
-        fill="var(--white)"
+        fill="var(--black)"
       />
     </svg>
   );
@@ -234,9 +234,9 @@ export default function Navigation() {
 
           <>
             <button
+              className="cursor-pointer"
               style={{
-                color: "white",
-                cursor: "pointer",
+                color: "inherit",
               }}
               onClick={() => setCartOpen(!cartOpen)}
             >
