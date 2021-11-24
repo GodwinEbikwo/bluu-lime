@@ -35,7 +35,7 @@ export const StyledButton = styled.button`
 
   &.filled {
     color: var(--white);
-    background-color: var(--black);
+    background-color: var(--accent);
   }
 
   &.add-to-bag {

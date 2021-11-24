@@ -79,6 +79,7 @@ const ProductContentContainer = styled.div`
     &:nth-child(2) {
       margin-top: var(--spacer);
       border: 1px solid var(--border-color);
+      border-radius: 10px;
       @media (min-width: 768px) {
         margin-top: 0;
       }

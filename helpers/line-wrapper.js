@@ -1,6 +1,6 @@
 import * as React from "react";
 import { m } from "framer-motion";
-// import { SplitText } from "@cyriacbr/react-split-text";
+import { SplitText } from "@cyriacbr/react-split-text";
 
 const LetterWrapper = ({ children, countIndex }) => {
   return (
@@ -30,15 +30,15 @@ const WordWrapper = ({ children }) => {
 export const MemoizedLetterWrapper = React.memo(LetterWrapper);
 export const MemoizedWordWrapper = React.memo(WordWrapper);
 
-// function linewrapper() {
-//   return (
-//     <>
-//       <SplitText
-//         LetterWrapper={MemoizedLetterWrapper}
-//         WordWrapper={MemoizedWordWrapper}
-//       >
-//         Dive into nature with bloom
-//       </SplitText>
-//     </>
-//   );
-// }
+function linewrapper() {
+  return (
+    <>
+      <SplitText
+        LetterWrapper={MemoizedLetterWrapper}
+        WordWrapper={MemoizedWordWrapper}
+      >
+        Dive into nature with bloom
+      </SplitText>
+    </>
+  );
+}

@@ -13,8 +13,8 @@ export const MobileMenuUL = styled.ul`
     div {
       font-size: 1.5rem;
       font-family: var(--font-6);
-      font-weight: 100;
       text-transform: uppercase;
+      letter-spacing: var(--ls-sm)
     }
   }
 `;
@@ -23,6 +23,6 @@ export const MobileMenuFooter = styled.footer`
   position: absolute;
   bottom: var(--spacer);
   font-family: var(--font-6);
-  font-weight: 100;
   text-decoration: underline;
+  letter-spacing: var(--ls-sm)
 `;

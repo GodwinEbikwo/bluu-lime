@@ -19,7 +19,7 @@ export function CartFooter({ subtotal, onClick, checkoutUrl }) {
   return (
     <footer>
       <div className="flex space-between">
-        <span className="inline-block text-uppercase">Subtotal: </span>
+        <span className="inline-block text-uppercase">Subtotal</span>
         <span className="inline-block">{formatMoney(subtotal)}</span>
       </div>
 

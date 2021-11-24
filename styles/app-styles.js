@@ -175,6 +175,7 @@ body {
   font-feature-settings: 'kern';
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
   color: var(--text-black);
   font-family: var(--font);
@@ -199,7 +200,6 @@ button::-moz-focus-inner,
 
 button {
   font-family: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   user-select: none;
   outline: none;
   background-color: transparent;
@@ -516,8 +516,8 @@ h1 {
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.18, 1),
     visibility 1s cubic-bezier(0.77, 0, 0.18, 1) 0.1s;
-    background: var(--bg);
     z-index: -1;
+    
     &.open {
       clip-path: inset(0%); 
       transition: clip-path 1s cubic-bezier(.76,0,.24,1); 
