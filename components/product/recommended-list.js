@@ -31,6 +31,7 @@ const RecommendedContainer = styled.section`
     font-weight: 100;
     font-family: var(--font-6);
     font-size: 1.563rem;
+    text-align: center;
 
     @media (min-width: 640px) {
       text-align: center;

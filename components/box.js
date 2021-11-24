@@ -39,7 +39,6 @@ export const StyledButton = styled.button`
   }
 
   &.add-to-bag {
-    border-radius: 0 !important;
     background-color: var(--accent);
     border: none;
   }

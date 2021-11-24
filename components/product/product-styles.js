@@ -87,9 +87,15 @@ export const ProductLink = styled.a`
 export const ProductInfoContainer = styled.div`
   padding: 1rem 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+  }
 `;
 
 export const ProductTitle = styled.span`
@@ -98,8 +104,6 @@ export const ProductTitle = styled.span`
 
 export const ProductPrice = styled.span`
   letter-spacing: var(--ls-sm);
-  font-family: "Helvetica Neue", var(--font-3);
-  font-weight: 700;
 `;
 
 export const ProductListHeader = styled.div`

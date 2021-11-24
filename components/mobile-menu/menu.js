@@ -6,6 +6,7 @@ import FancySpan from "../fancy-span";
 import { m } from "framer-motion";
 import { variantsAni, menuInOut } from "@/helpers/transitions";
 import { MobileMenuNav, MobileMenuUL, MobileMenuFooter } from "./menu-style";
+import Div100vh from "react-div-100vh";
 
 function List({ href, onClick, children, a11y }) {
   return (
@@ -22,7 +23,7 @@ function List({ href, onClick, children, a11y }) {
 export default function MobileMenu({}) {
   const { setMenuOpen, menuOpen } = useContext(CartContext);
   return (
-    <div className={cn("mobile-menu", { open: menuOpen })}>
+    <Div100vh className={cn("mobile-menu", { open: menuOpen })}>
       <m.div
         className="mm-inner"
         initial={false}
@@ -83,6 +84,6 @@ export default function MobileMenu({}) {
           </h5>
         </MobileMenuFooter>
       </m.div>
-    </div>
+    </Div100vh>
   );
 }

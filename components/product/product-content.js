@@ -60,12 +60,12 @@ export default function ProductContent({ product }) {
 }
 
 const ProductContentBox = styled.section`
-  margin: 8rem auto;
+  margin: 3rem auto;
   padding: 50px calc(var(--golden-ratio) - var(--px-2));
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 767px) {
     margin: 3rem auto;
-  }
+  } */
 
   @media (min-width: 991px) {
     margin: var(--spacing-md) auto;
@@ -103,7 +103,7 @@ const ProductContentContainer = styled.div`
 
   .product-container-inner {
     width: 100%;
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
       width: 50%;
       max-width: 30rem;
     }

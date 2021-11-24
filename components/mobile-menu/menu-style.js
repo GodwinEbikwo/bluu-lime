@@ -9,6 +9,7 @@ export const MobileMenuUL = styled.ul`
   margin-bottom: var(--spacer);
   li {
     margin-bottom: var(--spacing-sm);
+    
     div {
       font-size: 1.5rem;
       font-family: var(--font-6);
@@ -20,7 +21,7 @@ export const MobileMenuUL = styled.ul`
 
 export const MobileMenuFooter = styled.footer`
   position: absolute;
-  bottom: 10rem;
+  bottom: 0;
   font-family: var(--font-6);
   font-weight: 100;
   text-decoration: underline;
